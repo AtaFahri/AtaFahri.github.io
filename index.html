@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+</style>
+
+<body>
+    <div style=" width: 50%; background-color: red; margin-left: 25%;">
+        <input id="input1" style="font-size: 4.786vw;" placeholder="Parolanızı girin" type="password">
+    </div>
+</body>
+
+<script>
+    var input1 = document.getElementById("input1");
+    input1.onkeyup = function(e){
+        if(input1.value.toString() == "4416"){
+            window.location.href='index2.html';
+        }
+        
+    }
+</script>
+
+</html>

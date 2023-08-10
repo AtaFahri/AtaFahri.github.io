@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Çemberlitaş</title>
+    <link rel="icon" href="">
+
+    <script src="https://kit.fontawesome.com/9081cb8abe.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/f9cc8bdbe4.js" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Pacifico&family=Satisfy&display=swap" rel="stylesheet">
+</head>
+
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    #p{
+        color: rgb(0, 0, 0);
+        font-size: 2.5vw;
+        font-family: 'Pacifico', cursive;
+    }
+    .p{
+        color: rgb(255, 255, 255);
+        font-size: 1.4vw;
+        
+        line-height: 100%;
+    }
+    .h{
+        color: rgb(255, 255, 255);
+        font-size: 2.3vw;
+        margin-top: 11vw;
+    }
+    ::-webkit-scrollbar{
+        width: 0px;
+        height: 0px;
+    }
+    #cal{
+        width: 48%; height: 100vh;  display: inline-block; 
+    }
+    #cal2{
+        width: 50%; margin-right: 1.52%;  height: 100vh; margin-top: 1vw;
+         
+        display: block; padding: 1%;       
+        float: right;
+        
+    }
+    #div2{
+        width: 33.3%;  height: 35vw; display: block; float: right; margin-right: 1%;
+    }
+    .img{
+        height: 30vh;
+        width: 100%;
+        object-fit: cover;
+        image-rendering: pixelated;
+    }
+    .txt{
+        font-size: 6vw;
+        line-height: 10vw;   
+        text-align: center;
+        color: white;
+    }
+    .txt2{
+        font-size: 3vw;
+        line-height: 15vw;  
+        text-align: center;
+        color: white;
+    }
+    #slider1{
+        position: fixed; top: 0px; z-index: -1;
+    }
+    .button{
+        border: none; background: transparent; backdrop-filter: blur(55px); font-size: 1.5vw; color: white; padding: 0.5%; 
+        width: 13%; opacity: 80%; box-shadow: 0px 2px 5px grey; transition: 0.3s; text-align: center;
+        background: radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.12),transparent 80% ),radial-gradient(circle at top left, rgba(216, 216, 216, 0.322),transparent 60% );
+    }
+    button:hover{
+        box-shadow: 0px 0px 20px white;
+    }
+    #btndiv{
+        display: flex; justify-content: space-around; width: 100%; position: absolute; bottom: 10%; 
+    }
+    .divy{
+        display: block;  width: 33.333333333333333%; background-color: black; margin: 0px; padding: 0px; border: 0px;float: left; border: solid white 0.1vw; border-top: none; border-right: none;
+    }
+    #back{
+        height: 222vh; background: rgb(0, 0, 95); opacity: 30%; margin-top: -100vh;
+    }
+    #video{
+        width: 100%; height: 120vh; float: right; transition: 1s;
+    }
+    .footerdiv{
+        display: inline-block;  margin-right: 60%;
+    }
+    @media screen and (max-width: 600px) {
+        #cal{
+            width: 100%;
+            margin: 0px;
+        }
+        #btndiv{
+            display:block;
+        }
+        .footerdiv{
+            margin-right: 20%;
+        }
+        #cal2{
+            width: 100%; margin-right:0%;  height: 50vh; 
+        }
+        #cal{
+            height: 50vh; padding-top: 5vh;
+        }
+        #video{
+            height: 30vh; transition: 1s;
+        }
+        .p{
+            color: rgb(255, 255, 255);
+            font-size: 3vw;
+            
+            line-height: 100%;
+        }
+        .h{
+            color: rgb(255, 255, 255);
+            font-size: 5vw;
+            margin-top: 11vw;
+        }
+        #back{
+            height: 124vh;
+        }
+        .button{
+            width: 80%;
+            transition: 1s;
+            margin-left: 10%;
+            font-size: 6vw;
+            margin-top: 3vw;
+        }
+        #div2{
+            width: 100%;
+            margin: 0px;
+            height: 50vh; 
+           
+        }
+        .divy{
+            border: solid white 0.1vw;
+            
+        }
+        .txt2{
+            font-size: 6.5vw;
+            line-height: 35vw;  
+            text-align: center;
+            color: white;
+        }
+
+    }
+</style>
+
+<body id="body">
+    <!-- <div style="top: 0px; height: 4vw; position: fixed; background-color: rgb(233, 233, 233); z-index: 500; width: 100%;"><center><p id="p">Çemberlitaş Anadolu Lisesi</p></center></div> -->
+    
+    <div id="slider1" class="carousel slide" style=" height: auto; width: 100%; margin-bottom: 1vw;">
+        <div class="carousel-inner" >
+            <div class="carousel-item active" >
+                <div class="div" style="height: 100vh; background-position: center; background-size: cover; background-image:url('pics/aa.jpg') ; width: 100%; ">
+                    <!-- <img src="pics/zirve.jpg" alt="" class="ResponsiveBanner img"> -->
+                   <!-- <center> <p class="txt">zirve</p></center> -->
+                </div>
+            </div>
+            <div class="carousel-item" >
+                <div class="div" style="height: 100vh; background-position: center; background-size: cover;  background-image:url('pics/i.webp') ; width: 100%; ">
+                    <!-- <img src="pics/zirve.jpg" alt="" class="ResponsiveBanner img"> -->
+                </div>
+            </div>
+            <div class="carousel-item" >
+                <div class="div" style="height: 100vh; background-position: center; background-size: cover;  background-image:url('pics/tedx.jpg') ; width: 100%; ">
+                    <!-- <img src="pics/zirve.jpg" alt="" class="ResponsiveBanner img"> -->
+                  
+                </div>
+            </div>
+            <!-- <div class="carousel-item">
+                <div class="div" style="height: auto; width: 100%; ">
+                    <div class="div" style="height: auto; width: 100%;">
+                          <img src="pics/zirve.jpg" alt="" class="ResponsiveBanner img">
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        <div id="btndiv" >
+            <button class="button" style="margin-left: 10%;">ZİRVE</button>        
+            <button class="button">TEDx</button>        
+            <button class="button">VOCAL</button>        
+            <button class="button" style="margin-right: 10%;">FANZİN</button>        
+        </div>
+
+    </div>
+    <div style="position:relative;  margin-top: 100vh; width: 100%;">
+        <img id="i1" style="width: 100%; margin: 0px; position: sticky; height: 100vh;  top: 0px; " src="pics/aa/1.jpg" alt=""> 
+        <img id="cal" style="width: 100%;  margin: 0px; margin-top: 100vh; height: 100vh; " src="pics/aa/500.jpg" alt="">
+        <p id="p" style="color: antiquewhite; position: fixed; top: 0px; left: 0px; font-size: 1vw; margin: 0px;">atakan</p> 
+        
+    
+    </div>
+    <div id="back">             
+        <div id="nav" style="background-color: rgb(57, 57, 57); width: 2.5%; position: sticky; display: flex; justify-content: space-around; flex-direction: column; top: 0px; height: 100000px; left: 1%; border-radius: 0.5vw; "> 
+            
+            <i class="fa-solid fa-credit-card" style="color: white;  font-size: 1.8vw; margin-left: 10%;"></i>                 
+            <i class="fa-solid fa-house" style="color: white;  font-size: 1.8vw;margin-left: 10% "></i> 
+            <i class="fa-solid fa-book-open" style="color: white;  font-size: 1.8vw; margin-left: 10%"></i> 
+            <i class="fa-solid fa-user" style="color: white;  font-size: 1.8vw; margin-left: 20%"></i> 
+            
+        </div>
+        <div style="margin-top: -100vh;">
+            <img style="width: 100%; height: 100vh;" src="pics/indir.jpeg" alt="">
+        </div>
+        
+       
+    </div>
+
+    
+    
+    
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+
+<script>
+    //var div2 = document.getElementById("div2");
+    var ss = document.querySelectorAll(".divy");
+   // var cal2 = document.getElementById("cal2");
+    var back = document.getElementById("back");
+    //var video = document.getElementById("video");
+    var nav = document.getElementById("nav");
+    var p = document.getElementById("p");
+    var i1 = document.getElementById("i1");
+    size();
+
+
+    
+    
+    
+    
+       
+
+    
+
+    function size(){
+        if(window.innerWidth < 601){
+            for(var i = 0;i<ss.length;i++){
+               // ss[i].style.height = div2.offsetHeight/3+"px";
+            }
+        }
+        else{
+            for(var i = 0;i<ss.length;i++){
+                //ss[i].style.height = div2.offsetHeight/2+"px";
+            }
+        }
+        for(var i = 0;i<ss.length;i++){
+           // ss[i].style.height = div2.offsetHeight/3+"px";
+        }
+        ;    
+        nav.style.marginTop = window.innerHeight+"px";
+        nav.style.height = window.innerHeight/1.02+"px";
+        nav.style.top = window.innerHeight/100+"px";
+        back.style.borderTopWidth = window.innerHeight/100+"px";
+        
+    }
+    body.onresize = function(){
+        size();
+        // alert(('#slider1').length);
+    }
+    var counter = 0;
+    var myInterval = setInterval(function(){
+        var x = document.querySelectorAll(".button");
+        if(counter == 0){
+            counter = 1;
+            for (var i = 0; i < x.length; i++) {
+                x[i].style.boxShadow = "0px 2px 5px red";            
+            }
+        }
+        else if (counter == 1){
+            counter = 2;
+            for (var i = 0; i < x.length; i++) {
+                x[i].style.boxShadow = "0px 2px 5px blue";            
+            }
+        }
+        else if (counter == 2){
+            counter = 0;
+            for (var i = 0; i < x.length; i++) {
+                x[i].style.boxShadow = "0px 2px 5px grey";            
+            }
+        }        
+    },5000);
+
+    var x = document.querySelectorAll(".button");
+        document.addEventListener("visibilitychange", function() {
+        //console.log(document.visibilityState);
+        if(document.visibilityState == "visible"){
+           // alert("a");
+        }
+        else if(document.visibilityState == "hidden"){
+            // alert("b");
+        }
+    });
+    
+   
+    for (var i = 0; i < x.length; i++) {
+        x[i].addEventListener("mouseenter", ls);  
+        x[i].addEventListener("mouseleave", ls2);  
+    }
+    function ls(){
+        if(counter == 0){
+            this.style.boxShadow = "0px 0px 20px grey";                        
+        }
+        else if (counter == 1){
+            this.style.boxShadow = "0px 0px 20px red";                        
+        }
+        else if (counter == 2){
+            this.style.boxShadow = "0px 0px 20px blue";                        
+        }        
+        
+    }
+    function ls2(){
+        if(counter == 0){
+            this.style.boxShadow = "0px 2px 5px grey";                        
+        }
+        else if (counter == 1){
+            this.style.boxShadow = "0px 2px 5px red";                        
+        }
+        else if (counter == 2){
+            this.style.boxShadow = "0px 2px 5px blue";                        
+        }        
+        
+    }
+
+
+    $(function () {
+        $('#slider1').carousel({
+            interval: 5000,
+            keyword: true,
+            pause: false,
+            wrap: true
+        });
+
+    });
+    // $(function () {
+    //     $('#slider2').carousel({
+    //         interval: 5000,
+    //         keyword: true,
+    //         pause: false,
+    //         wrap: true,            
+    //     });
+        
+
+    // });
+    var counterr = 0;
+    
+   
+    window.onscroll = function(){
+        p.innerText = i1.offsetTop;
+            if(i1.offsetTop>8 && i1.offsetTop<1750){
+                i1.style.opacity = 1;
+                var b = Math.ceil(window.scrollY/10) ;
+                i1.src = "pics/aa/"+b+".jpg"
+            }
+            else if(i1.offsetTop<=8) {
+                i1.style.opacity = 1;
+                i1.src = "pics/aa/1.jpg"
+            }   
+            else if(i1.offsetTop>1750){
+               i1.style.opacity = 0;
+            }    
+      
+      
+            if(window.scrollY/10>counterr*3){
+                //cal2.src = "pics/aa/"+counterr+".jpg";
+                counterr++;
+            }
+            else if(window.scrollY/10<counterr*3){
+                //cal2.src = "pics/aa/"+counterr+".jpg";
+                counterr--;
+            }
+           
+        var w = window.innerWidth;
+       // video.style.marginLeft = w - window.scrollY+"px";    
+        var a = window.scrollY/600;
+        back.style.opacity = a;     
+        // if(window.scrollY>video.scrollHeight){
+        // //    video.style.marginRight = "0px";
+        // }
+        // console.log();
+    }
+   
+    
+
+
+</script>
+
+</html>
