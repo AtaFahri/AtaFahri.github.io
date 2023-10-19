@@ -3,47 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parola</title>
+    <title>Document</title>
 </head>
-
-<style>
-    ::-webkit-scrollbar{
-        width: 0px;
-    }    
-    *{
-        margin: 0px;
-        padding: 0px;
-        border: 0px;
-    }   
-    body{
-        width: 100%; height: 100vh; 
-        background: radial-gradient(circle at bottom right, rgb(0, 32, 16),transparent 100% ),radial-gradient(circle at top left, rgb(216, 216, 216),transparent 100% ); 
-    }
+<body style="background-image: linear-gradient(#252452, black); height: 100vh;">
     
-</style>
-
-<body>    
-    <center>
-        <div style=" width: 50%;">
-            <input id="input1" style="font-size: 4.786vw; margin-top: 30vh; text-align: center; box-shadow: 15px 15px 30px black; "  placeholder="Parolanızı Girin" type="password">
-        </div>
-    </center>
 </body>
-
-<script>
-    var input1 = document.getElementById("input1");
-    input1.onkeyup = function(e){
-        if(input1.value.toString() == "4416"){
-            window.location.href='index2.html';            
-        }
-        else if(input1.value.toString() == "050905"){
-            window.location.href='formylove/index.html';
-        }
-        else if(input1.value.toString() == "1503"){
-            window.location.href='index3.html';
-        }
-        
-    }
-</script>
-
 </html>
