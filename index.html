@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="Pics/logobg.png" type="image/x-icon" >
+    <title>PMUConsultans</title>
+   
+</head>
+
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+        border: 0px;
+    }
+    #navbar{
+        width: 100%;
+        position: fixed;
+        height: 5vw;
+        top: -5vw;
+        z-index: 500;
+        transition: 0.5s;
+        background-color: white;
+    }
+    #logo{
+        height: 100%;
+        display: inline-block;
+        margin-left: 5vw;
+    }
+    .navlabel{
+        line-height: 5vw;
+        margin-left: 4%;
+        font-size: 1.2vw;
+        /* text-decoration: underline; */
+        text-align: center;
+        float: right;
+    }
+    .navlabel:hover{
+        cursor: pointer;
+    }
+    #div1{
+        float: right;        
+        width: 50%;
+    }
+    #video{
+        width: 100%;
+        height: auto;
+
+    }
+    .os{
+        margin-top: 5%; width: 30%; height: 35vw; 
+        color: navy;
+        font-size: 1.7vw;
+        text-align: center;
+        background-color: white;
+        border-radius: 1vw;
+        margin-bottom: 2%;
+    }
+    .card{
+        margin-top: 5%;
+    }
+    .cardp{
+        color: black;
+        font-size: 1.2vw;
+        width: 96%;
+        margin-left: 2%;
+        margin-top: 2%;
+    }
+    .down{
+        object-fit: fill;
+        height: 24vw;
+        width: 24%;
+    }
+    #bg{
+        background-image: url(Pics/wood3.jpeg); background-repeat: no-repeat; background-size:cover; margin-top: -1%; background-position: 0px -4vw ;
+    }
+    #ours{
+        width: 30%; margin-left: 35%; height: 5vw; margin-top: 5%; font-size: 4.2vw; text-shadow: 5px 5px 5px rgb(255, 255, 255); color: rgb(0, 0, 113);
+    }
+    #footer{
+        width: 100%;
+        height: 15vw;
+        background-color: navy;
+    }
+    #our{
+        display: flex; justify-content: space-around; width: 80%; margin-left: 10%; 
+    }
+    .img{
+        height: 18vw;
+    }
+    #menu{
+        width: 5%; height: 5vw; float: right; margin-right: 5%;
+        visibility: hidden;
+    }
+    #square{
+        display: flex; justify-content: space-around; margin-top: 5%; margin-bottom: 5%;
+    }
+    @media screen and (max-width:500px) {
+        .os{
+            
+            width: 100%; 
+            margin-top: 0%;
+            height: 97vw; 
+            color: navy;
+            font-size: 4vw;
+            text-align: center;
+            background-color: white;
+            border-radius: 1vw;
+            
+        }          
+        #our{
+            display: inline-block; width: 90%; margin-left: 5%; margin-top: 5%; 
+        }
+        .img{
+            height: 60vw;
+        }
+        .cardp{
+            color: black;
+            font-size: 3vw;
+            width: 96%;
+            margin-left: 2%;
+            margin-top: 2%;
+        }
+        #navbar{
+           
+            height: 10vw;
+            top: -10vw;
+        }
+        .navlabel{
+            line-height: 10vw;
+            font-size: 2vw;
+        }
+        #div1{
+            visibility: hidden; 
+        }
+        #bg{
+            background-position: 0px 0px ;
+            background-image: url(Pics/wood4.jpeg);
+        }
+        #ours{
+            font-size: 7vw;  width: 50%; margin-left: 25%;
+        }
+        #menu{
+            visibility: visible; height: 9vw; width: 10%;
+        }
+        .down{
+            object-fit: fill;
+            height: 95vw;
+            width: 95%;
+            margin-left: 2.5%;
+        }
+        #square{
+            display: block; justify-content: space-around; margin-top: 5%; margin-bottom: 5%;
+        }
+    }
+</style>
+
+<body>
+    <div id="navbar">
+        <img id="logo" src="Pics/nobglogo.png" alt="">
+        <img id="menu" src="Pics/menu.jpeg" alt="">
+        <div id="div1">            
+            <label class="navlabel">About PMUConsultans</label>
+            <label class="navlabel">Contact Us</label>
+            <label class="navlabel">Our Projects</label>
+            <label class="navlabel">Services</label>
+            
+        </div>
+        
+       
+
+    </div>
+
+    <div id="videod">
+        <video id="video" src="Pics/v1.MOV" muted autoplay loop style="object-fit: cover; height: 55vw;"></video>
+    </div>
+    <div id="bg">
+        <div style="display: flex;">
+            <div id="ours">
+                OUR SERVICES
+            </div>
+        </div>
+        
+
+        <div id="our">
+            <div class="os">
+               <img class="img" style="width: 100%; border-top-left-radius: 1vw; border-top-right-radius: 1vw;" src="Pics/ev1.jpeg" alt="">
+               <p class="card">HOME RENOVATIONS</p>
+               <p class="cardp" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, odio porro iure sunt molestiae fuga suscipit earum non, eos quaerat libero modi similique tempora itaque. Aut dolorum tempora, rerum, atque, eum mollitia quo autem explicabo natus excepturi eligendi harum commodi soluta officia aliquam omnis est? Voluptate distinctio soluta amet accusamus.</p> 
+            </div>
+            <div class="os">
+                <img class="img" style="width: 100%; border-top-left-radius: 1vw; border-top-right-radius: 1vw;" src="Pics/ev2.jpeg" alt="">
+                <p class="card"> NEW CONSTRUCTION</p>
+                <p class="cardp" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit architecto repellat voluptatem, porro delectus, ipsam nostrum animi illum velit laboriosam quas qui hic, dolore soluta quasi mollitia sunt modi sapiente. Nulla delectus recusandae, quisquam facere aperiam accusamus quibusdam error odit? Id soluta voluptas repudiandae corporis, corrupti ipsum est officiis vel.</p> 
+            </div>
+            <div class="os">
+                <img class="img" style="width: 100%; border-top-left-radius: 1vw; border-top-right-radius: 1vw;" src="Pics/ev3.jpeg" alt="">
+                <p class="card"> ADDITIONS </p>
+                <p class="cardp" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam blanditiis, voluptates, repellat hic mollitia iure tempore deserunt perspiciatis, exercitationem natus debitis modi nisi error necessitatibus amet nostrum et? Iste pariatur fuga aliquid error incidunt quas facilis. Consectetur aliquam vel placeat veniam, minus accusantium voluptate ratione aliquid veritatis neque cum sit?</p> 
+            </div>
+        </div>
+       
+
+    </div>
+    <div style="display: flex;">
+        <div id="square">
+            <img class="down" src="Pics/ev.jpeg" alt="">
+            <img class="down" src="Pics/ev1.jpeg" alt="">
+            <img class="down" src="Pics/ev2.jpeg" alt="">
+            <img class="down" src="Pics/ev3.jpeg" alt="">
+        </div>
+    </div>
+    <footer id="footer" style="font-size: 13vw; text-align: center; color: white;">
+            TELİF HAKLARI
+    </footer>
+   
+
+    
+</body>
+
+<script>
+    const navbar = document.getElementById("navbar");
+    const i1 = document.getElementById("i1");
+    const video = document.getElementById("video");
+
+    
+
+    // setting size
+    video.style.height = window.innerHeight+"px";
+    // var deleteLink = document.querySelectorAll('.down');
+    // for (var i = 0; i < deleteLink.length; i++) {
+
+    //     deleteLink[i].style.height =  "457"+"px";
+        
+    // }
+
+
+    window.onscroll = function(){
+        if(window.innerWidth>500){
+            if(window.scrollY <= 25){
+                navbar.style.top = "-5vw";
+            }
+            else{
+                navbar.style.top = "0px";
+            }
+        }
+        else{
+            if(window.scrollY <= 25){
+                navbar.style.top = "-10vw";
+            }
+            else{
+                navbar.style.top = "0px";
+            }
+        }
+        
+        
+    }
+    window.onresize = function(){
+        video.style.height = window.innerHeight+"px";
+    }
+
+</script>
+
+</html>
