@@ -90,11 +90,68 @@
         height: 18vw;
     }
     #menu{
-        width: 5%; height: 5vw; float: right; margin-right: 5%;
+        height: 1vw; float: right; margin-right: 5%;
+        
         visibility: hidden;
+    }
+    #menu2{
+        display: inline;
     }
     #square{
         display: flex; justify-content: space-around; margin-top: 5%; margin-bottom: 5%;
+    }
+    #men{
+        position: fixed;
+        height: 15vw;
+        width: 100%;
+        background-color: rgb(255, 255, 255);
+       
+        right: -100%;
+        z-index: 499;
+        scrollbar-width: 0px;
+        overflow:scroll;
+        transition: 0.5s;
+    }
+    .menlabel{
+        color: black;
+        width: 90%;
+        margin-left: 5%;
+        margin-top: 5%;
+        background-color: rgb(255, 255, 255);
+        font-size: 9vw;
+        text-align: left;
+        margin-bottom: 5vw;
+        display: block;
+        border-bottom: 1vw solid black;
+    }
+    .conlabel{
+        color: rgb(39, 39, 39);
+        display: inline;
+        width: 33%;
+        margin-left: 5%;
+        font-size: 6.7vw;
+        text-decoration: underline;
+    }
+    #x1{
+        
+       
+        height: 15vw;
+        
+        transition: 0.5s;
+    }
+    #x{
+        position: fixed;
+        background-color: white;
+        height: 18vw;
+        width: 15%;
+        margin-right: 4%;
+        top: 0px; right: -100%;
+        z-index: 1000;
+        transition: 0.5s;
+    }
+
+    #men::-webkit-scrollbar {
+        display: none;
     }
     @media screen and (max-width:500px) {
         .os{
@@ -124,8 +181,8 @@
         }
         #navbar{
            
-            height: 10vw;
-            top: -10vw;
+            height: 15vw;
+            top: -15vw;
         }
         .navlabel{
             line-height: 10vw;
@@ -142,7 +199,7 @@
             font-size: 7vw;  width: 50%; margin-left: 25%;
         }
         #menu{
-            visibility: visible; height: 9vw; width: 10%;
+            visibility: visible; height: 10vw; width: 10%; margin-top: 2.5vw;
         }
         .down{
             object-fit: fill;
@@ -159,7 +216,10 @@
 <body>
     <div id="navbar">
         <img id="logo" src="Pics/nobglogo.png" alt="">
-        <img id="menu" src="Pics/menu.jpeg" alt="">
+        <div id="menu2">
+            <img id="menu" src="Pics/menu.jpeg" alt="">
+        </div>
+        
         <div id="div1">            
             <label class="navlabel">About PMUConsultans</label>
             <label class="navlabel">Contact Us</label>
@@ -171,9 +231,22 @@
        
 
     </div>
+    <div id="x">
+        <img id="x1" src="Pics/x.jpeg" alt="">
+    </div>
+    
+    <div id="men">
+        <label style="margin-top: 15vw;" class="menlabel">About PMUConsultans</label>        
+        <label class="menlabel">Our Projects</label>
+        <label class="menlabel">Services</label>
+        <label class="menlabel">Contact Us <p style="display: block; font-size: 5vw; float: right; margin-right: 2%;">▼</p></label>
+        <a href="https://www.instagram.com/ata.fahri_/" class="conlabel">Instagram</a>
+        <a href="" class="conlabel">Facebook </a>
+        <a href="" class="conlabel">LinkedIn </a>
+    </div>
 
     <div id="videod">
-        <video id="video" src="Pics/v1.MOV" muted autoplay loop style="object-fit: cover; height: 55vw;"></video>
+        <video id="video" src="Pics/v1.MOV" loop muted autoplay preload="metadata" style="object-fit: cover; height: 55vw;"></video>
     </div>
     <div id="bg">
         <div style="display: flex;">
@@ -223,19 +296,33 @@
     const navbar = document.getElementById("navbar");
     const i1 = document.getElementById("i1");
     const video = document.getElementById("video");
+    const men = document.getElementById("men");
+    const menu = document.getElementById("menu");
+    const x = document.getElementById("x");
 
     
 
     // setting size
     video.style.height = window.innerHeight+"px";
+    var uzun = navbar.offsetHeight/10;
+    men.style.height = window.innerHeight+"px";
+    
+    
+    
     // var deleteLink = document.querySelectorAll('.down');
     // for (var i = 0; i < deleteLink.length; i++) {
 
     //     deleteLink[i].style.height =  "457"+"px";
         
     // }
-
-
+    x.onclick = function(){
+        men.style.right = "-100%";
+        x.style.right = "-100%"
+    }    
+    menu.onclick = function(){
+        men.style.right = "0px";
+        x.style.right = "0px"
+    }
     window.onscroll = function(){
         if(window.innerWidth>500){
             if(window.scrollY <= 25){
@@ -247,7 +334,7 @@
         }
         else{
             if(window.scrollY <= 25){
-                navbar.style.top = "-10vw";
+                navbar.style.top = "-15vw";
             }
             else{
                 navbar.style.top = "0px";
