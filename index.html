@@ -246,7 +246,7 @@
     </div>
 
     <div id="videod">
-        <video id="video" src="Pics/v1.MOV" loop muted autoplay preload="metadata" style="object-fit: cover; height: 55vw;"></video>
+        <video id="video" src="Pics/v1.MOV" loop muted autoplay style="object-fit: cover; height: 55vw; transition: 1s;"></video>
     </div>
     <div id="bg">
         <div style="display: flex;">
@@ -344,7 +344,7 @@
         
     }
     window.onresize = function(){
-       // video.style.height = window.innerHeight+"px";
+        video.style.height = window.innerHeight+"px";
     }
 
 </script>
