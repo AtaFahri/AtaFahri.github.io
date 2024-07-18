@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id = "main" >
+    <style>
+        .button{
+            background: black;
+            color: white;
+            margin-right: 5px;
+            font-size: 20px;
+        }
+        #main{
+            background:lightsteelblue;
+        }
+    </style>
+    <script>
+        var chars = ["☮", "✈", "♋", "웃", "유", "☠", "☯", "♥", "✌", "✖" ,"☢" ,"☣", "☤" ,"⚜" ,"❖" ,"Σ", "⊗" ,"♒" ,"♠" ,"Ω" ,"♤" ,"♣" ,"♧", "♡", "♦","♢" ,"♔" , "♕" ,"♚", "♛", "★", "☆", "✮", "✯", "☄" ,"☾", "☽", "☼", "۞", "۩", "✄", "✂", "✆", "✉", "✦", "✧" ,"∞", "♂", "♀", "☿", "❤", "❥", "❦", "❧", "™", "®", "©", "✗", "✘", "⊗", "♒", "▢", "◆", "◇", "○", "◎", "●", "◯", "Δ", "◕", "◔", "ʊ", "ϟ", "ღ", "回", "₪", "✓", "✔", "✕", "☥", "☦", "☧", "☨", "☩", "☪", "☫", "☬", "☭", "™", "©" ,"®", "¿","¡","½", "⅓", "⅔", "¼", "¾", "⅛", "⅜", "⅝", "⅞", "℅", "№", "⇨", "❝", "❞", "∃", "∧", "∠", "∨", "∩", "⊂", "⊃", "∪", "⊥", "∀", "Ξ", "Γ", "ɐ", "ə", "ɘ", "ε", "β", "ɟ", "ɥ", "λ", "ч", "∞", "Σ", "Π", "⌥", "⌘", "文", "⑂", "ஜ", "๏"];
+        var sayac = 0;
+
+        for(var i = 0 ; i< chars.length; i++){
+            sayac+=1;
+            var btn = document.createElement("button");
+            btn.classList = "button";
+            btn.textContent = chars[sayac]; 
+            btn.id = "b"+i.toString();       
+            main.appendChild(btn);
+            btn.onclick = function functionName() {                
+                const el = document.createElement('textarea');
+                el.value = document.getElementById(this.id).innerHTML;
+                document.body.appendChild(el);
+                el.select();
+               
+                document.execCommand('copy');
+                document.body.removeChild(el);
+                
+            }           
+            
+            
+        }
+
+        function reply_click(clicked_id)
+        {
+            alert(clicked_id);
+        }
+        console.log(sayac);
+
+
+        
+        
+
+
+
+
+    </script>
+</body>
+</html>

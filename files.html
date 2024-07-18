@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Files</title>
+</head>
+
+
+<style>
+    *{
+        border: 0px;
+        padding: 0px;
+        margin: 0px;
+    }
+
+body{
+    /* background-color: rgb(0, 20, 0); */
+    background: linear-gradient(180deg, rgb(0, 20, 7) 0%, rgba(255,255,255,1) 100%);
+    background-repeat: no-repeat;
+    min-height: 150vw;
+}
+
+label{
+    color: white;
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-size: 9vw;
+}
+#search{
+    width: 100%;
+    height: 14vw;
+    
+}
+a{
+    width: 100%;
+    display: block;
+    text-align: center;
+    color: black;
+    font-size: 7vw;
+}
+#fix{
+    /* background-color: rgb(0, 20, 0); */
+   
+    width: 100%;
+    padding-top: 5vw;
+}
+#input1{
+    font-size: 8vw;
+    text-align: center;
+    width: 100%;
+    margin-top: 3%;
+    position: sticky;
+    top: 0px;
+    border-bottom: 1.5vw solid black;
+}
+#files{
+   margin-top: 5vw;
+   width: 90%;
+   margin-left: 5%;
+   background-color: white;
+   overflow: auto;
+ 
+}
+
+</style>
+
+
+<body>
+    
+    <div id="fix">
+        <label>Your Files:</label>
+        
+        <label>Click to Install</label>
+
+       
+       
+    </div>
+    <input placeholder="type to search" id="input1" type="text">
+
+    <div id="files">
+        <a id="i1"  href="index1.html" download="file">index1.html </a>
+        <a id="i2"  href="files.html" download="file">files HTML </a>
+        <a id="i3"  href="files/qr-code.png" download="file">qr code </a>
+        <a id="i4"  href="files/pmu.html" download="file">pmu consultans HTML </a>
+        <a id="i5"  href="files/daryl.html" download="file">Daryl Wear HTML</a> 
+        <a id="i6"  href="files/search.html" download="file">Search HTML </a>     
+        
+        <a id="i7"  href="files/phpjava.php" download="file">php java PHP</a>
+        <a id="i8"  href="files/audio-player.html" download="file">audio player HTML </a>
+        <a id="i9"  href="files/copy-paste.html" download="file">copy paste HTML</a>
+        <a id="i10" href="files/carrousel.html" download="file">carrousel  HTML</a>
+        <a id="i11" href="files/Başlıksız-2.ai" download="file">Background AI</a> 
+        <a id="i12" href="files/cizim.png" download="file">Background PNG </a>     
+        <a id="i13" href="files/Ekran Resmi 2024-07-13 01.31.07.png" download="file">LOGO </a>
+        <a id="i14" href="files/gtr+logo.ai" download="file">GTR + Logo AI</a>
+        <a id="i15" href="files/1.jpg" download="file">Daryl, Wing </a>
+        <a id="i16" href="files/2.jpg" download="file">Wing</a>
+        <a id="i17" href="files/3.jpg" download="file">Daryl</a> 
+        <a id="i18" href="files/one.php" download="file">One PHP </a>     
+        <a id="i19" href="files/march-15-2019-interacting-galaxies-arp-81.jpg" download="file">15 Mart</a>
+        <a id="i20" href="files/qrlogo.png" download="file">QR LOGO</a>    
+       
+        
+    </div>
+    
+
+
+</body>
+
+
+<script>
+    var items = [];
+
+    const files = document.getElementById("files");
+    const input1 = document.getElementById("input1");
+    const i1 = document.getElementById("i1");
+    const i2 = document.getElementById("i2");
+    const i3 = document.getElementById("i3");
+    const i4 = document.getElementById("i4");
+    const i5 = document.getElementById("i5");
+    const i6 = document.getElementById("i6");
+    const i7 = document.getElementById("i7");
+    const i8 = document.getElementById("i8");
+    const i9 = document.getElementById("i9");
+
+    const i10 = document.getElementById("i10");
+    const i11 = document.getElementById("i11");
+    const i12 = document.getElementById("i12");
+    const i13 = document.getElementById("i13");
+    const i14 = document.getElementById("i14");
+    const i15 = document.getElementById("i15");
+    const i16 = document.getElementById("i16");
+    const i17 = document.getElementById("i17");
+    const i18 = document.getElementById("i18");
+    const i19 = document.getElementById("i19");
+    const i20 = document.getElementById("i20");    
+   
+    var items2 = [i1,i2,i3,i4,i5,i6,i7,i8,i9,i10,i11,i12,i13,i14,i15,i16,i17,i18,i19,i20];
+
+    for(var x = 0; x<items2.length;x++){
+        items[x] = items2[x].innerHTML.toString();
+    }
+    for(var x = 0; x<items2.length;x++){
+     //   console.log( items[x] );
+    }
+    // files.removeChild(i2);
+    
+    input1.onkeyup = function(){
+        var text = input1.value.toString();        
+        text.toLowerCase();
+        if(text == ""){
+            sort();            
+        }
+        else{
+            remove();
+            add(text);
+        }
+        
+    }
+
+    function sort(){
+        try{ 
+            for(var i = 0; i<items2.length;i++){
+                files.appendChild(items2[i]);
+            }
+        }
+            catch(err) {  
+            }
+        
+
+
+    }
+
+    function remove(){
+        try{
+            for(var i = 0; i<items2.length;i++){
+                files.removeChild(items2[i]);
+            }
+            // files.removeChild(i1);
+            // files.removeChild(i2);
+            // files.removeChild(i3);
+            // files.removeChild(i4);
+            // files.removeChild(i5);
+            // files.removeChild(i6);
+            // files.removeChild(i7);
+            // files.removeChild(i8);
+            // files.removeChild(i9);
+
+
+        }
+        catch(err) {
+        
+        }
+    
+    }
+    var element = document.getElementById("i1");
+    function add(word){
+        // console.log(word);
+        // console.log(word.length);
+        for(var a = 0; a<items.length; a++){
+            try{        
+                var text = items[a].substring(0,word.length);
+                console.log(text);
+            }
+            catch(err) {  
+            }
+            console.log(word);
+            if(text == word){
+                
+                
+                files.appendChild(items2[a]);
+                
+            }
+        }
+
+
+    }
+
+
+
+   
+
+</script>
+
+
+</html>
