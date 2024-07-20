@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lock screen", "lock screen\lock screen.csproj", "{7D920529-449B-4D28-B8B0-5F7A40CBE9E4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7D920529-449B-4D28-B8B0-5F7A40CBE9E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D920529-449B-4D28-B8B0-5F7A40CBE9E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D920529-449B-4D28-B8B0-5F7A40CBE9E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D920529-449B-4D28-B8B0-5F7A40CBE9E4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {67B658DA-8020-4871-8268-ADBA56EEF918}
+	EndGlobalSection
+EndGlobal
