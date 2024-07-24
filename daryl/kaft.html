@@ -199,8 +199,10 @@
     
     var locationY3;
     var x = "0px";  
+    var up = false;
     console.log(x);
     document.ontouchstart = function(e){
+        up = false;
         main.style.transition = "0s";
         var touch = e.touches[0] || e.changedTouches[0];
        
@@ -216,22 +218,39 @@
         console.log(x)
     }
     document.ontouchmove = function(e){
+        console.log(locationY2);
         if(test2){
-             var touch = e.touches[0] || e.changedTouches[0];
-            
-            locationY2=touch.pageY;   
-            
-            
-            main.style.top = x+locationY2-locationY+"px";
-            
-            y = touch.pageY;        
-        }
+            if(counter2>0){
+                var touch = e.touches[0] || e.changedTouches[0];            
+                locationY2=touch.pageY;               
+                main.style.top = x+locationY2-locationY+"px";                        
+            }
+            else{
+                console.log(locationY2);
+                var touch = e.touches[0] || e.changedTouches[0];            
+                locationY2=touch.pageY;               
+                if(locationY> locationY2){
+                    main.style.top = x+locationY2-locationY+"px";   
+                    up = false;                     
+                }
+                else{
+                    locationY = touch.pageY;  
+                    //alert("yukarı");
+                    up = true
+                }
+                
+            }
+        
+       }
         
 
     }
     document.ontouchend = function(e){
-        main.style.transition = "0.7s";
-        if(test2 == true){
+      
+        if(up == false){
+            up = true;
+            main.style.transition = "0.7s";
+            if(test2 == true){
             test2 = false;
             if(locationY>locationY2){
                 
@@ -264,6 +283,8 @@
             
         }
         console.log(x)
+        }
+        
     }
 
 </script>
