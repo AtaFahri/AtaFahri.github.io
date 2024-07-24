@@ -196,6 +196,7 @@
     var test2 = true;
     var locationY;
     var locationY2;
+    
     var locationY3;
     var x = "0px";  
     console.log(x);
@@ -215,14 +216,17 @@
         console.log(x)
     }
     document.ontouchmove = function(e){
-        var touch = e.touches[0] || e.changedTouches[0];
-       
-        locationY2=touch.pageY;   
+        if(test2){
+             var touch = e.touches[0] || e.changedTouches[0];
+            
+            locationY2=touch.pageY;   
+            
+            
+            main.style.top = x+locationY2-locationY+"px";
+            
+            y = touch.pageY;        
+        }
         
-       
-        main.style.top = x+locationY2-locationY+"px";
-        
-        y = touch.pageY;        
 
     }
     document.ontouchend = function(e){
