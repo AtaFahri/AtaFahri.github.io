@@ -7,13 +7,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <style>
-/* *{
+*{
     margin: 0px;
     padding: 0px;
-    border: 0px;
+    /* border: 0px; */
     outline: none;
-} */
-  #donut {
+}
+  #donut {    
     width: 300px; 
     aspect-ratio: 1;
     transition: 1s;
@@ -32,13 +32,16 @@
   #legend {
     display: flex;
     margin-top: 30px;
+    margin-left: 5vw;
   }
   .txt{
-    font-size: 4.3vw;
+    font-size: 4vw;
   }
   @media screen and (max-width:600px) {
     #donut{
-      width: 100%;
+      width: 96%;
+      margin-left: 2%;
+      margin-top: 2vw;
       aspect-ratio: 1;
     }
     #donut::before {
@@ -57,21 +60,26 @@
   .segment3 { background: blue; }
   .segment4 { background: grey; }
 
-
+.lb{
+  font-size: 8vw; text-align: center; font-family: Arial, Helvetica, sans-serif;
+  margin-top: 1vw; 
+}
 
 
 </style>
-<body id="body">
+<body id="body" style="background-color: rgb(255, 255, 255);">
 
 
 
   <div id="donut">
-    <div style="width: 80%; margin-left: 10%; background-color: white; border-radius: 100%; margin-top: 10%; float: left; aspect-ratio: 1;">
+    <div style="width: 80%; margin-left: 10%; background-color: rgb(255, 255, 255);; border-radius: 100%; margin-top: 10%; float: left; aspect-ratio: 1;">
        <div style="width: 50%; float: left; margin-left: 25%; margin-top: 25%; aspect-ratio: 1; font-size: 2vw; ">
-            <label style="display: block; font-size: 6vw; width: 100%; text-align: center; margin-top: 3vw; font-family: Arial, Helvetica, sans-serif; border-radius: 1vw; color: red;" id="altin">5000</label>
-            <label style="display: block; font-size: 6vw; width: 100%; text-align: center; margin-top: 3vw; font-family: Arial, Helvetica, sans-serif; border-radius: 1vw; color: green; "   id="tkm">5000</label>
-            <label style="display: block; font-size: 6vw; width: 100%; text-align: center; margin-top: 3vw; font-family: Arial, Helvetica, sans-serif; border-radius: 1vw; color: blue;"   id="tua">5000</label>
-            <label style="display: block; font-size: 6vw; width: 100%; text-align: center; margin-top: 3vw; font-family: Arial, Helvetica, sans-serif; border-radius: 1vw; color: grey;"   id="tyh">5000</label>
+            <div style="display: block; width: 100%;" ><label class="lb" style=" margin-left: 3vw; color: red;" id="altin">5000</label> <p class="lb" style=" color: red; display: inline-block;">₺</p> </div>
+            <div style="display: block;" ><label class="lb" style=" margin-left: 3vw;  color: green;" id="tkm">5000</label> <p class="lb" style=" color: green; display: inline-block;">₺</p> </div>
+
+            <div style="display: block;" ><label class="lb" style=" margin-left: 3vw; color: blue;" id="tua">5000</label> <p class="lb" style=" color: blue; display: inline-block;">₺</p> </div>
+
+            <div style="display: block;" ><label class="lb" style=" margin-left: 3vw; color: grey;" id="tyh">5000</label> <p class="lb" style=" color: grey; display: inline-block;">₺</p> </div>
        </div>
     </div>
   </div>
@@ -81,9 +89,10 @@
     <div  class="segment3"></div> <div class="txt">TUA Altın</div>
     <div  class="segment4"></div> <div class="txt">TYH</div>
   </div>
+  <p style="width: 100%; text-align: center; font-size: 8vw; margin-top: 3vw; font-family: Arial, Helvetica, sans-serif;" id="toplam">120000</p>
   <hr>
 
-  <div id="vis" style="visibility: hidden;">
+  <div id="vis" style="visibility: hidden; margin-left: 5vw; margin-top: 5vw;">
     <div class="custom-select" style="width:200px; overflow: hidden;">
         <select id="select">
           <option value="0">DEFAULT</option>
@@ -114,6 +123,7 @@
   var tyh = document.getElementById("tyh");
   var legend = document.getElementById("legend");
   var vis = document.getElementById("vis");
+  var toplama = document.getElementById("toplam");
 
   var counter = 0;
   var toplam;
@@ -178,6 +188,7 @@
     tkm.innerHTML = TKM;
     tua.innerHTML = TUA;
     tyh.innerHTML = TYH;
+    toplama.innerHTML = toplam+"₺"
     deg1 = sonuc*goldd;
     deg2 = sonuc*TKM + deg1;
     deg3 = sonuc*TUA + deg2;
