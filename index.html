@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>stock existence</title>
+  <title>existence</title>
   <meta charset="UTF-8">
   <link rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -126,6 +126,8 @@
   var vis = document.getElementById("vis");
   var toplama = document.getElementById("toplam");
 
+
+
   var counter = 0;
   var toplam;
   var sonuc;
@@ -184,17 +186,21 @@
     console.log(goldd);
     console.log(TKM);
     console.log(TUA);
-    console.log(TYH);
-    altin.innerHTML = goldd;
-    tkm.innerHTML = TKM;
-    tua.innerHTML = TUA;
-    tyh.innerHTML = TYH;
+    console.log(TYH);      
+    toplam = toplam.toLocaleString('de-DE');
     toplama.innerHTML = toplam+"₺"
     deg1 = sonuc*goldd;
     deg2 = sonuc*TKM + deg1;
     deg3 = sonuc*TUA + deg2;
     donut.style.background =  "conic-gradient(red 0deg "+deg1 +"deg, green "+deg1+"deg "+deg2+"deg, blue "+deg2+"deg "+deg3+"deg, grey "+deg3+"deg 360deg)";
-
+    goldd = goldd.toLocaleString('de-DE');
+    TKM = TKM.toLocaleString('de-DE');
+    TUA = TUA.toLocaleString('de-DE');
+    TYH = TYH.toLocaleString('de-DE');
+    altin.innerHTML = goldd;
+    tkm.innerHTML = TKM;
+    tua.innerHTML = TUA;
+    tyh.innerHTML = TYH; 
 
 
     
@@ -283,7 +289,6 @@
 
 
 </script>
-
 
 
 
