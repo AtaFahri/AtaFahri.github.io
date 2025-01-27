@@ -13,58 +13,139 @@
     /* border: 0px; */
     outline: none;
 }
+
+::-webkit-scrollbar {
+    display: none;
+}
+
   #donut {    
-    width: 300px; 
+    width: 40%;
+    margin-left: 2%;
+    margin-top: 2vw;
     aspect-ratio: 1;
     transition: 1s;
     border-radius: 50%;
     /* display: flex; */
     align-items: center;
+    display: inline-block;
     justify-content: center;
   } 
 
   #donut::before {
     content: "";
-    width: 180px; height: 180px;
+    width: 300px; height: 300px;
     border-radius: 50%;
     background: #fff;
   }
-  #legend {
-    display: flex;
+  #can{
+  
+    width: 100%;
+    height: auto;
+    margin-top: 1vw;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  #legend {     
     margin-top: 30px;
-    margin-left: 5vw;
+    margin-left: 5vw;   
+    width: 45%;
+    float: right;
   }
   .txt{
-    font-size: 4vw;
+    font-size: 3.5vw;
     color: white;
+    position: absolute;
+    display: inline-block;    
+    text-align: center;
+    line-height: 5vw;
+    margin-left: 1%;
+    display: inline-block;
   }
+  .lb{
+    font-size: 4vw; text-align: center; font-family: Arial, Helvetica, sans-serif;
+    margin-top: 0.1vw; margin-left: 1vw;
+  }
+  .lb2{
+    font-size: 4vw; text-align: center; font-family: Arial, Helvetica, sans-serif;
+    margin-top: 0.1vw; 
+  }
+  .def{
+    background-color: #fff;
+    width: 10%;    
+    
+    display: inline-block;
+    aspect-ratio: 1;    
+  }
+  
   @media screen and (max-width:600px) {
-    #donut{
+      .alt{
+      display: inline-block;
+      width:23%;
+      margin-left: 1vw;
+    }  
+      #donut {    
       width: 96%;
       margin-left: 2%;
       margin-top: 2vw;
       aspect-ratio: 1;
+      transition: 1s;
+      border-radius: 50%;
+      /* display: flex; */
+      align-items: center;
+      justify-content: center;
+    } 
+    .def{
+      background-color: #fff;
+      width: 20%;
+      margin-left: 3vw;
+      display: inline-block;
     }
     #donut::before {
       content: "";
-      width: 350px; height: 350px;
+      width: 300px; height: 300px;
       border-radius: 50%;
       background: #fff;
     }
+    #can{
+    
+      width: 100%;
+      height: auto;
+      margin-top: 1vw;
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+    #legend {      
+      margin-top: 30px;
+      width: 100%;
+      margin-left: 5vw;
+    }
+    .txt{
+      font-size: 5vw;
+      color: white;
+      line-height: 5vw;
+      text-align: center;
+      margin-left: 1vw;
+      display: inline-block;
+      position: relative;
+    }
+    .lb{
+        font-size: 8vw; text-align: center; font-family: Arial, Helvetica, sans-serif;
+        margin-top: 1vw; margin-left: 1vw;
+      }
+      .lb2{
+        font-size: 8vw; text-align: center; font-family: Arial, Helvetica, sans-serif;
+        margin-top: 1vw;         
+      }
 
   }
 
-  /* (C2) SEGMENTS */
-  #legend div { padding: 0 10px; }
+  /* (C2) SEGMENTS */  
   .segment1 { background: red; }
   .segment2 { background: green; }
   .segment3 { background: blue; }
   .segment4 { background: grey; }
 
-.lb{
-  font-size: 8vw; text-align: center; font-family: Arial, Helvetica, sans-serif;
-  margin-top: 1vw; 
-}
+
 
 
 </style>
@@ -75,25 +156,30 @@
   <div id="donut">
     <div style="width: 80%; margin-left: 10%; background: radial-gradient(circle at center, #ffffff 30%, rgb(2, 0, 48)70%); border-radius: 100%; margin-top: 10%; float: left; aspect-ratio: 1;">
        <div style="width: 50%; float: left; margin-left: 25%; margin-top: 25%; aspect-ratio: 1; font-size: 2vw; ">
-            <div style="display: block; width: 100%;" ><label class="lb" style=" margin-left: 3vw; color: red;" id="altin">5000</label> <p class="lb" style=" color: red; display: inline-block;">₺</p> </div>
-            <div style="display: block;" ><label class="lb" style=" margin-left: 3vw;  color: green;" id="tkm">5000</label> <p class="lb" style=" color: green; display: inline-block;">₺</p> </div>
+            <div style="display: block; width: 100%;" ><label class="lb" style="  color: red;" id="altin">5000</label> <p class="lb2" style=" color: red; display: inline-block;">₺</p> </div>
+            <div style="display: block;" ><label class="lb" style="   color: green;" id="tkm">5000</label> <p class="lb2" style=" color: green; display: inline-block;">₺</p> </div>
 
-            <div style="display: block;" ><label class="lb" style=" margin-left: 3vw; color: blue;" id="tua">5000</label> <p class="lb" style=" color: blue; display: inline-block;">₺</p> </div>
+            <div style="display: block;" ><label class="lb" style=" color: blue;" id="tua">5000</label> <p class="lb2" style=" color: blue; display: inline-block;">₺</p> </div>
 
-            <div style="display: block;" ><label class="lb" style=" margin-left: 3vw; color: grey;" id="tyh">5000</label> <p class="lb" style=" color: grey; display: inline-block;">₺</p> </div>
+            <div style="display: block;" ><label class="lb" style="color: grey;" id="tyh">5000</label> <p class="lb2" style=" color: grey; display: inline-block;">₺</p> </div>
        </div>
     </div>
   </div>
-  <div id="legend">
-    <div  class="segment1"></div> <div class="txt">Altın</div>
-    <div  class="segment2"></div> <div class="txt">TKM Hisse</div>
-    <div  class="segment3"></div> <div class="txt">TUA Altın</div>
-    <div  class="segment4"></div> <div class="txt">TYH</div>
+  <div id="legend">   
+    <div class="alt"> <div  class="segment1 def"></div> <p class="txt">Altın</p>      </div>
+    <div class="alt"> <div  class="segment2 def"></div> <p class="txt">TKM</p>  </div>
+    <div class="alt"> <div  class="segment3 def"></div> <p class="txt">TUA</p>  </div>
+    <div class="alt"> <div  class="segment4 def"></div> <p class="txt">TYH</p>        </div>      
+    
+    <p style="width: 100%; text-align: center; font-size: 8vw; margin-top: 5vw; font-family: Arial, Helvetica, sans-serif; color: white;" id="toplam">120000</p>
+    <hr>     
   </div>
-  <p style="width: 100%; text-align: center; font-size: 8vw; margin-top: 3vw; font-family: Arial, Helvetica, sans-serif; color: white;" id="toplam">120000</p>
-  <hr>
 
-  <div id="vis" style="visibility: hidden; margin-left: 5vw; margin-top: 5vw;">
+  <div>
+   
+  
+
+  <div id="vis" style=" margin-left: 5vw; margin-top: 5vw;  display: none;">
     <div class="custom-select" style="width:200px; overflow: hidden;">
         <select id="select">
           <option value="0">DEFAULT</option>
@@ -102,12 +188,30 @@
           <option value="3">TUA Altın</option>
           <option value="4">TYH </option>
           <option value="5">KUR</option>
+          <option value="6">OCAK</option>
+          <option value="7">ŞUBAT</option>
+          <option value="8">MART</option>
+          <option value="9">NİSAN</option>
+          <option value="10">MAYIS</option>
+          <option value="11">HAZİRAN</option>
+          <option value="12">TEMMUZ</option>
+          <option value="13">AĞUSTOS</option>
+          <option value="14">EYLÜL</option>
+          <option value="15">EKİM</option>
+          <option value="16">KASIM</option>
+          <option value="17">ARALIK</option>
+
         </select>
         <input type="number" id="input1">
     </div>
     <br>
     <button id="calc">calculate</button>
   </div>
+
+  <div id="can">    
+    <canvas id="myCanvas"   style=" width: 1100px; height: 99px; border-top: 0.1vw solid white; "></canvas>
+  </div>
+
 
 </body>
 
@@ -138,7 +242,7 @@
   getcookie();
 
   legend.onclick = function(){
-    vis.style.visibility = "visible";
+    vis.style.display = "block";
   }
  
   function getcookie(type,valu){
@@ -229,7 +333,7 @@
         break;
     }
    setcookie(si,input1.value);  
-   vis.style.visibility = "hidden"; 
+   vis.style.display = "none"; 
   }
   console.log(document.cookie);
 
@@ -288,8 +392,174 @@
 
 
 
+
 </script>
 
 
+
+<script>
+//GRAFİK
+console.log("--------------GRAFİK--------------");
+
+var array = ["66000","103000"];//ALTIN
+var array2 = ["0","20000"];//TUA
+var array3 = ["0","5000"];//TKM
+var array4 = ["0","10000"];//TYH
+
+
+let canvas = document.getElementById('myCanvas');
+canvas.width = canvas.offsetWidth;  // CSS genişliği kullanarak
+canvas.height = canvas.offsetHeight;  // CSS yüksekliği kullanarak
+let ctx = canvas.getContext('2d');  // 2D bağlamı alıyoruz
+
+for(var i = 0; i < array.length; i++){
+  drawing(array[i],array[i+1],i);
+}
+
+for(var i = 0; i < array2.length; i++){
+  drawing2(array2[i],array2[i+1],i);
+}
+for(var i = 0; i < array2.length; i++){
+  drawing3(array3[i],array3[i+1],i);
+}
+for(var i = 0; i < array2.length; i++){
+  drawing4(array4[i],array4[i+1],i);
+}
+
+
+function drawing(value1,value2,count,color){
+
+  
+  value1/=3000;  
+  value2/=3000;
+  console.log(value1);
+  var count2 = count+1
+  ctx.strokeStyle = "red"; 
+  ctx.beginPath();
+  ctx.lineWidth = 2;  
+  ctx.moveTo(count*100, 99-value1); // Başlangıç noktası
+  ctx.lineTo(count2*100, 99-value2); // Bitiş noktası  
+  ctx.stroke(); 
+  // var v1,v2,v3,v4;
+  // v1 = count*4;
+  // v2 = 100-value1;
+  // v3 = count2*4;
+  // v4 = 100-value2;
+  // console.log(v1.toString()+" "+v2.toString());
+  // console.log(v3.toString()+" "+v4.toString());
+  // console.log(" ");
+  
+
+  
+  // ctx.beginPath();
+  // ctx.lineWidth = 2; 
+  // ctx.moveTo(0, 100); // Başlangıç noktası
+  // ctx.lineTo(4, 96); // Bitiş noktası  
+
+  // ctx.moveTo(4, 96);
+  // ctx.lineTo(8, 84); 
+
+  // ctx.moveTo(8, 84);
+  // ctx.lineTo(12, 100); 
+
+  // ctx.moveTo(12, 100);
+  // ctx.lineTo(16, 80); 
+
+  // ctx.moveTo(16, 90);
+  // ctx.lineTo(20, 0); 
+
+
+  // ctx.stroke(); 
+
+   
+  
+}
+
+
+
+function drawing2(value1,value2,count){
+  value1/=3000;  
+  value2/=3000;
+  console.log(value1);
+  var count2 = count+1
+  ctx.strokeStyle = "blue"; 
+  ctx.beginPath();
+  ctx.lineWidth = 2;  
+  ctx.moveTo(count*100, 99-value1); // Başlangıç noktası
+  ctx.lineTo(count2*100, 99-value2); // Bitiş noktası  
+  ctx.stroke(); 
+}
+function drawing3(value1,value2,count){
+  value1/=3000;  
+  value2/=3000;
+  console.log(value1);
+  var count2 = count+1
+  ctx.strokeStyle = "green"; 
+  ctx.beginPath();
+  ctx.lineWidth = 2;  
+  ctx.moveTo(count*100, 99-value1); // Başlangıç noktası
+  ctx.lineTo(count2*100, 99-value2); // Bitiş noktası  
+  ctx.stroke(); 
+}
+function drawing4(value1,value2,count){
+  value1/=3000;  
+  value2/=3000;
+  console.log(value1);
+  var count2 = count+1
+  ctx.strokeStyle = "grey"; 
+  ctx.beginPath();
+  ctx.lineWidth = 2;  
+  ctx.moveTo(count*100, 99-value1); // Başlangıç noktası
+  ctx.lineTo(count2*100, 99-value2); // Bitiş noktası  
+  ctx.stroke(); 
+}
+
+
+
+
+
+
+// Basit bir çizgi çizin
+console.log("----------------------------")
+
+</script>
+
+<script>
+  //LOCAL STORAGE
+  var toplam = document.getElementById("toplam");
+
+
+
+  let today = new Date();  
+  let dateString = today.toLocaleDateString(); // Tarayıcının yerel tarih formatına göre
+  var text = toplam.innerHTML;  
+  text = text.substring(0,text.length-1);
+  text = text.replace(".","");
+  function getDayOfYear(date) {
+    // Yılın başından itibaren geçen gün sayısını hesapla
+    let start = new Date(date.getFullYear(), 0, 0);
+    let diff = date - start;
+    let oneDay = 1000 * 60 * 60 * 24;
+    return Math.floor(diff / oneDay);
+}
+  let dayOfYear = getDayOfYear(today);
+  console.log(dayOfYear);
+
+  window.onload = function(){
+    localStorage.setItem(dayOfYear, text);    
+    console.log(text);
+  }
+  //localStorage.setItem("isim", "Ahmet");  
+  //localStorage.setItem("isim", "Ahmet");  
+
+
+  //localStorage.setItem(dateString, "123");  
+
+
+
+
+  //localStorage.removeItem("yas");
+
+</script>
 
 </html>
