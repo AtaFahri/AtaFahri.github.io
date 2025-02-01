@@ -4,6 +4,8 @@
   <title>existence</title>
   <meta charset="UTF-8">
   <link rel="stylesheet">
+  <link rel="icon" href="pics/logo.png" type="image/x-icon" />
+  <link rel="shortcut icon" href="pics/logo.png" type="image/x-icon" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <style>
@@ -132,10 +134,10 @@
   }
 
   /* (C2) SEGMENTS */  
-  .segment1 { background: red; }
-  .segment2 { background: green; }
-  .segment3 { background: blue; }
-  .segment4 { background: grey; }
+  .segment1 { background: #e9a239; margin-bottom: 2vw;} 
+  .segment2 { background: #1ddb4f; margin-bottom: 2vw;}
+  .segment3 { background: #2b6af9; margin-bottom: 2vw;}
+  .segment4 { background: #6622f8; margin-bottom: 2vw;}
 
 
 
@@ -146,28 +148,29 @@
 
 
   <div id="donut">
-    <div style="width: 80%; margin-left: 10%; background: radial-gradient(circle at center, #ffffff 30%, rgb(2, 0, 48)70%); border-radius: 100%; margin-top: 10%; float: left; aspect-ratio: 1;">
+    <div style="width: 80%; margin-left: 10%; background-color: rgb(2, 0, 48); border-radius: 100%; margin-top: 10%; float: left; aspect-ratio: 1;">
        <div style="width: 50%;  margin-left: 22%; margin-top: 22%; aspect-ratio: 1; font-size: 2vw; ">
-            <div style="display: block; width: 100%;" ><p class="lb" style="color: red;" id="altin">5000</p></div>
-            <div style="display: block; width: 100%;" ><p class="lb" style="   color: green;" id="tkm">5000</p> </div>
+            <div style="display: block; width: 100%;" ><p class="lb" style="color: #e9a239;" id="altin">5000</p></div>
+            <div style="display: block; width: 100%;" ><p class="lb" style="   color: #1ddb4f;" id="tkm">5000</p> </div>
 
-            <div style="display: block; width: 100%;" ><p class="lb" style=" color: blue;" id="tua">5000</p> </div>
+            <div style="display: block; width: 100%;" ><p class="lb" style=" color: #2b6af9;" id="tua">5000</p> </div>
 
-            <div style="display: block; width: 100%;" ><p class="lb" style="color: grey;" id="tyh">5000</p> </div>
+            <div style="display: block; width: 100%;" ><p class="lb" style="color: #6622f8;" id="tyh">5000</p> </div>
        </div>
     </div>
   </div>
 
 
   <div id="legend">   
-    <div class="alt"> <div  class="segment1 def"></div> <p class="txt">Altın</p>      </div>
-    <div class="alt"> <div  class="segment2 def"></div> <p class="txt">TKM</p>  </div>
-    <div class="alt"> <div  class="segment3 def"></div> <p class="txt">TUA</p>  </div>
-    <div class="alt"> <div  class="segment4 def"></div> <p class="txt">TYH</p>        </div>      
+    <div class="alt"> <div  class="segment1 def"></div> <div style="width: 50%; height: 10vw; display: inline-block;"> <p id="segment1" class="txt">Altın %74</p>   </div>  </div>
+    <div class="alt"> <div  class="segment2 def"></div> <div style="width: 50%; height: 10vw; display: inline-block;"> <p id="segment2" class="txt">TKM %70</p>     </div>  </div>
+    <div class="alt"> <div  class="segment3 def"></div> <div style="width: 50%; height: 10vw; display: inline-block;"> <p id="segment3" class="txt">TUA %70</p>     </div>  </div>
+    <div class="alt"> <div  class="segment4 def"></div> <div style="width: 50%; height: 10vw; display: inline-block;"> <p id="segment4" class="txt">TYH %70</p>     </div>  </div>   
     
     <p style="width: 100%; text-align: center; font-size: 8vw; margin-top: 5vw; font-family: Arial, Helvetica, sans-serif; color: white;" id="toplam">120000</p>
     <hr>     
   </div>
+  
 
   <div>
    
@@ -202,7 +205,7 @@
   </div>
 
   <div id="can">    
-    <canvas id="myCanvas"   style=" width: 1100px; height: 99px; border-top: 0.1vw solid white; "></canvas>
+    <canvas id="myCanvas"   style=" width: 100%; height: 99px; "></canvas>
   </div>
 
 
@@ -222,6 +225,11 @@
   var legend = document.getElementById("legend");
   var vis = document.getElementById("vis");
   var toplama = document.getElementById("toplam");
+  
+  var segment1 = document.getElementById("segment1");
+  var segment2 = document.getElementById("segment2");
+  var segment3 = document.getElementById("segment3");
+  var segment4 = document.getElementById("segment4");
 
 
 
@@ -289,7 +297,31 @@
     deg1 = sonuc*goldd;
     deg2 = sonuc*TKM + deg1;
     deg3 = sonuc*TUA + deg2;
-    donut.style.background =  "conic-gradient(red 0deg "+deg1 +"deg, green "+deg1+"deg "+deg2+"deg, blue "+deg2+"deg "+deg3+"deg, grey "+deg3+"deg 360deg)";
+    donut.style.background =  "conic-gradient(#e9a239 0deg "+deg1 +"deg, #1ddb4f "+deg1+"deg "+deg2+"deg, #2b6af9 "+deg2+"deg "+deg3+"deg, #6622f8 "+deg3+"deg 360deg)";
+    
+    var deg4 = 360-deg3; 
+    deg3-=deg2;
+    deg2 -= deg1;
+    
+    var degree = deg1/3.6;
+    degree = parseInt(degree)
+    segment1.innerText = "Altın"+" "+"%"+degree.toString();
+    
+    degree = deg2/3.6
+    degree = parseInt(degree);
+    segment2.innerText = "TKM"+" "+"%"+degree.toString();
+    
+    degree = deg3/3.6
+    degree = parseInt(degree)
+    segment3.innerText = "TUA"+" "+"%"+degree.toString();
+    
+    degree = deg4/3.6
+    degree = parseInt(degree)
+    segment4.innerText = "TYH"+" "+"%"+degree.toString();
+    
+
+
+
     goldd = goldd.toLocaleString('de-DE');
     TKM = TKM.toLocaleString('de-DE');
     TUA = TUA.toLocaleString('de-DE');
@@ -355,10 +387,10 @@
   // deg1 = 60;
   // deg2 = 190;
   // deg3 = 250;
-  //donut.style.background =  "conic-gradient(red 0deg "+deg1 +"deg, green "+deg1+"deg "+deg2+"deg, blue "+deg2+"deg "+deg3+"deg, grey "+deg3+"deg 360deg)";
+  //donut.style.background =  "conic-gradient(#e9a239 0deg "+deg1 +"deg, #1ddb4f "+deg1+"deg "+deg2+"deg, #e9a239 "+deg2+"deg "+deg3+"deg, #6622f8 "+deg3+"deg 360deg)";
 
 
- // donut.style.background =  "conic-gradient(red 0deg 60deg, green 60deg 190deg, blue 190deg 250deg,orange 250deg 310deg,grey 250deg 360deg)";
+ // donut.style.background =  "conic-gradient(#e9a239 0deg 60deg, #1ddb4f 60deg 190deg, #e9a239 190deg 250deg,orange 250deg 310deg,#6622f8 250deg 360deg)";
 
  //goldapi-112sql19m5zty9o6-io
 
@@ -404,7 +436,8 @@ let canvas = document.getElementById('myCanvas');
 canvas.width = canvas.offsetWidth;  // CSS genişliği kullanarak
 canvas.height = canvas.offsetHeight;  // CSS yüksekliği kullanarak
 let ctx = canvas.getContext('2d');  // 2D bağlamı alıyoruz
-
+var wide = canvas.offsetWidth/11;
+wide = parseInt(wide);
 for(var i = 0; i < array.length; i++){
   drawing(array[i],array[i+1],i);
 }
@@ -419,6 +452,26 @@ for(var i = 0; i < array2.length; i++){
   drawing4(array4[i],array4[i+1],i);
 }
 
+ctx.strokeStyle = "grey"; 
+ctx.beginPath();
+ctx.lineWidth = 1;  
+ctx.moveTo(0, canvas.offsetHeight/3); 
+ctx.lineTo(canvas.offsetWidth, canvas.offsetHeight/3);
+ctx.stroke(); 
+
+
+ctx.beginPath();
+ctx.lineWidth = 1;  
+ctx.moveTo(0, canvas.offsetHeight*2/3); 
+ctx.lineTo(canvas.offsetWidth, canvas.offsetHeight*2/3);
+ctx.stroke(); 
+
+
+ctx.beginPath();
+ctx.lineWidth = 2;  
+ctx.moveTo(0, canvas.offsetHeight); 
+ctx.lineTo(canvas.offsetWidth,  canvas.offsetHeight);
+ctx.stroke(); 
 
 function drawing(value1,value2,count,color){
 
@@ -427,11 +480,13 @@ function drawing(value1,value2,count,color){
   value2/=3000;
   console.log(value1);
   var count2 = count+1
-  ctx.strokeStyle = "red"; 
+  ctx.strokeStyle = "#e9a239";
   ctx.beginPath();
   ctx.lineWidth = 2;  
-  ctx.moveTo(count*100, 99-value1); // Başlangıç noktası
-  ctx.lineTo(count2*100, 99-value2); // Bitiş noktası  
+  count *= wide;  
+  count2*=wide;
+  ctx.moveTo(count, canvas.offsetHeight-value1); // Başlangıç noktası
+  ctx.lineTo(count2, canvas.offsetHeight-value2); // Bitiş noktası  
   ctx.stroke(); 
   // var v1,v2,v3,v4;
   // v1 = count*4;
@@ -475,11 +530,13 @@ function drawing2(value1,value2,count){
   value2/=3000;
   console.log(value1);
   var count2 = count+1
-  ctx.strokeStyle = "blue"; 
+  ctx.strokeStyle = "#e9a239"; 
   ctx.beginPath();
   ctx.lineWidth = 2;  
-  ctx.moveTo(count*100, 99-value1); // Başlangıç noktası
-  ctx.lineTo(count2*100, 99-value2); // Bitiş noktası  
+  count *= wide;  
+  count2*=wide;
+  ctx.moveTo(count, canvas.offsetHeight-value1); // Başlangıç noktası
+  ctx.lineTo(count2, canvas.offsetHeight-value2); // Bitiş noktası  
   ctx.stroke(); 
 }
 function drawing3(value1,value2,count){
@@ -487,11 +544,13 @@ function drawing3(value1,value2,count){
   value2/=3000;
   console.log(value1);
   var count2 = count+1
-  ctx.strokeStyle = "green"; 
+  ctx.strokeStyle = "#1ddb4f"; 
   ctx.beginPath();
   ctx.lineWidth = 2;  
-  ctx.moveTo(count*100, 99-value1); // Başlangıç noktası
-  ctx.lineTo(count2*100, 99-value2); // Bitiş noktası  
+  count *= wide;  
+  count2*=wide;
+  ctx.moveTo(count, canvas.offsetHeight-value1); // Başlangıç noktası
+  ctx.lineTo(count2, canvas.offsetHeight-value2); // Bitiş noktası  
   ctx.stroke(); 
 }
 function drawing4(value1,value2,count){
@@ -499,11 +558,13 @@ function drawing4(value1,value2,count){
   value2/=3000;
   console.log(value1);
   var count2 = count+1
-  ctx.strokeStyle = "grey"; 
+  ctx.strokeStyle = "#6622f8"; 
   ctx.beginPath();
   ctx.lineWidth = 2;  
-  ctx.moveTo(count*100, 99-value1); // Başlangıç noktası
-  ctx.lineTo(count2*100, 99-value2); // Bitiş noktası  
+  count *= wide;  
+  count2*=wide;
+  ctx.moveTo(count, canvas.offsetHeight-value1); // Başlangıç noktası
+  ctx.lineTo(count2, canvas.offsetHeight-value2); // Bitiş noktası  
   ctx.stroke(); 
 }
 
