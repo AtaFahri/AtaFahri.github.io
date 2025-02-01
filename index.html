@@ -304,19 +304,19 @@
     deg2 -= deg1;
     
     var degree = deg1/3.6;
-    degree = parseInt(degree)
+    degree = Math.round(degree * 10) / 10;    
     segment1.innerText = "Altın"+" "+"%"+degree.toString();
     
     degree = deg2/3.6
-    degree = parseInt(degree);
+    degree = Math.round(degree * 10) / 10;;
     segment2.innerText = "TKM"+" "+"%"+degree.toString();
     
     degree = deg3/3.6
-    degree = parseInt(degree)
+    degree = Math.round(degree * 10) / 10;
     segment3.innerText = "TUA"+" "+"%"+degree.toString();
     
     degree = deg4/3.6
-    degree = parseInt(degree)
+    degree = Math.round(degree * 10) / 10;
     segment4.innerText = "TYH"+" "+"%"+degree.toString();
     
 
