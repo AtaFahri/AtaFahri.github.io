@@ -135,7 +135,7 @@
   }
 
   /* (C2) SEGMENTS */  
-  .segment1 { background: #e9a239; margin-bottom: 2vw;} 
+  .segment1 { background: #ffdf00; margin-bottom: 2vw;} 
   .segment2 { background: #1ddb4f; margin-bottom: 2vw;}
   .segment3 { background: #2b6af9; margin-bottom: 2vw;}
   .segment4 { background: #6622f8; margin-bottom: 2vw;}
@@ -151,7 +151,7 @@
   <div id="donut">
     <div style="width: 80%; margin-left: 10%; background-color: rgb(2, 0, 48); border-radius: 100%; margin-top: 10%; float: left; aspect-ratio: 1;">
        <div style="width: 50%;  margin-left: 22%; margin-top: 22%; aspect-ratio: 1; font-size: 2vw; ">
-            <div style="display: block; width: 100%;" ><p class="lb" style="color: #e9a239;" id="altin">5000</p></div>
+            <div style="display: block; width: 100%;" ><p class="lb" style="color: #ffdf00;" id="altin">5000</p></div>
             <div style="display: block; width: 100%;" ><p class="lb" style="   color: #1ddb4f;" id="tkm">5000</p> </div>
 
             <div style="display: block; width: 100%;" ><p class="lb" style=" color: #2b6af9;" id="tua">5000</p> </div>
@@ -298,7 +298,7 @@
     deg1 = sonuc*goldd;
     deg2 = sonuc*TKM + deg1;
     deg3 = sonuc*TUA + deg2;
-    donut.style.background =  "conic-gradient(#e9a239 0deg "+deg1 +"deg, #1ddb4f "+deg1+"deg "+deg2+"deg, #2b6af9 "+deg2+"deg "+deg3+"deg, #6622f8 "+deg3+"deg 360deg)";
+    donut.style.background =  "conic-gradient(#ffdf00 0deg "+deg1 +"deg, #1ddb4f "+deg1+"deg "+deg2+"deg, #2b6af9 "+deg2+"deg "+deg3+"deg, #6622f8 "+deg3+"deg 360deg)";
     
     var deg4 = 360-deg3; 
     deg3-=deg2;
@@ -481,7 +481,7 @@ function drawing(value1,value2,count,color){
   value2/=3000;
   console.log(value1);
   var count2 = count+1
-  ctx.strokeStyle = "#e9a239";
+  ctx.strokeStyle = "#ffdf00";
   ctx.beginPath();
   ctx.lineWidth = 2;  
   count *= wide;  
