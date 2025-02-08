@@ -4,9 +4,9 @@
   <title>existence</title>
   <meta charset="UTF-8">
   <link rel="stylesheet">
-  <link rel="icon" href="pics/logo2.png" type="image/x-icon" />
-  <link rel="apple-touch-icon" href="pics/logo2.png">
-  <link rel="shortcut icon" href="pics/logo2.png" type="image/x-icon" />
+  <link rel="icon" href="pics/logo1.png" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="pics/logo1.png">
+  <link rel="shortcut icon" href="pics/logo1.png" type="image/x-icon" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
@@ -188,11 +188,11 @@
 
 
 
-  <div id="vis" style=" width: 100%;  height: 100%; position: fixed; background-color: rgb(57, 0, 0); top: 0px; transition: 0.5s; margin-left: -100%;">
+  <div id="vis" style=" width: 100%;  height: 100%; position: fixed; background-color: rgb(2, 0, 48); top: 0px; transition: 0.5s; margin-left: -100%;">
     <center> <div class="custom-select" style="width:300px; overflow: hidden; ">
      <button id="close" style="float: inline-end; background-color: transparent;border: none; outline: none; color: white; margin-top: 10vw; font-size: 6vw;">X</button>
-     <input placeholder="ENTER A VALUE" style="font-size: 4vw; margin-top: 20vw; width: 100%; text-align: center; border-radius: 0px;" type="number" id="input1">    
-     <select style="font-size: 4vw; margin-top: 1vw; width: 100%; text-align: center; border-radius: 0px;" id="select">
+     <input placeholder="ENTER A VALUE" style="font-size: 8vw; margin-top: 20vw; width: 100%; text-align: center; border-radius: 0px;" type="number" id="input1">    
+     <select style="font-size: 8vw; margin-top: 1vw; width: 100%; text-align: center; border-radius: 0px;" id="select">
            <option value="0">MAKE A CHOICE</option>
            <option value="1">Altın</option>
            <option value="2">TKM TEB Para </option>
@@ -213,8 +213,8 @@
            <option value="17">ARALIK</option> -->
  
          </select>
-         <button style="font-size: 8vw; margin-top: 110vw; width: 25%; aspect-ratio: 1; border-radius: 100%;" id="downloadPDF">💾</button>
-         <button style="font-size: 8vw; margin-top: 110vw; width: 25%; aspect-ratio: 1; border-radius: 100%;" id="calc">✓</button></center>
+         <!-- <button style="font-size: 8vw; margin-top:80vw; width: 25%; aspect-ratio: 1; border-radius: 100%;" id="downloadPDF">💾</button> -->
+         <button style="font-size: 8vw; margin-top:80vw; width: 25%; aspect-ratio: 1; border-radius: 100%;" id="calc">💾</button></center>
      </div>    
    </div>
 
@@ -607,7 +607,7 @@ console.log("----------------------------")
 <script>
   // document.getElementById("date").innerText = new Date().toLocaleDateString();
 
-  document.getElementById("downloadPDF").addEventListener("click", function () {
+  document.getElementById("calc").addEventListener("click", function () {
       let element = document.getElementById("pdfcontent");
       //alert();
 
