@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Carousel</title>
+    <script src="jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="index.css">
+
+
+</head>
+
+<body>
+
+
+   
+       
+            
+            <div class="col-10">
+                <div id="slider3" class="carousel slide carousel-fade">
+
+                    <ol class="carousel-indicators">
+                        <li data-target="#slider3" data-slide-to="0" class="active"></li>
+                        <li data-target="#slider3" data-slide-to="1"></li>
+                        <li data-target="#slider3" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="div" style="height: 500px; width: 100%;">
+                                <img src="dfsfsds.png" alt="" class="ResponsiveBanner">
+                            </div>
+                            <div class="carousel-caption" style="margin-bottom: 150px;">
+                                <h1 style="color: black;">Slider Header 1</h1>
+                                <p style="color: black;" class="MainContent">Lorem ipsum dolor sit amet, consectetur
+                                    adipisicing elit. Voluptates, eaque!</p>
+                                <button class=" mt-4 btn btn-lg btn-secondary">Jeztz Kaufen</button>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="div" style="height: 500px; width: 100%; background-color: green;">
+                                <div class="carousel-caption" style="margin-bottom: 150px;">
+                                    <h1>Slider Header 1</h1>
+                                    <p class="MainContent">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                        Voluptates, eaque!</p>
+                                    <button class=" mt-4 btn btn-lg btn-secondary">Besucht</button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="div" style="height: 500px; width: 100%; background-color: blueviolet;">
+                                <div class="carousel-caption" style="margin-bottom: 150px;">
+                                    <h1>Slider Header 1</h1>
+                                    <p class="MainContent">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                        Voluptates, eaque!</p>
+                                    <button class=" mt-4 btn btn-lg btn-secondary">Besucht</button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <a href="#slider3" class="carousel-control-prev" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a href="#slider3" class="carousel-control-next" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-1"></div>
+
+      
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <script>
+
+        $(function () {
+
+
+            $('#slider3').carousel({
+
+                interval: 5000,
+                keyword: false,
+                pause: false,
+                wrap: false
+            });
+
+
+
+        });
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Bulut Mimarı</title>
+  <link rel="icon" href="pics/logo.png" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="pics/logo.png">
+  <link rel="shortcut icon" href="pics/logo.png" type="image/x-icon" />
+  <link rel="stylesheet" type="text/css" href="style21.css"/>
+</head>
+
+
+<!-- //HTML -->
+<body>
+    <div id="navbar"> 
+            <img class="img" src="pics/logo.png" alt="">
+            <div id="navbtn" >
+                <button id="bl">Kendi Web Sitenizi Yaratın</button>
+            </div>
+    </div>
+    <div id="container">
+        <div id="divv" class="wrapper">
+            <p id="p1">Geleceğin Web Dünyası İçin Hazır Mısın?</p>
+            <span class="span" id="s1" ></span>
+            <span class="span" id="s2" ></span>
+            <span class="span" id="s3" ></span>
+            <span class="span" id="s4" ></span>
+            <span class="span" id="s5" ></span>
+            <span class="span" id="s6" ></span>
+            <span class="span" id="s7" ></span>
+            <span class="span" id="s8" ></span>
+            <span class="span" id="s9" ></span>
+            <span class="span" id="s10" ></span>
+        </div>     
+    </div>  
+    <div id="main">
+        <div>
+            <div class="dmain"> 
+                <img class="imain" src="pics/ceo.png" alt="">
+            </div>
+            <div class="dmain">
+                <p class="pmain">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque, molestiae autem a error obcaecati, expedita eaque voluptatem exercitationem perferendis ducimus amet ab ipsum possimus dicta ipsa rem totam? Assumenda, quidem.</p>
+            </div>
+        </div>
+
+
+        <div>          
+            <div class="dmain">
+                <p class="pmain">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque, molestiae autem a error obcaecati, expedita eaque voluptatem exercitationem perferendis ducimus amet ab ipsum possimus dicta ipsa rem totam? Assumenda, quidem.</p>
+            </div>
+            <div class="dmain"> 
+                <img class="imain" src="pics/img1.png" alt="">
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- <div id="form">
+        <div style="width: 50%; display: block; float: left; ">
+            <img style="width: 55%; margin-left: 15%; object-fit: fill; float: left;" src="pics/logo.png" alt="">
+        </div>
+        <div style="display: inline-block; width: 45%; margin-top: 3%; padding-bottom: 3%; ">        
+            <div style="width: 100%; ">
+                <input class="input" placeholder="İsminiz" type="text"> 
+                <input class="input" placeholder="e-Mail Adresiniz" type="email">                
+                <input class="input" placeholder="Web Siteniz (Varsa)" type="url"> 
+                <input class="input" placeholder="Telefon Numaranız" type="tel">   
+                <button id="basvurbtn">
+                    Başvuru Yapın
+                 </button>
+            </div>
+   
+        </div>
+    </div>        
+        -->
+
+
+  <footer style="width: 100%; height: 100vw; background-color: rgb(54, 54, 54);"></footer>
+</body>
+
+<!-- //JavaScript -->
+<script>
+var divv = document.getElementById("divv");   
+var container = document.getElementById("container");    
+var navbar = document.getElementById("navbar");    
+var bl = document.getElementById("bl");    
+
+
+var widtt = divv.offsetWidth/2;
+var hei = divv.offsetHeight/2;
+
+size();
+function size(){
+    widtt = divv.offsetWidth/2;
+    hei = divv.offsetHeight/2;
+    var hei = window.innerHeight;
+    container.style.height = hei+"px";
+    divv.style.marginTop = navbar.offsetHeight+"px";
+    divv.style.height = hei+"px";
+}
+window.onresize = function(){
+    size();
+}
+
+
+
+
+
+
+
+
+
+
+divv.addEventListener("mousemove", function(event) {
+    let x = event.offsetX; 
+    let y = event.offsetY;
+    y-=hei;
+    y*=5
+    x-=widtt;
+    x*=10;
+    x*=-1;
+    divv.style.transform = "rotateY("+ x/widtt+ "deg) rotateX("+ y/hei +"deg)";
+});
+divv.style.transform = "rotateY(0deg) rotateX(0deg)";
+divv.onmouseleave = function(){
+    divv.style.transform = "rotateY(0deg) rotateX(0deg)";
+}
+</script>
+
+
+<script>
+    var arr = [2000,0,4000,7000,3000,1000,8000,6000,0,3000]
+    var counter = 0;
+// ANIMATION KEY
+    var elementdizi = document.querySelectorAll(".span");
+            elementdizi.forEach(element => {                
+                element.animate(
+                [
+                    { transform: "translateY(0)", opacity: 1, borderRadius: "0%"},
+                    { opacity: 0.7, offset: 0.8,borderRadius: "20%" },
+                    { opacity: 0.7, offset: 0.9,borderRadius: "50%" },
+                    { transform: "translateY(-"+window.innerHeight+"px) rotate(-360deg)", opacity:0,borderRadius: "50%"}
+                ],
+                    {
+                        duration: 10000, 
+                        easing: "ease-out",
+                        iterations: Infinity,
+                        delay: arr[counter]
+                        
+                    }
+                );     
+                counter++                      
+            });
+    
+    
+</script>
+
+
+</html>    

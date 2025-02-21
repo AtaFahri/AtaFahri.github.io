@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>existence</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet">
+  <link rel="icon" href="pics/logo1.png" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="pics/logo1.png">
+  <link rel="shortcut icon" href="pics/logo1.png" type="image/x-icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+*{
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    outline: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+  #donut {    
+    width: 40%;
+    margin-left: 2%;
+    margin-top: 2vw;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    /* display: flex; */
+    
+    display: inline-block;
+    
+  } 
+
+  
+  #can{
+  
+    width: 100%;
+    height: auto;
+    margin-top: 1vw;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  #legend {     
+    margin-top: 30px;
+    margin-left: 5vw;   
+    width: 45%;
+    float: right;
+  }
+  .txt{
+    font-size: 3.5vw;
+    color: white;
+    position: absolute;
+    display: inline-block;    
+    text-align: center;
+    line-height: 5vw;
+    margin-left: 1%;
+    display: inline-block;
+  }
+  .lb{
+    font-size: 3.3vw; text-align: center; font-family: Arial, Helvetica, sans-serif;
+    margin-top: 0.9vw; margin-left: 1vw;
+    width: 100%;
+  }
+
+  .def{
+    background-color: #fff;
+    width: 10%;    
+    
+    display: inline-block;
+    aspect-ratio: 1;    
+  }
+  
+  @media screen and (max-width:600px) {
+      .alt{
+      display: inline-block;
+      width:23%;
+      margin-left: 1vw;
+    }  
+      #donut {    
+      width: 96%;
+      margin-left: 2%;
+      margin-top: 2vw;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      /* display: flex; */
+      align-items: center;
+      justify-content: center;
+    } 
+    .def{
+      background-color: #fff;
+      width: 20%;
+      margin-left: 3vw;
+      display: inline-block;
+    }
+    #donut::before {
+      content: "";
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      background: #fff;
+    }
+    #can{
+    
+      width: 100%;
+      height: auto;
+      margin-top: 1vw;
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+    #legend {      
+      margin-top: 30px;
+      width: 100%;
+      margin-left: 5vw;
+    }
+    .txt{
+      font-size: 5vw;
+      color: white;
+      line-height: 5vw;
+      text-align: center;
+      margin-left: 1vw;
+      display: inline-block;
+      position: relative;
+    }
+    .lb{
+        font-size: 8vw; text-align: center; font-family: Arial, Helvetica, sans-serif;
+        margin-top: 2vw; margin-left: 2vw;
+      }
+      .lb2{
+        font-size: 8vw; text-align: center; font-family: Arial, Helvetica, sans-serif;
+        margin-top: 1vw;         
+      }
+
+  }
+
+  /* (C2) SEGMENTS */  
+  .segment1 { background: #ffdf00; margin-bottom: 2vw;} 
+  .segment2 { background: #1ddb4f; margin-bottom: 2vw;}
+  .segment3 { background: #2b6af9; margin-bottom: 2vw;}
+  .segment4 { background: #6622f8; margin-bottom: 2vw;}
+
+
+
+
+</style>
+<body id="body" style="background-color: rgb(2, 0, 48);">
+
+  <div id="pdfcontent" style="background-color: rgb(2, 0, 48);">  
+
+  <div id="donut">
+    <div style="width: 80%; margin-left: 10%; background-color: rgb(2, 0, 48); border-radius: 100%; margin-top: 10%; float: left; aspect-ratio: 1;">
+       <div style="width: 50%;  margin-left: 22%; margin-top: 22%; aspect-ratio: 1; font-size: 2vw; ">
+            <div style="display: block; width: 100%;" ><p class="lb" style="color: #ffdf00;" id="altin">5000</p></div>
+            <div style="display: block; width: 100%;" ><p class="lb" style="   color: #1ddb4f;" id="tkm">5000</p> </div>
+
+            <div style="display: block; width: 100%;" ><p class="lb" style=" color: #2b6af9;" id="tua">5000</p> </div>
+
+            <div style="display: block; width: 100%;" ><p class="lb" style="color: #6622f8;" id="tyh">5000</p> </div>
+       </div>
+    </div>
+  </div>
+
+
+  <div id="legend">   
+    <div class="alt"> <div  class="segment1 def"></div> <div style="width: 50%; height: 7vw; display: inline-block;"> <p id="segment1" class="txt">Altın %74</p>   </div>  </div>
+    <div class="alt"> <div  class="segment2 def"></div> <div style="width: 50%; height: 7vw; display: inline-block;"> <p id="segment2" class="txt">TKM %70</p>     </div>  </div>
+    <div class="alt"> <div  class="segment3 def"></div> <div style="width: 50%; height: 7vw; display: inline-block;"> <p id="segment3" class="txt">TUA %70</p>     </div>  </div>
+    <div class="alt"> <div  class="segment4 def"></div> <div style="width: 50%; height: 7vw; display: inline-block;"> <p id="segment4" class="txt">TYH %70</p>     </div>  </div>   
+    
+    <p style="width: 100%; text-align: center; font-size: 8vw; margin-top: 2vw; font-family: Arial, Helvetica, sans-serif; color: white;" id="toplam">120000</p>
+    <hr>     
+  </div>
+  
+
+
+  
+
+ 
+
+  <div id="can">    
+    <canvas id="myCanvas"   style=" width: 100%; height: 99px; "></canvas>
+  </div>
+
+</div>
+  
+
+
+
+  <div id="vis" style=" width: 100%;  height: 100%; position: fixed; background-color: rgb(2, 0, 48); top: 0px; transition: 0.5s; margin-left: -100%;">
+    <center> <div class="custom-select" style="width:300px; overflow: hidden; ">
+     <button id="close" style="float: inline-end; background-color: transparent;border: none; outline: none; color: white; margin-top: 10vw; font-size: 6vw;">X</button>
+     <input placeholder="ENTER A VALUE" style="font-size: 8vw; margin-top: 20vw; width: 100%; text-align: center; border-radius: 0px;" type="number" id="input1">    
+     <select style="font-size: 6vw; margin-top: 1vw; width: 100%; text-align: center; border-radius: 0px;" id="select">
+           <option value="0">MAKE A CHOICE</option>
+           <option value="1">Altın</option>
+           <option value="2">TKM TEB Para </option>
+           <option value="3">TUA Altın</option>
+           <option value="4">TYH Hisse</option>
+           <option value="5">KUR</option>
+           <!-- <option value="6">OCAK</option>
+           <option value="7">ŞUBAT</option>
+           <option value="8">MART</option>
+           <option value="9">NİSAN</option>
+           <option value="10">MAYIS</option>
+           <option value="11">HAZİRAN</option>
+           <option value="12">TEMMUZ</option>
+           <option value="13">AĞUSTOS</option>
+           <option value="14">EYLÜL</option>
+           <option value="15">EKİM</option>
+           <option value="16">KASIM</option>
+           <option value="17">ARALIK</option> -->
+ 
+         </select>
+         <!-- <button style="font-size: 8vw; margin-top:80vw; width: 25%; aspect-ratio: 1; border-radius: 100%;" id="downloadPDF">💾</button> -->
+         <button style="font-size: 8vw; margin-top:80vw; width: 25%; aspect-ratio: 1; border-radius: 100%;" id="calc">💾</button></center>
+     </div>    
+   </div>
+
+</body>
+
+<script>
+
+  var donut = document.getElementById("donut");
+  var input1 = document.getElementById("input1");
+  var body = document.getElementById("body");
+  var calc = document.getElementById("calc");
+  var clos = document.getElementById("close");
+  var select = document.getElementById("select");
+  var altin = document.getElementById("altin");
+  var tkm = document.getElementById("tkm");
+  var tua = document.getElementById("tua");
+  var tyh = document.getElementById("tyh");
+  var legend = document.getElementById("legend");
+  var vis = document.getElementById("vis");
+  var toplama = document.getElementById("toplam");
+  
+  var segment1 = document.getElementById("segment1");
+  var segment2 = document.getElementById("segment2");
+  var segment3 = document.getElementById("segment3");
+  var segment4 = document.getElementById("segment4");
+
+
+
+  var counter = 0;
+  var toplam;
+  var sonuc;
+  var deg1 = 0,deg2 = 0,deg3 = 0;
+  var kur = 3100;
+  var gold = 0,TKM = 0,TUA = 0,TYH = 0;
+  console.log(document.cookie);
+  getcookie();
+
+  legend.onclick = function(){
+    vis.style.marginLeft = "0px";
+  }
+  clos.onclick = function(){
+    vis.style.marginLeft = "-100%";
+  }
+ 
+  function getcookie(type,valu){
+    var kuki = document.cookie;
+    var spkuki = kuki.split(" ");
+    //console.log(spkuki); 
+    for (let index = 0; index < spkuki.length; index++) {
+      var spp = spkuki[index].split("=");
+      try {
+        spp[1]=spp[1].replace(";","");
+      } catch (error) {
+        
+      }
+      
+      spp[1]=parseInt(spp[1])
+      switch (spp[0]) {
+        case "KUR":
+          kur = spp[1];
+          break;
+        case "gold":
+          gold = spp[1];
+          break;
+        case "TKM":
+          TKM = spp[1];
+          break;
+        case "TUA":
+          TUA = spp[1];
+          break;
+        case "TYH":
+          TYH = spp[1];
+          break;
+      
+        default:
+          break;
+      }
+    }
+
+
+
+    var value1 = 86800,value2 = 5000,value3 = 20000,value4 = 10000;
+    var goldd = gold*kur;
+    toplam = goldd+TKM+TUA+TYH;
+    sonuc = 360/toplam;  
+    
+    // console.log(toplam);       
+    // console.log(goldd);
+    // console.log(TKM);
+    // console.log(TUA);
+    // console.log(TYH);      
+    toplam = toplam.toLocaleString('de-DE');
+    toplama.innerHTML = toplam+"₺"
+    deg1 = sonuc*goldd;
+    deg2 = sonuc*TKM + deg1;
+    deg3 = sonuc*TUA + deg2;
+    donut.style.background =  "conic-gradient(#ffdf00 0deg "+deg1 +"deg, #1ddb4f "+deg1+"deg "+deg2+"deg, #2b6af9 "+deg2+"deg "+deg3+"deg, #6622f8 "+deg3+"deg 360deg)";
+    
+    var deg4 = 360-deg3; 
+    deg3-=deg2;
+    deg2 -= deg1;
+    
+    var degree = deg1/3.6;
+    degree = Math.round(degree * 10) / 10;    
+    segment1.innerText = "Altın"+" "+"%"+degree.toString();
+    
+    degree = deg2/3.6
+    degree = Math.round(degree * 10) / 10;;
+    segment2.innerText = "TKM"+" "+"%"+degree.toString();
+    
+    degree = deg3/3.6
+    degree = Math.round(degree * 10) / 10;
+    segment3.innerText = "TUA"+" "+"%"+degree.toString();
+    
+    degree = deg4/3.6
+    degree = Math.round(degree * 10) / 10;
+    segment4.innerText = "TYH"+" "+"%"+degree.toString();
+    
+
+
+
+    goldd = goldd.toLocaleString('de-DE');
+    TKM = TKM.toLocaleString('de-DE');
+    TUA = TUA.toLocaleString('de-DE');
+    TYH = TYH.toLocaleString('de-DE');
+    altin.innerHTML = goldd +"₺";
+    tkm.innerHTML = TKM +"₺";
+    tua.innerHTML = TUA +"₺";
+    tyh.innerHTML = TYH +"₺"; 
+
+
+    
+  }
+  
+  calc.onclick = function(){
+    var si;
+    switch (select.selectedIndex) {
+      case 1:
+        si = "gold";
+        break;
+      case 2:
+        si = "TKM";
+        break;
+      case 3:
+        si = "TUA";
+        break;  
+      case 4:
+        si = "TYH";
+        break;
+      case 5:
+        si = "KUR";
+        break;   
+    
+      default:
+        break;
+    }
+   setcookie(si,input1.value);  
+   vis.style.marginLeft = "-100%"; 
+   graph();
+  }
+  console.log(document.cookie);
+
+
+  function setcookie(type,valu){
+    var kuki = document.cookie;
+    var spkuki = kuki.split(" ");
+    var old;
+    for (let index = 0; index < spkuki.length; index++) {
+      var spp = spkuki[index].split("=");
+      if(spp[0] == type){
+        old = spp[1];
+      }
+      
+    }
+    document.cookie = type+ "="+ old+" path=/; expires=Thu, 31 Dec 2020 23:59:59 UTC";
+    document.cookie = type+ "="+ valu+"; path=/; expires=Thu, 31 Dec 2026 23:59:59 UTC";
+    console.log(document.cookie);
+    getcookie();
+    
+  }
+
+
+  // deg1 = 60;
+  // deg2 = 190;
+  // deg3 = 250;
+  //donut.style.background =  "conic-gradient(#e9a239 0deg "+deg1 +"deg, #1ddb4f "+deg1+"deg "+deg2+"deg, #e9a239 "+deg2+"deg "+deg3+"deg, #6622f8 "+deg3+"deg 360deg)";
+
+
+ // donut.style.background =  "conic-gradient(#e9a239 0deg 60deg, #1ddb4f 60deg 190deg, #e9a239 190deg 250deg,orange 250deg 310deg,#6622f8 250deg 360deg)";
+
+ //goldapi-112sql19m5zty9o6-io
+
+
+
+//  input1.addEventListener("input", function(event) {
+//     let value = input1.value;
+
+//     // Sayıya sadece rakamları ve virgül/ noktayı kabul ediyoruz
+//     value = value.replace(/[^0-9]/g, ''); // Tüm harfleri sileriz
+    
+//     // Sayıyı formatlayıp, tekrar input alanına yazarız
+//     const formattedValue = formatNumber(value);
+//     input1.value = formattedValue;
+//   });
+
+//   // Sayıyı binlik ayracı ile formatlama fonksiyonu
+//   function formatNumber(value) {
+//     if (value === "") return "";
+
+//     return Number(value)
+//       .toLocaleString('tr-TR'); // 'tr-TR' formatıyla binlik ayraç kullanılır
+//   }
+
+
+
+
+
+
+//GRAFİK
+
+graph();
+function graph(){
+console.log("--------------GRAFİK--------------");
+
+var array = ["66000","103000"];//ALTIN
+var array4 = ["0","35000"];//FON
+// var array2 = ["0","20000","22000","25000","30000","30000","35000","35000","35000","38000","40000","40000"];//TUA
+// var array3 = ["0","5000","5000","5000","8000","8000","10000","10000","10000","15000","20000","20000"];//TKM
+
+
+
+array[new Date().getMonth() + 1]= gold*kur; 
+var one = parseInt(TYH.replace(".",""));
+var two = parseInt(TUA.replace(".",""));
+var trh = parseInt(TKM.replace(".",""));
+array4[new Date().getMonth() + 1]= one+two+trh; 
+
+let canvas = document.getElementById('myCanvas');
+canvas.width = canvas.offsetWidth;  // CSS genişliği kullanarak
+canvas.height = canvas.offsetHeight;  // CSS yüksekliği kullanarak
+let ctx = canvas.getContext('2d');  // 2D bağlamı alıyoruz
+var wide = canvas.offsetWidth/11;
+wide = parseInt(wide);
+for(var i = 0; i < array.length; i++){
+  drawing(array[i],array[i+1],i);
+}
+
+// for(var i = 0; i < array2.length; i++){
+//   drawing2(array2[i],array2[i+1],i);
+// }
+// for(var i = 0; i < array2.length; i++){
+//   drawing3(array3[i],array3[i+1],i);
+// }
+for(var i = 0; i < array4.length; i++){
+  drawing4(array4[i],array4[i+1],i);
+}
+
+ctx.strokeStyle = "grey"; 
+ctx.beginPath();
+ctx.lineWidth = 1;  
+ctx.moveTo(0, canvas.offsetHeight/3); 
+ctx.lineTo(canvas.offsetWidth, canvas.offsetHeight/3);
+ctx.stroke(); 
+
+
+ctx.beginPath();
+ctx.lineWidth = 1;  
+ctx.moveTo(0, canvas.offsetHeight*2/3); 
+ctx.lineTo(canvas.offsetWidth, canvas.offsetHeight*2/3);
+ctx.stroke(); 
+
+
+ctx.beginPath();
+ctx.lineWidth = 2;  
+ctx.moveTo(0, canvas.offsetHeight); 
+ctx.lineTo(canvas.offsetWidth,  canvas.offsetHeight);
+ctx.stroke(); 
+
+function drawing(value1,value2,count,color){
+
+  
+  value1/=3000;  
+  value2/=3000;
+  // console.log(value1);
+  var count2 = count+1
+  ctx.strokeStyle = "#ffdf00";
+  ctx.beginPath();
+  ctx.lineWidth = 2;  
+  count *= wide;  
+  count2*=wide;
+  ctx.moveTo(count, canvas.offsetHeight-value1); // Başlangıç noktası
+  ctx.lineTo(count2, canvas.offsetHeight-value2); // Bitiş noktası  
+  ctx.stroke();    
+  
+}
+
+
+
+// function drawing2(value1,value2,count){
+//   value1/=3000;  
+//   value2/=3000;
+//   console.log(value1);
+//   var count2 = count+1
+//   ctx.strokeStyle = "#e9a239"; 
+//   ctx.beginPath();
+//   ctx.lineWidth = 2;  
+//   count *= wide;  
+//   count2*=wide;
+//   ctx.moveTo(count, canvas.offsetHeight-value1); // Başlangıç noktası
+//   ctx.lineTo(count2, canvas.offsetHeight-value2); // Bitiş noktası  
+//   ctx.stroke(); 
+// }
+// function drawing3(value1,value2,count){
+//   value1/=3000;  
+//   value2/=3000;
+//   console.log(value1);
+//   var count2 = count+1
+//   ctx.strokeStyle = "#1ddb4f"; 
+//   ctx.beginPath();
+//   ctx.lineWidth = 2;  
+//   count *= wide;  
+//   count2*=wide;
+//   ctx.moveTo(count, canvas.offsetHeight-value1); // Başlangıç noktası
+//   ctx.lineTo(count2, canvas.offsetHeight-value2); // Bitiş noktası  
+//   ctx.stroke(); 
+// }
+function drawing4(value1,value2,count){
+  value1/=3000;  
+  value2/=3000;
+  // console.log(value1);
+  var count2 = count+1
+  ctx.strokeStyle = "#6622f8"; 
+  ctx.beginPath();
+  ctx.lineWidth = 2;  
+  count *= wide;  
+  count2*=wide;
+  ctx.moveTo(count, canvas.offsetHeight-value1); // Başlangıç noktası
+  ctx.lineTo(count2, canvas.offsetHeight-value2); // Bitiş noktası  
+  ctx.stroke(); 
+}
+
+
+
+
+}
+
+// Basit bir çizgi çizin
+console.log("----------------------------")
+
+</script>
+
+<script>
+  //LOCAL STORAGE
+  var toplam = document.getElementById("toplam");
+
+
+
+  let today = new Date();  
+  let dateString = today.toLocaleDateString(); // Tarayıcının yerel tarih formatına göre
+  var text = toplam.innerHTML;  
+  text = text.substring(0,text.length-1);
+  text = text.replace(".","");
+  function getDayOfYear(date) {
+    // Yılın başından itibaren geçen gün sayısını hesapla
+    let start = new Date(date.getFullYear(), 0, 0);
+    let diff = date - start;
+    let oneDay = 1000 * 60 * 60 * 24;
+    return Math.floor(diff / oneDay);
+}
+  let dayOfYear = getDayOfYear(today);
+  // console.log(dayOfYear);
+
+  window.onload = function(){
+    localStorage.setItem(dayOfYear, text);    
+    // console.log(text);
+  }
+  //localStorage.setItem("isim", "Ahmet");  
+  //localStorage.setItem("isim", "Ahmet");  
+
+
+  //localStorage.setItem(dateString, "123");  
+
+
+
+
+  //localStorage.removeItem("yas");
+
+</script>
+
+<script>
+  // document.getElementById("date").innerText = new Date().toLocaleDateString();
+
+  document.getElementById("calc").addEventListener("click", function () {
+      let element = document.getElementById("pdfcontent");
+      //alert();
+
+      let options = {
+          margin: 10,
+          filename: "Yatırım_Raporu.pdf",
+          image: { type: "jpeg", quality: 0.98 },
+          html2canvas: { scale: 2 },
+          jsPDF: { unit: "mm", format: "a4", orientation: "portrait" }
+      };
+
+      html2pdf().set(options).from(element).save();
+  });
+</script>
+
+</html>
