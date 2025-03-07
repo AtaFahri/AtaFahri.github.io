@@ -143,19 +143,19 @@
 
 
 </style>
-<body id="body" style="background-color: rgb(2, 0, 48);">
+<body id="body" style="background-color: rgb(1, 0, 20);">
 
-  <div id="pdfcontent" style="background-color: rgb(2, 0, 48);">  
+  <div id="pdfcontent" style="background-color: rgb(1, 0, 20);">  
 
   <div id="donut">
-    <div style="width: 80%; margin-left: 10%; background-color: rgb(2, 0, 48); border-radius: 100%; margin-top: 10%; float: left; aspect-ratio: 1;">
+    <div style="width: 80%; margin-left: 10%; background-color: rgb(1, 0, 20); border-radius: 100%; margin-top: 10%; float: left; aspect-ratio: 1;">
        <div style="width: 50%;  margin-left: 22%; margin-top: 22%; aspect-ratio: 1; font-size: 2vw; ">
             <div style="display: block; width: 100%;" ><p class="lb" style="color: #ffdf00;" id="altin">5000</p></div>
             <div style="display: block; width: 100%;" ><p class="lb" style="   color: #1ddb4f;" id="tkm">5000</p> </div>
 
             <div style="display: block; width: 100%;" ><p class="lb" style=" color: #2b6af9;" id="tua">5000</p> </div>
 
-            <div style="display: block; width: 100%;" ><p class="lb" style="color: #6622f8;" id="tyh">5000</p> </div>
+            <div style="display: block; width: 100%;" ><p class="lb" style="color: #6622f8;" id="tta">5000</p> </div>
        </div>
     </div>
   </div>
@@ -165,9 +165,10 @@
     <div class="alt"> <div  class="segment1 def"></div> <div style="width: 50%; height: 7vw; display: inline-block;"> <p id="segment1" class="txt">Altın %74</p>   </div>  </div>
     <div class="alt"> <div  class="segment2 def"></div> <div style="width: 50%; height: 7vw; display: inline-block;"> <p id="segment2" class="txt">TKM %70</p>     </div>  </div>
     <div class="alt"> <div  class="segment3 def"></div> <div style="width: 50%; height: 7vw; display: inline-block;"> <p id="segment3" class="txt">TUA %70</p>     </div>  </div>
-    <div class="alt"> <div  class="segment4 def"></div> <div style="width: 50%; height: 7vw; display: inline-block;"> <p id="segment4" class="txt">TYH %70</p>     </div>  </div>   
+    <div class="alt"> <div  class="segment4 def"></div> <div style="width: 50%; height: 7vw; display: inline-block;"> <p id="segment4" class="txt">TTA %70</p>     </div>  </div>   
     
     <p style="width: 100%; text-align: center; font-size: 8vw; margin-top: 2vw; font-family: Arial, Helvetica, sans-serif; color: white;" id="toplam">120000</p>
+    <p style="width: 100%; color: white; font-size: 4vw; white-space: pre;">   1       2      3      4       5      6      7       8      9     10     11    12</p >
     <hr>     
   </div>
   
@@ -195,7 +196,7 @@
            <option value="1">Altın</option>
            <option value="2">TKM TEB Para </option>
            <option value="3">TUA Altın</option>
-           <option value="4">TYH Hisse</option>
+           <option value="4">TTA Altın</option>
            <option value="5">KUR</option>
            <!-- <option value="6">OCAK</option>
            <option value="7">ŞUBAT</option>
@@ -229,7 +230,7 @@
   var altin = document.getElementById("altin");
   var tkm = document.getElementById("tkm");
   var tua = document.getElementById("tua");
-  var tyh = document.getElementById("tyh");
+  var tta = document.getElementById("tta");
   var legend = document.getElementById("legend");
   var vis = document.getElementById("vis");
   var toplama = document.getElementById("toplam");
@@ -246,7 +247,7 @@
   var sonuc;
   var deg1 = 0,deg2 = 0,deg3 = 0;
   var kur = 3100;
-  var gold = 0,TKM = 0,TUA = 0,TYH = 0;
+  var gold = 0,TKM = 0,TUA = 0,TTA = 0;
   console.log(document.cookie);
   getcookie();
 
@@ -283,8 +284,8 @@
         case "TUA":
           TUA = spp[1];
           break;
-        case "TYH":
-          TYH = spp[1];
+        case "TTA":
+          TTA = spp[1];
           break;
       
         default:
@@ -296,14 +297,14 @@
 
     var value1 = 86800,value2 = 5000,value3 = 20000,value4 = 10000;
     var goldd = gold*kur;
-    toplam = goldd+TKM+TUA+TYH;
+    toplam = goldd+TKM+TUA+TTA;
     sonuc = 360/toplam;  
     
     // console.log(toplam);       
     // console.log(goldd);
     // console.log(TKM);
     // console.log(TUA);
-    // console.log(TYH);      
+    // console.log(tta);      
     toplam = toplam.toLocaleString('de-DE');
     toplama.innerHTML = toplam+"₺"
     deg1 = sonuc*goldd;
@@ -329,7 +330,7 @@
     
     degree = deg4/3.6
     degree = Math.round(degree * 10) / 10;
-    segment4.innerText = "TYH"+" "+"%"+degree.toString();
+    segment4.innerText = "TTA"+" "+"%"+degree.toString();
     
 
 
@@ -337,11 +338,11 @@
     goldd = goldd.toLocaleString('de-DE');
     TKM = TKM.toLocaleString('de-DE');
     TUA = TUA.toLocaleString('de-DE');
-    TYH = TYH.toLocaleString('de-DE');
+    TTA = TTA.toLocaleString('de-DE');
     altin.innerHTML = goldd +"₺";
     tkm.innerHTML = TKM +"₺";
     tua.innerHTML = TUA +"₺";
-    tyh.innerHTML = TYH +"₺"; 
+    tta.innerHTML = TTA +"₺"; 
 
 
     
@@ -360,7 +361,7 @@
         si = "TUA";
         break;  
       case 4:
-        si = "TYH";
+        si = "TTA";
         break;
       case 5:
         si = "KUR";
@@ -437,15 +438,13 @@ graph();
 function graph(){
 console.log("--------------GRAFİK--------------");
 
-var array = ["66000","103000"];//ALTIN
-var array4 = ["0","35000"];//FON
-// var array2 = ["0","20000","22000","25000","30000","30000","35000","35000","35000","38000","40000","40000"];//TUA
-// var array3 = ["0","5000","5000","5000","8000","8000","10000","10000","10000","15000","20000","20000"];//TKM
+var array = ["66000","103000","134550"];//ALTIN
+var array4 = ["0","25000","35000"];//FON
 
 
 
 array[new Date().getMonth() + 1]= gold*kur; 
-var one = parseInt(TYH.replace(".",""));
+var one = parseInt(TTA.replace(".",""));
 var two = parseInt(TUA.replace(".",""));
 var trh = parseInt(TKM.replace(".",""));
 array4[new Date().getMonth() + 1]= one+two+trh; 
@@ -454,7 +453,7 @@ let canvas = document.getElementById('myCanvas');
 canvas.width = canvas.offsetWidth;  // CSS genişliği kullanarak
 canvas.height = canvas.offsetHeight;  // CSS yüksekliği kullanarak
 let ctx = canvas.getContext('2d');  // 2D bağlamı alıyoruz
-var wide = canvas.offsetWidth/11;
+var wide = canvas.offsetWidth/12;
 wide = parseInt(wide);
 for(var i = 0; i < array.length; i++){
   drawing(array[i],array[i+1],i);
@@ -471,6 +470,15 @@ for(var i = 0; i < array4.length; i++){
 }
 
 ctx.strokeStyle = "grey"; 
+
+ctx.beginPath();
+ctx.lineWidth = 2;  
+ctx.moveTo(0, 0); 
+ctx.lineTo(canvas.offsetWidth, 0);
+ctx.stroke(); 
+
+
+
 ctx.beginPath();
 ctx.lineWidth = 1;  
 ctx.moveTo(0, canvas.offsetHeight/3); 
@@ -491,6 +499,19 @@ ctx.moveTo(0, canvas.offsetHeight);
 ctx.lineTo(canvas.offsetWidth,  canvas.offsetHeight);
 ctx.stroke(); 
 
+for(let i = 1; i<12; i++){
+  ctx.strokeStyle = "white"; 
+  ctx.beginPath();
+  ctx.lineWidth = 1;  
+  ctx.moveTo(canvas.offsetWidth*i/12, canvas.offsetHeight); 
+  ctx.lineTo(canvas.offsetWidth*i/12, 0);
+  ctx.stroke(); 
+}
+
+
+
+
+
 function drawing(value1,value2,count,color){
 
   
@@ -502,7 +523,7 @@ function drawing(value1,value2,count,color){
   ctx.beginPath();
   ctx.lineWidth = 2;  
   count *= wide;  
-  count2*=wide;
+  count2 *=wide;
   ctx.moveTo(count, canvas.offsetHeight-value1); // Başlangıç noktası
   ctx.lineTo(count2, canvas.offsetHeight-value2); // Bitiş noktası  
   ctx.stroke();    
@@ -511,34 +532,6 @@ function drawing(value1,value2,count,color){
 
 
 
-// function drawing2(value1,value2,count){
-//   value1/=3000;  
-//   value2/=3000;
-//   console.log(value1);
-//   var count2 = count+1
-//   ctx.strokeStyle = "#e9a239"; 
-//   ctx.beginPath();
-//   ctx.lineWidth = 2;  
-//   count *= wide;  
-//   count2*=wide;
-//   ctx.moveTo(count, canvas.offsetHeight-value1); // Başlangıç noktası
-//   ctx.lineTo(count2, canvas.offsetHeight-value2); // Bitiş noktası  
-//   ctx.stroke(); 
-// }
-// function drawing3(value1,value2,count){
-//   value1/=3000;  
-//   value2/=3000;
-//   console.log(value1);
-//   var count2 = count+1
-//   ctx.strokeStyle = "#1ddb4f"; 
-//   ctx.beginPath();
-//   ctx.lineWidth = 2;  
-//   count *= wide;  
-//   count2*=wide;
-//   ctx.moveTo(count, canvas.offsetHeight-value1); // Başlangıç noktası
-//   ctx.lineTo(count2, canvas.offsetHeight-value2); // Bitiş noktası  
-//   ctx.stroke(); 
-// }
 function drawing4(value1,value2,count){
   value1/=3000;  
   value2/=3000;
@@ -564,61 +557,7 @@ console.log("----------------------------")
 
 </script>
 
-<script>
-  //LOCAL STORAGE
-  var toplam = document.getElementById("toplam");
 
 
-
-  let today = new Date();  
-  let dateString = today.toLocaleDateString(); // Tarayıcının yerel tarih formatına göre
-  var text = toplam.innerHTML;  
-  text = text.substring(0,text.length-1);
-  text = text.replace(".","");
-  function getDayOfYear(date) {
-    // Yılın başından itibaren geçen gün sayısını hesapla
-    let start = new Date(date.getFullYear(), 0, 0);
-    let diff = date - start;
-    let oneDay = 1000 * 60 * 60 * 24;
-    return Math.floor(diff / oneDay);
-}
-  let dayOfYear = getDayOfYear(today);
-  // console.log(dayOfYear);
-
-  window.onload = function(){
-    localStorage.setItem(dayOfYear, text);    
-    // console.log(text);
-  }
-  //localStorage.setItem("isim", "Ahmet");  
-  //localStorage.setItem("isim", "Ahmet");  
-
-
-  //localStorage.setItem(dateString, "123");  
-
-
-
-
-  //localStorage.removeItem("yas");
-
-</script>
-
-<script>
-  // document.getElementById("date").innerText = new Date().toLocaleDateString();
-
-  document.getElementById("calc").addEventListener("click", function () {
-      let element = document.getElementById("pdfcontent");
-      //alert();
-
-      let options = {
-          margin: 10,
-          filename: "Yatırım_Raporu.pdf",
-          image: { type: "jpeg", quality: 0.98 },
-          html2canvas: { scale: 2 },
-          jsPDF: { unit: "mm", format: "a4", orientation: "portrait" }
-      };
-
-      html2pdf().set(options).from(element).save();
-  });
-</script>
 
 </html>
