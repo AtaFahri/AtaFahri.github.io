@@ -3,198 +3,276 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="icon" href="pics/logo1.png" type="image/x-icon" />
-  <link rel="apple-touch-icon" href="pics/logo1.png">
-  <link rel="shortcut icon" href="pics/logo1.png" type="image/x-icon" />
+    <title>Files</title>
 </head>
 
 
 <style>
-
     *{
-        margin: 0px;
-        padding: 0px;
         border: 0px;
+        padding: 0px;
+        margin: 0px;
     }
-    #div1{
-        width: 80%; margin-left: 10%; margin-top: 4vw; 
-    }
-    #p1{
-        color: white; font-size: 4.2vw; text-align: center;
-    }
-    #pass{
-        width: 100%;  margin-top: 3vw; background-color: white; text-align: center;
-        color: rgb(58, 58, 58); 
-        height: 12vw;
-    }
-    #num{
-        width: 80%; margin-left: 10%;   margin-top: 25vw; visibility: hidden; display: flex; justify-content: space-around;
-    }
-    .num{
-        width: 32%;
-        display: inline-block;
-        /* height: 33%; */
-       
-       
-    }
-    .num2{
-        width: 100%;
-        /* height: 33%; */
-        
-      
-    }
-    .nums{
-        width: 25%;
-    }
-    .pass{
-        font-size: 10vw;
-       
-    }
-    .numt{
-        font-size: 15vw;
-        line-height: 20vw;
-        margin-top: 15%;
-        text-align: center;
-        border-radius: 100%;
-        width: 78%;
-        margin-left: 11%;
-        
-        background-color: rgb(196, 196, 196);
-    }
-    .numt2{
-        font-size: 15vw;
-        line-height: 20vw;
-        margin-top: 15%;
-        text-align: center;
-        color: rgb(196, 196, 196);
-        width: 78%;
-        margin-left: 11%;
-     
-    }
-    @media screen and (max-width:500px){
-        #div1{
-            width: 100%;
-            margin-left: 0px;
-        }
-        #p1{
-            font-size: 10vw;
-            margin-top: 15vw;
-        }
-        #pass{
-            font-size: 8vw;
-        }
-        #num{
-            visibility: visible;
-        }
-    }
-    ::-webkit-scrollbar{
-        display: none;
-    }
+
+body{
+    /* background-color: rgb(0, 20, 0); */
+    background: linear-gradient(180deg, rgb(0, 20, 7) 0%, rgba(255,255,255,1) 100%);
+    background-repeat: no-repeat;
+    min-height: 150vw;
+}
+
+label{
+    color: white;
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-size: 9vw;
+}
+#search{
+    width: 100%;
+    height: 14vw;
+    
+}
+a{
+    width: 100%;
+    display: block;
+    text-align: center;
+    color: black;
+    font-size: 7vw;
+}
+#fix{
+    /* background-color: rgb(0, 20, 0); */
+   
+    width: 100%;
+    padding-top: 5vw;
+}
+#input1{
+    font-size: 8vw;
+    text-align: center;
+    width: 100%;
+    margin-top: 3%;
+    position: sticky;
+    top: 0px;
+    border-bottom: 1.5vw solid black;
+    border-top: 1.5vw solid black;
+}
+#files{
+   margin-top: 5vw;
+   width: 90%;
+   margin-left: 5%;
+   background-color: white;
+   overflow:hidden;
+ 
+}
+.title{
+    font-size: 7vw; color: darkblue; text-align: left; text-decoration: underline; margin-left: 5vw;
+}
+
 </style>
 
 
-<body style="background-color: rgb(0, 20, 0);">
+<body>
+    
+    <div id="fix">
+        <label>Your Files:</label>
+        
+        <label>Click to Install</label>
 
-    <div id="div1" >
-        <p id="p1" > </p>
-        <div id="pass">
-           <p class="pass">PASSCODE</p>
-        </div>
+       
+       
     </div>
-    <div id="num">
-        <div class="num">
-            <label class="nums">
-                <p class="numt">1</p>
-            </label>
-            <label class="nums">
-                <p class="numt">4</p>
-            </label>
-            <label class="nums">
-                <p class="numt">7</p>
-            </label>
-        </div>
-        <div class="num">
-            <label class="nums">
-                <p class="numt">2</p>
-            </label>
-            <label class="nums">
-                <p class="numt">5</p>
-            </label>
-            <label class="nums">
-                <p class="numt">8</p>
-            </label>
-            <label class="nums">
-                <p class="numt">0</p>
-            </label>
-        </div>
-        <div class="num">
-            <label class="nums">
-                <p class="numt">3</p>
-            </label>
-            <label class="nums">
-                <p class="numt">6</p>
-            </label>
-            <label class="nums">
-                <p class="numt">9</p>
-            </label>
-            <label class="nums" id="delete">
-                <p class="numt2" >⌫</p>
-            </label>
-        </div>
+    <input placeholder="type to search" id="input1" type="text">
+
+    <div id="files">
+        <label id="html" class="title">HTML</label>
+        <a id="i1"  href="index1.html" download="file">pin HTML </a>
+        <a id="i2"  href="files.html" download="file">files HTML </a>        
+        <a id="i3"  href="files/pmu.html" download="file">Pmu consultans HTML </a>
+        <a id="i4"  href="files/daryl.html" download="file">Daryl Wear HTML</a> 
+        <a id="i5"  href="files/search.html" download="file">search HTML </a>        
+        <a id="i6"  href="files/audio-player.html" download="file">audio player HTML </a>
+        <a id="i7"  href="files/copy-paste.html" download="file">copy paste HTML</a>
+        <a id="i8" href="files/carrousel.html" download="file">carrousel  HTML</a>         <label id="graph" class="title">Graphic</label>
+        <a id="i9" href="files/Başlıksız-2.ai" download="file">Background AI</a> 
+        <a id="i10"  href="files/qr-code.png" download="file">qr code </a>
+        <a id="i11" href="files/cizim.png" download="file">Background PNG </a>     
+        <a id="i12" href="files/Ekran Resmi 2024-07-13 01.31.07.png" download="file">LOGO </a>
+        <a id="i13" href="files/gtr+logo.ai" download="file">GTR + Logo AI</a>
+        <a id="i14" href="files/1.jpg" download="file">Daryl, Wing </a>
+        <a id="i15" href="files/2.jpg" download="file">Wing</a>
+        <a id="i16" href="files/3.jpg" download="file">Daryl</a>             
+        <a id="i17" href="files/march-15-2019-interacting-galaxies-arp-81.jpg" download="file">15 Mart</a>
+        <a id="i18" href="files/qrlogo.png" download="file">QR LOGO</a>     
+        <a id="i19" href="files/xcds.zip" download="file">Mezuniyet</a>                         <label id="soft" class="title">Software</label>        
+        <a id="i20" href="files/one.php" download="file">One PHP </a> 
+        <a id="i21" href="files/phpjava.php" download="file">php java PHP</a>                
+        <a id="i22" href="files/process.sln" download="file">process SLN</a>
+        <a id="i23" href="files/cpu_ısı.sln" download="file">cpu temp SLN</a>
+        <a id="i24" href="files/datas.sln" download="file">datas SLN</a>
+        <a id="i25" href="files/WindowsFormsAppWithoutForm.sln" download="file">without form SLN</a>
+        <a id="i26" href="files/copyto.sln" download="file">copyto SLN</a>
+        <a id="i27" href="files/lock screen.sln" download="file">lockscreen SLN</a>
+        <a id="i28" href="files/makro.sln" download="file">makro SLN</a>
+        <a id="i29" href="files/veriler.sln" download="file">veriler SLN</a>  <label id="set" class="title">SetUp</label>
+        <a id="i30" href="files/Cloudflare_WARP.zip" download="file">Warp SetUp</a>    
+        <a id="i31" href="files/Discord.dmg" download="file">Discord SetUp</a>    
+        <a id="i32" href="files/googlechrome (1).dmg" download="file">Chrome SetUp</a>    
+        <a id="i33" href="files/OperaGXSetup.zip" download="file">Opera GX SetUp</a>    
+       
+        
     </div>
     
+
+
 </body>
 
-<script>
 
-    var btns = document.querySelectorAll('.numt');
-    var pass = document.getElementById("pass");
-    var deleted = document.getElementById("delete");
-    var password = "s"
+<script>
+    var items = [];
+
+    const files = document.getElementById("files");
+    const input1 = document.getElementById("input1");
+     const i1 = document.getElementById("i1");
+     const i2 = document.getElementById("i2");
+     const i3 = document.getElementById("i3");
+     const i4 = document.getElementById("i4");
+     const i5 = document.getElementById("i5");
+     const i6 = document.getElementById("i6");
+     const i7 = document.getElementById("i7");
+     const i8 = document.getElementById("i8");
+     const i9 = document.getElementById("i9");
+    const i10 = document.getElementById("i10");
+    const i11 = document.getElementById("i11");
+    const i12 = document.getElementById("i12");
+    const i13 = document.getElementById("i13");
+    const i14 = document.getElementById("i14");
+    const i15 = document.getElementById("i15");
+    const i16 = document.getElementById("i16");
+    const i17 = document.getElementById("i17");
+    const i18 = document.getElementById("i18");
+    const i19 = document.getElementById("i19");
+    const i20 = document.getElementById("i20");
+    const i21 = document.getElementById("i21");
+    const i22 = document.getElementById("i22");
+    const i23 = document.getElementById("i23");
+    const i24 = document.getElementById("i24");
+    const i25 = document.getElementById("i25");    
+    const i26 = document.getElementById("i26");    
+    const i27 = document.getElementById("i27");    
+    const i28 = document.getElementById("i28");    
+    const i29 = document.getElementById("i29");    
+    const i30 = document.getElementById("i30");    
+    const i31 = document.getElementById("i31");    
+    const i32 = document.getElementById("i32");    
+    const i33 = document.getElementById("i33");    
+
+
+    const html = document.getElementById("html");
+    const graph = document.getElementById("graph"); 
+    const soft = document.getElementById("soft"); 
+    const set = document.getElementById("set");    
+   
+    var items2 = [i1,i2,i3,i4,i5,i6,i7,i8,i9,i10,i11,i12,i13,i14,i15,i16,i17,i18,i19,i20,i21,i22,i23,i24,i25,i26,i27,i28,i29,i30,i31,i32,i33];
+
+    for(var x = 0; x<items2.length;x++){
+        items[x] = items2[x].innerHTML.toString();
+    }
+    for(var x = 0; x<items2.length;x++){
+     //   console.log( items[x] );
+    }
+    // files.removeChild(i2);
     
-    for (var i = 0; i < btns.length; i++) {
-        btns[i].onclick = text;            
-    }
-    var check = true;
-    function text(){
-       if(check){
-            check = false;
-            pass.innerHTML = "";
-       }
-       var btn = event.target;
-       
-       pass.innerHTML +="*";
-       password += btn.innerHTML;
-       console.log(password);
-       if(password.toString() == "s4416"){
-            pass.innerHTML="";
-            window.location = "https://atafahri.github.io/files.html"
-       }
-       else if(password.toString() == "s2580"){
-            pass.innerHTML="";
-            window.location = "https://atafahri.github.io/existence.html"
-       }
-       else if(password.toString() == "s1234"){
-            pass.innerHTML="";
-            window.location = "https://atafahri.github.io/index21.html"
-       }
-    }
-    deleted.onclick = function(){
-      //  console.log(parseInt(pass.innerHTML.length));
-     
-        var c = parseInt(pass.innerHTML.length);
-        pass.innerHTML = pass.innerHTML.substring(0, pass.innerHTML.length-1);
-        
-        
-        password= password.substring(0, password.length-1);
-        console.log(password);
-        if(password == ""){
-            //pass.innerHTML="Enter Your Passcode";
-            password = "s";            
+    input1.onkeyup = function(){
+        var text = input1.value.toString();        
+        text.toLowerCase();
+        if(text == ""){
+            sort();            
         }
+        else{
+            remove();
+            add(text);
+        }
+        
     }
+
+    function sort(){
+        try{ 
+            files.appendChild(html);
+            for(var i = 0; i<items2.length;i++){
+                files.appendChild(items2[i]);
+                if(i == 8){
+                    files.appendChild(graph);
+                }
+                else if(i==19){
+                    files.appendChild(soft);
+                }
+                else if(i==28){
+                    files.appendChild(set);
+                }
+
+            }
+        }
+        catch(err) {  
+        }
+        
+
+
+    }
+
+    function remove(){
+        try{
+            for(var i = 0; i<items2.length;i++){
+                files.removeChild(items2[i]);
+            }
+            files.removeChild(html);
+            files.removeChild(graph);
+            files.removeChild(soft);
+            files.removeChild(set);
+            // files.removeChild(i3);
+            // files.removeChild(i4);
+            // files.removeChild(i5);
+            // files.removeChild(i6);
+            // files.removeChild(i7);
+            // files.removeChild(i8);
+            // files.removeChild(i9);
+
+
+        }
+        catch(err) {
+        
+        }
+    
+    }
+    var element = document.getElementById("i1");
+    function add(word){
+        word = word.toLowerCase();
+        // console.log(word);
+        // console.log(word.length);
+        for(var a = 0; a<items.length; a++){
+            try{        
+                var text = items[a].substring(0,word.length);
+                text = text.toLowerCase();
+                console.log(text);
+            }
+            catch(err) {  
+            }
+            console.log(word);
+            if(text == word){
+                
+                
+                files.appendChild(items2[a]);
+                
+            }
+        }
+
+
+    }
+
+
+
+   
 
 </script>
+
 
 </html>
