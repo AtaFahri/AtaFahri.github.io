@@ -63,9 +63,9 @@
         background-color: rgb(196, 196, 196);
     }
     .numt2{
-        font-size: 15vw;
+        font-size: 10vw;
         line-height: 20vw;
-        margin-top: 15%;
+        margin-top: 20%;
         text-align: center;
         color: rgb(196, 196, 196);
         width: 78%;
@@ -97,9 +97,9 @@
 <body style="background-color: rgb(0, 20, 0);">
 
     <div id="div1" >
-        <p id="p1" >Welcome Ata </p>
+        <p id="p1" > </p>
         <div id="pass">
-           <p class="pass"> Enter Your Passcode</p>
+           <p class="pass">PASSCODE</p>
         </div>
     </div>
     <div id="num">
@@ -168,13 +168,16 @@
        password += btn.innerHTML;
        console.log(password);
        if(password.toString() == "s4416"){
+            pass.innerHTML="";
             window.location = "https://atafahri.github.io/files.html"
        }
        else if(password.toString() == "s2580"){
-        window.location = "https://atafahri.github.io/existence.html"
+            pass.innerHTML="";
+            window.location = "https://atafahri.github.io/existence.html"
        }
        else if(password.toString() == "s1234"){
-        window.location = "https://atafahri.github.io/index21.html"
+            pass.innerHTML="";
+            window.location = "https://atafahri.github.io/index21.html"
        }
     }
     deleted.onclick = function(){
@@ -187,7 +190,8 @@
         password= password.substring(0, password.length-1);
         console.log(password);
         if(password == ""){
-            password = "s";
+            //pass.innerHTML="Enter Your Passcode";
+            password = "s";            
         }
     }
 
