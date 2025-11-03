@@ -171,7 +171,7 @@
     <hr>     
   </div>
 
-<p style="width: 100%; color: white; font-size: 4vw; white-space: pre; float: left; margin-top: 2vw;">   1       2      3      4       5      6      7       8      9     10     11    12</p >
+<!-- <p style="width: 100%; color: white; font-size: 4vw; white-space: pre; float: left; margin-top: 2vw;">   1       2      3      4       5      6      7       8      9     10     11    12</p > -->
 
 
   
@@ -434,127 +434,127 @@
 
 //GRAFİK
 
-graph();
-function graph(){
-console.log("--------------GRAFİK--------------");
+// graph();
+// function graph(){
+// console.log("--------------GRAFİK--------------");
 
-var array = ["66000","123000","134550","182400","202400","252400"];//ALTIN
-//var array = ["66000","103000","134550"];//ALTIN Gerçek değerler
-var array4 = ["0","15000","20000","35000","35000","40000"];//FON
+// var array = ["66000","123000","134550","182400","202400","252400","252400","252400","252400","252400"];//ALTIN
+// //var array = ["66000","103000","134550"];//ALTIN Gerçek değerler
+// var array4 = ["0","15000","20000","35000","35000","40000"];//FON
 
 
 
-array[new Date().getMonth() + 1]= gold*kur; 
-var one = parseInt(TTA.replace(".",""));
-var two = parseInt(TUA.replace(".",""));
-var trh = parseInt(TKM.replace(".",""));
-array4[new Date().getMonth() + 1]= one+two+trh; 
+// array[new Date().getMonth() + 1]= gold*kur; 
+// var one = parseInt(TTA.replace(".",""));
+// var two = parseInt(TUA.replace(".",""));
+// var trh = parseInt(TKM.replace(".",""));
+// array4[new Date().getMonth() + 1]= one+two+trh; 
 
-let canvas = document.getElementById('myCanvas');
-canvas.width = canvas.offsetWidth;  // CSS genişliği kullanarak
-canvas.height = canvas.offsetHeight;  // CSS yüksekliği kullanarak
-let ctx = canvas.getContext('2d');  // 2D bağlamı alıyoruz
-var wide = canvas.offsetWidth/12;
-wide = parseInt(wide);
-for(var i = 0; i < array.length; i++){
-  drawing(array[i],array[i+1],i);
-}
-
-// for(var i = 0; i < array2.length; i++){
-//   drawing2(array2[i],array2[i+1],i);
+// let canvas = document.getElementById('myCanvas');
+// canvas.width = canvas.offsetWidth;  // CSS genişliği kullanarak
+// canvas.height = canvas.offsetHeight;  // CSS yüksekliği kullanarak
+// let ctx = canvas.getContext('2d');  // 2D bağlamı alıyoruz
+// var wide = canvas.offsetWidth/12;
+// wide = parseInt(wide);
+// for(var i = 0; i < array.length; i++){
+//   drawing(array[i],array[i+1],i);
 // }
-// for(var i = 0; i < array2.length; i++){
-//   drawing3(array3[i],array3[i+1],i);
+
+// // for(var i = 0; i < array2.length; i++){
+// //   drawing2(array2[i],array2[i+1],i);
+// // }
+// // for(var i = 0; i < array2.length; i++){
+// //   drawing3(array3[i],array3[i+1],i);
+// // }
+// for(var i = 0; i < array4.length; i++){
+//   drawing4(array4[i],array4[i+1],i);
 // }
-for(var i = 0; i < array4.length; i++){
-  drawing4(array4[i],array4[i+1],i);
-}
 
-ctx.strokeStyle = "grey"; 
+// ctx.strokeStyle = "grey"; 
 
-ctx.beginPath();
-ctx.lineWidth = 2;  
-ctx.moveTo(0, 0); 
-ctx.lineTo(canvas.offsetWidth, 0);
-ctx.stroke(); 
+// ctx.beginPath();
+// ctx.lineWidth = 2;  
+// ctx.moveTo(0, 0); 
+// ctx.lineTo(canvas.offsetWidth, 0);
+// ctx.stroke(); 
 
 
 
-ctx.beginPath();
-ctx.lineWidth = 1;  
-ctx.moveTo(0, canvas.offsetHeight/3); 
-ctx.lineTo(canvas.offsetWidth, canvas.offsetHeight/3);
-ctx.stroke(); 
+// ctx.beginPath();
+// ctx.lineWidth = 1;  
+// ctx.moveTo(0, canvas.offsetHeight/3); 
+// ctx.lineTo(canvas.offsetWidth, canvas.offsetHeight/3);
+// ctx.stroke(); 
 
 
-ctx.beginPath();
-ctx.lineWidth = 1;  
-ctx.moveTo(0, canvas.offsetHeight*2/3); 
-ctx.lineTo(canvas.offsetWidth, canvas.offsetHeight*2/3);
-ctx.stroke(); 
+// ctx.beginPath();
+// ctx.lineWidth = 1;  
+// ctx.moveTo(0, canvas.offsetHeight*2/3); 
+// ctx.lineTo(canvas.offsetWidth, canvas.offsetHeight*2/3);
+// ctx.stroke(); 
 
 
-ctx.beginPath();
-ctx.lineWidth = 2;  
-ctx.moveTo(0, canvas.offsetHeight); 
-ctx.lineTo(canvas.offsetWidth,  canvas.offsetHeight);
-ctx.stroke(); 
+// ctx.beginPath();
+// ctx.lineWidth = 2;  
+// ctx.moveTo(0, canvas.offsetHeight); 
+// ctx.lineTo(canvas.offsetWidth,  canvas.offsetHeight);
+// ctx.stroke(); 
 
-for(let i = 1; i<12; i++){
-  ctx.strokeStyle = "white"; 
-  ctx.beginPath();
-  ctx.lineWidth = 1;  
-  ctx.moveTo(canvas.offsetWidth*i/12, canvas.offsetHeight); 
-  ctx.lineTo(canvas.offsetWidth*i/12, 0);
-  ctx.stroke(); 
-}
+// for(let i = 1; i<12; i++){
+//   ctx.strokeStyle = "white"; 
+//   ctx.beginPath();
+//   ctx.lineWidth = 1;  
+//   ctx.moveTo(canvas.offsetWidth*i/12, canvas.offsetHeight); 
+//   ctx.lineTo(canvas.offsetWidth*i/12, 0);
+//   ctx.stroke(); 
+// }
 
 
 
 
 
-function drawing(value1,value2,count,color){
+// function drawing(value1,value2,count,color){
 
   
-  value1/=6000;  
-  value2/=6000;
-  // console.log(value1);
-  var count2 = count+1
-  ctx.strokeStyle = "#ffdf00";
-  ctx.beginPath();
-  ctx.lineWidth = 2;  
-  count *= wide;  
-  count2 *=wide;
-  ctx.moveTo(count, canvas.offsetHeight-value1); // Başlangıç noktası
-  ctx.lineTo(count2, canvas.offsetHeight-value2); // Bitiş noktası  
-  ctx.stroke();    
+//   value1/=6000;  
+//   value2/=6000;
+//   // console.log(value1);
+//   var count2 = count+1
+//   ctx.strokeStyle = "#ffdf00";
+//   ctx.beginPath();
+//   ctx.lineWidth = 2;  
+//   count *= wide;  
+//   count2 *=wide;
+//   ctx.moveTo(count, canvas.offsetHeight-value1); // Başlangıç noktası
+//   ctx.lineTo(count2, canvas.offsetHeight-value2); // Bitiş noktası  
+//   ctx.stroke();    
   
-}
+// }
 
 
 
-function drawing4(value1,value2,count){
-  value1/=1000;  
-  value2/=1000;
-  // console.log(value1);
-  var count2 = count+1
-  ctx.strokeStyle = "#6622f8"; 
-  ctx.beginPath();
-  ctx.lineWidth = 2;  
-  count *= wide;  
-  count2*=wide;
-  ctx.moveTo(count, canvas.offsetHeight-value1); // Başlangıç noktası
-  ctx.lineTo(count2, canvas.offsetHeight-value2); // Bitiş noktası  
-  ctx.stroke(); 
-}
+// function drawing4(value1,value2,count){
+//   value1/=1000;  
+//   value2/=1000;
+//   // console.log(value1);
+//   var count2 = count+1
+//   ctx.strokeStyle = "#6622f8"; 
+//   ctx.beginPath();
+//   ctx.lineWidth = 2;  
+//   count *= wide;  
+//   count2*=wide;
+//   ctx.moveTo(count, canvas.offsetHeight-value1); // Başlangıç noktası
+//   ctx.lineTo(count2, canvas.offsetHeight-value2); // Bitiş noktası  
+//   ctx.stroke(); 
+// }
 
 
 
 
-}
+// }
 
-// Basit bir çizgi çizin
-console.log("----------------------------")
+// // Basit bir çizgi çizin
+// console.log("----------------------------")
 
 </script>
 
