@@ -75,7 +75,7 @@
   @media screen and (max-width:600px) {
       .alt{
       display: inline-block;
-      width:23%;
+      width: 31%;
       margin-left: 1vw;
     }  
       #donut {    
@@ -135,9 +135,9 @@
 
   /* (C2) SEGMENTS */  
   .segment1 { background: #ffdf00; margin-bottom: 2vw;} 
-  .segment2 { background: #1ddb4f; margin-bottom: 2vw;}
-  .segment3 { background: #2b6af9; margin-bottom: 2vw;}
-  .segment4 { background: #fd3b00; margin-bottom: 2vw;}
+  .segment2 { background: #ae00ff; margin-bottom: 2vw;}
+  .segment3 { background: #fd3b00; margin-bottom: 2vw;}
+  /* .segment4 { background: #fd3b00; margin-bottom: 2vw;} */
 
 
 
@@ -149,22 +149,24 @@
 
   <div id="donut">
     <div style="width: 80%; margin-left: 10%; background-color: rgb(1, 0, 20); border-radius: 100%; margin-top: 10%; float: left; aspect-ratio: 1;">
-       <div style="width: 50%;  margin-left: 22%; margin-top: 22%; aspect-ratio: 1; font-size: 2vw; ">
+       <div style="width: 50%;  margin-left: 22%; margin-top: 29%; aspect-ratio: 1; font-size: 2vw; ">
             <div style="display: block; width: 100%;" ><p class="lb" style="color: #ffdf00;" id="altin">5000</p></div>
-            <div style="display: block; width: 100%;" ><p class="lb" style="   color: #1ddb4f;" id="tkm">5000</p> </div>
+            <div style="display: block; width: 100%;" ><p class="lb" style=" color: #fd3b00;" id="bes">5000</p> </div>
+            <div style="display: block; width: 100%;" ><p class="lb" style="   color: #ae00ff;" id="fon">5000</p> </div>
 
-            <div style="display: block; width: 100%;" ><p class="lb" style=" color: #2b6af9;" id="tua">5000</p> </div>
 
-            <div style="display: block; width: 100%;" ><p class="lb" style="color: #fd3b00;" id="tta">5000</p> </div>
+
+            <!-- <div style="display: block; width: 100%;" ><p class="lb" style="color: #fd3b00;" id="tta">5000</p> </div> -->
        </div>
     </div>
   </div>
 
   <div id="legend">   
     <div class="alt"> <div  class="segment1 def"></div> <div style="width: 50%; height: 7vw; display: inline-block;"> <p id="segment1" class="txt">Altın %74</p>   </div>  </div>
-    <div class="alt"> <div  class="segment2 def"></div> <div style="width: 50%; height: 7vw; display: inline-block;"> <p id="segment2" class="txt">TKM %70</p>     </div>  </div>
-    <div class="alt"> <div  class="segment3 def"></div> <div style="width: 50%; height: 7vw; display: inline-block;"> <p id="segment3" class="txt">TUA %70</p>     </div>  </div>
-    <div class="alt"> <div  class="segment4 def"></div> <div style="width: 50%; height: 7vw; display: inline-block;"> <p id="segment4" class="txt">TTA %70</p>     </div>  </div>   
+    <div class="alt"> <div  class="segment3 def"></div> <div style="width: 50%; height: 7vw; display: inline-block;"> <p id="segment3" class="txt">BES %70</p>     </div>  </div>
+    <div class="alt"> <div  class="segment2 def"></div> <div style="width: 50%; height: 7vw; display: inline-block;"> <p id="segment2" class="txt">Fon</p>     </div>  </div>
+    
+    <!-- <div class="alt"> <div  class="segment4 def"></div> <div style="width: 50%; height: 7vw; display: inline-block;"> <p id="segment4" class="txt">TTA %70</p>     </div>  </div>    -->
     
     <p style="border-bottom: 1vw solid white; width: 100%; text-align: center; font-size: 12vw; margin-top: 2vw; font-family: Arial, Helvetica, sans-serif; color: white;" id="toplam">120000</p>
     
@@ -194,10 +196,10 @@
      <select style="font-size: 6vw; margin-top: 1vw; width: 100%; text-align: center; border-radius: 0px;" id="select">
            <option value="0">MAKE A CHOICE</option>
            <option value="1">Altın</option>
-           <option value="2">TKM TEB Para </option>
-           <option value="3">TUA Altın</option>
-           <option value="4">TTA Altın</option>
-           <option value="5">KUR</option>
+           <option value="2">Fon </option>
+           <option value="3">BES</option>
+           <!-- <option value="4">TTA Altın</option> -->
+           <option value="4">KUR</option>
            <!-- <option value="6">OCAK</option>
            <option value="7">ŞUBAT</option>
            <option value="8">MART</option>
@@ -228,9 +230,9 @@
   var clos = document.getElementById("close");
   var select = document.getElementById("select");
   var altin = document.getElementById("altin");
-  var tkm = document.getElementById("tkm");
-  var tua = document.getElementById("tua");
-  var tta = document.getElementById("tta");
+  var fonn = document.getElementById("fon");
+  var bess = document.getElementById("bes");
+  // var tta = document.getElementById("tta");
   var legend = document.getElementById("legend");
   var vis = document.getElementById("vis");
   var toplama = document.getElementById("toplam");
@@ -238,7 +240,7 @@
   var segment1 = document.getElementById("segment1");
   var segment2 = document.getElementById("segment2");
   var segment3 = document.getElementById("segment3");
-  var segment4 = document.getElementById("segment4");
+  // var segment4 = document.getElementById("segment4");
 
 
 
@@ -247,7 +249,7 @@
   var sonuc;
   var deg1 = 0,deg2 = 0,deg3 = 0;
   var kur = 3100;
-  var gold = 0,TKM = 0,TUA = 0,TTA = 0;
+  var gold = 0,fon = 0,bes = 0;
   console.log(document.cookie);
   getcookie();
 
@@ -278,15 +280,15 @@
         case "gold":
           gold = spp[1];
           break;
-        case "TKM":
-          TKM = spp[1];
+        case "fon":
+          fon = spp[1];
           break;
-        case "TUA":
-          TUA = spp[1];
+        case "bes":
+          bes = spp[1];
           break;
-        case "TTA":
-          TTA = spp[1];
-          break;
+        // case "TTA":
+        //   TTA = spp[1];
+        //   break;
       
         default:
           break;
@@ -297,20 +299,20 @@
 
     var value1 = 86800,value2 = 5000,value3 = 20000,value4 = 10000;
     var goldd = gold*kur;
-    toplam = goldd+TKM+TUA+TTA;
+    toplam = goldd+fon+bes;
     sonuc = 360/toplam;  
     
     // console.log(toplam);       
     // console.log(goldd);
-    // console.log(TKM);
-    // console.log(TUA);
+    // console.log(fon);
+    // console.log(bes);
     // console.log(tta);      
     toplam = toplam.toLocaleString('de-DE');
     toplama.innerHTML = toplam+"₺"
     deg1 = sonuc*goldd;
-    deg2 = sonuc*TKM + deg1;
-    deg3 = sonuc*TUA + deg2;
-    donut.style.background =  "conic-gradient(#ffdf00 0deg "+deg1 +"deg, #1ddb4f "+deg1+"deg "+deg2+"deg, #2b6af9 "+deg2+"deg "+deg3+"deg, #fd3b00 "+deg3+"deg 360deg)";
+    deg2 = sonuc*fon + deg1;
+    deg3 = sonuc*bes + deg2;
+    donut.style.background =  "conic-gradient(#ffdf00 0deg "+deg1 +"deg, #ae00ff "+deg1+"deg "+deg2+"deg, #fd3b00 "+deg2+"deg 360deg)";
     
     var deg4 = 360-deg3; 
     deg3-=deg2;
@@ -322,27 +324,27 @@
     
     degree = deg2/3.6
     degree = Math.round(degree * 10) / 10;;
-    segment2.innerText = "TKM"+" "+"%"+degree.toString();
+    segment2.innerText = "Fon"+" "+"%"+degree.toString();
     
     degree = deg3/3.6
     degree = Math.round(degree * 10) / 10;
-    segment3.innerText = "TUA"+" "+"%"+degree.toString();
+    segment3.innerText = "BES"+" "+"%"+degree.toString();
     
-    degree = deg4/3.6
-    degree = Math.round(degree * 10) / 10;
-    segment4.innerText = "TTA"+" "+"%"+degree.toString();
+    // degree = deg4/3.6
+    // degree = Math.round(degree * 10) / 10;
+    // segment4.innerText = "TTA"+" "+"%"+degree.toString();
     
 
 
 
     goldd = goldd.toLocaleString('de-DE');
-    TKM = TKM.toLocaleString('de-DE');
-    TUA = TUA.toLocaleString('de-DE');
-    TTA = TTA.toLocaleString('de-DE');
+    fon = fon.toLocaleString('de-DE');
+    bes = bes.toLocaleString('de-DE');
+    // TTA = TTA.toLocaleString('de-DE');
     altin.innerHTML = goldd +"₺";
-    tkm.innerHTML = TKM +"₺";
-    tua.innerHTML = TUA +"₺";
-    tta.innerHTML = TTA +"₺"; 
+    fonn.innerHTML = fon +"₺";
+    bess.innerHTML = bes +"₺";
+    // tta.innerHTML = TTA +"₺"; 
 
 
     
@@ -355,15 +357,15 @@
         si = "gold";
         break;
       case 2:
-        si = "TKM";
+        si = "fon";
         break;
       case 3:
-        si = "TUA";
+        si = "bes";
         break;  
+      // case 4:
+      //   si = "TTA";
+      //   break;
       case 4:
-        si = "TTA";
-        break;
-      case 5:
         si = "KUR";
         break;   
     
@@ -372,7 +374,7 @@
     }
    setcookie(si,input1.value);  
    vis.style.marginLeft = "-100%"; 
-   graph();
+  //  graph();
   }
   console.log(document.cookie);
 
@@ -394,6 +396,32 @@
     getcookie();
     
   }
+  select.onselect = function(){
+    alert();
+  }
+  select.addEventListener("change", function () {
+
+    switch (select.selectedIndex) {
+      case 1:
+      input1.value = gold;
+        break;
+      case 2:
+      input1.value = fon;
+        break;
+      case 3:
+      input1.value = bes;
+        break;  
+      // case 4:
+      //   si = "TTA";
+      //   break;
+      case 4:
+      input1.value = kur;
+        break;   
+    
+      default:
+        break;
+    }
+  });
 
 
   // deg1 = 60;
@@ -446,8 +474,8 @@
 
 // array[new Date().getMonth() + 1]= gold*kur; 
 // var one = parseInt(TTA.replace(".",""));
-// var two = parseInt(TUA.replace(".",""));
-// var trh = parseInt(TKM.replace(".",""));
+// var two = parseInt(bes.replace(".",""));
+// var trh = parseInt(fon.replace(".",""));
 // array4[new Date().getMonth() + 1]= one+two+trh; 
 
 // let canvas = document.getElementById('myCanvas');
