@@ -2,220 +2,250 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="icon" href="pics/logo1.png" type="image/x-icon" />
-  <link rel="apple-touch-icon" href="pics/logo1.png">
-  <link rel="shortcut icon" href="pics/logo1.png" type="image/x-icon" />
 </head>
 
-
 <style>
-
     *{
-        margin: 0px;
-        padding: 0px;
-        border: 0px;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    outline: none;
     }
-    #div1{
-        width: 80%; margin-left: 10%; margin-top: 4vw; 
+    .img{
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        user-select: none;
+        -webkit-user-select: none; /* Safari/iOS */
+        -ms-user-select: none;      /* Eski Edge/IE */
+        -webkit-touch-callout: none;/* iOS uzun basış menüsünü kapatır */
     }
-    #p1{
-        color: white; font-size: 4.2vw; text-align: center;
-    }
-    #pass{
-        width: 100%;  margin-top: 3vw; background-color: white; text-align: center;
-        color: rgb(58, 58, 58); 
-        height: 12vw;
-    }
-    #num{
-        width: 80%; margin-left: 10%;   margin-top: 25vw; visibility: hidden; display: flex; justify-content: space-around;
-    }
-    .num{
-        width: 32%;
-        display: inline-block;
-        /* height: 33%; */
-       
+    #img1{
+        width: 406px;
+        left: -65px;
+        top: -90px;
        
     }
-    .num2{
-        width: 100%;
-        /* height: 33%; */
-        
-      
+    #img2{
+        opacity: 0.8;
     }
-    .nums{
-        width: 25%;
-    }
-    .pass{
-        font-size: 10vw;
-       
-    }
-    .numt{
-        font-size: 15vw;
-        line-height: 20vw;
-        margin-top: 15%;
+    #input1{
+        font-size: 2vw;
+        border: 0.1vw solid black;
         text-align: center;
+        position: fixed;
+        z-index: 9;
+        width: 20%;
+        left: 40%;
+    }
+    #search{
+        
+        border: 0.1vw solid black;
+        text-align: center;
+        position: fixed;
+        z-index: 9;
+        width: 20%;
+        left: 40%;
+        margin-top: 2.3vw;
+        top: 0px;
+        background-color: rgb(0, 0, 0);
+    }
+    #swap{
+        color: white;  background-color: rgb(0, 0, 0); padding: 1vw; right: 0px;
+        position: absolute;
+        z-index: 9;
+        width: 2.3vw;
+        aspect-ratio: 1;
         border-radius: 100%;
-        width: 78%;
-        margin-left: 11%;
-        
-        background-color: rgb(196, 196, 196);
-    }
-    .numt2{
-        font-size: 15vw;
-        line-height: 20vw;
-        margin-top: 15%;
-        text-align: center;
-        color: rgb(196, 196, 196);
-        width: 78%;
-        margin-left: 11%;
-     
-    }
-    @media screen and (max-width:500px){
-        #div1{
-            width: 100%;
-            margin-left: 0px;
-        }
-        #p1{
-            font-size: 10vw;
-            margin-top: 15vw;
-        }
-        #pass{
-            font-size: 8vw;
-        }
-        #num{
-            visibility: visible;
-        }
-    }
-    ::-webkit-scrollbar{
-        display: none;
+        margin: 1vw;
+
+        user-select: none;
+        -webkit-user-select: none; /* Safari/iOS */
+        -ms-user-select: none;      /* Eski Edge/IE */
+        -webkit-touch-callout: none;/* iOS uzun basış menüsünü kapatır */
     }
 </style>
 
+<body id="body">
+    <div id="cont">
+        <img id="img1" draggable="false" class="img" style="z-index: 5;" src="pics/i30side.PNG" alt="">
+        <img id="img2" draggable="false" class="img" style="z-index: 4;" src="pics/opelcorsaside.png" alt="">
 
-<body style="background-color: rgb(0, 20, 0);">
+    </div>
+    
 
-    <div id="div1" >
-        <p id="p1" > </p>
-        <div id="pass">
-           <p class="pass">PASSCODE</p>
-        </div>
+    <div id="swap" ><p style="line-height: 2.3vw; text-align: center; font-size: 1.7vw; ">⇆</p></div>
+
+    <input id="input1" placeholder="Model Girin" type="text">
+    <div id="search">
+
     </div>
-    <div id="num">
-        <div class="num">
-            <label class="nums">
-                <p class="numt">1</p>
-            </label>
-            <label class="nums">
-                <p class="numt">4</p>
-            </label>
-            <label class="nums">
-                <p class="numt">7</p>
-            </label>
-        </div>
-        <div class="num">
-            <label class="nums">
-                <p class="numt">2</p>
-            </label>
-            <label class="nums">
-                <p class="numt">5</p>
-            </label>
-            <label class="nums">
-                <p class="numt">8</p>
-            </label>
-            <label class="nums">
-                <p class="numt">0</p>
-            </label>
-        </div>
-        <div class="num">
-            <label class="nums">
-                <p class="numt">3</p>
-            </label>
-            <label class="nums">
-                <p class="numt">6</p>
-            </label>
-            <label class="nums">
-                <p class="numt">9</p>
-            </label>
-            <label class="nums" id="delete">
-                <p class="numt2" >⌫</p>
-            </label>
-        </div>
-    </div>
+
+
     
 </body>
 
 <script>
+    //Companentler
+    const img1 = document.getElementById("img1");
+    const img2 = document.getElementById("img2");
+    const body = document.getElementById("body");
+    const swap = document.getElementById("swap");
+    const cont = document.getElementById("cont");
+    const input1 = document.getElementById("input1");
+    const search = document.getElementById("search");
+    //Companentler end
+    let arabalar = ["corsa","civic","cla", "i30","bmw320","brabus","mercedes a180","mercedes b160", "Audi"];
+    let sayilar = [4060, 4300, 30, 40];
 
-    var btns = document.querySelectorAll('.numt');
-    var pass = document.getElementById("pass");
-    var deleted = document.getElementById("delete");
-    var password = "s"
     
-    for (var i = 0; i < btns.length; i++) {
-        btns[i].onclick = text;            
-    }
-    var check = true;
-    function text(){
-       if(check){
-            check = false;
-            pass.innerHTML = "";
-       }
-       var btn = event.target;
-       
-       pass.innerHTML +="*";
-       password += btn.innerHTML;
-       console.log(password);
-       if(password.toString() == "s4416"){
-            pass.innerHTML="";
-            window.location = "https://atafahri.github.io/files.html"
-       }
-       else if(password.toString() == "s2580"){
-            pass.innerHTML="";
-            window.location = "https://atafahri.github.io/existence.html"
-       }
-       else if(password.toString() == "s1234"){
-            pass.innerHTML="";
-            window.location = "https://atafahri.github.io/index21.html"
-       }
-    }
-    deleted.onclick = function(){
-      //  console.log(parseInt(pass.innerHTML.length));
-     
-        var c = parseInt(pass.innerHTML.length);
-        pass.innerHTML = pass.innerHTML.substring(0, pass.innerHTML.length-1);
-        
-        
-        password= password.substring(0, password.length-1);
-        console.log(password);
-        if(password == ""){
-            //pass.innerHTML="Enter Your Passcode";
-            password = "s";            
+    var controller = false;
+
+   swap.onclick = function(){
+        if(controller){
+            img1.style.opacity = "1";
+            img1.style.zIndex = "5"
+
+            img2.style.opacity = "0.8";
+            img2.style.zIndex = "4"
+            controller = false;
         }
-    }
+        else{
+            img2.style.opacity = "1";
+            img2.style.zIndex = "5"
+
+            img1.style.opacity = "0.8";
+            img1.style.zIndex = "4"
+            controller = true;
+        }
+   }
+
+    var x1; // pencere içindeki X koordinatı
+    var drag = false;
+    var x2; // pencere içindeki X koordinatı
+    var lef;
+   img1.onmousedown = function(){
+        x1 = event.clientX; // pencere içindeki X koordinatı
+        lef = img1.offsetLeft
+        drag = true;
+
+   }
+   var heightcounter = 0,pcounter = 0;
+   input1.onkeyup = function(){
+    const key = event.key;
+            heightcounter = 0;
+            if(input1.value != ""){
+                search.innerHTML = "";
+                var valu = input1.value;
+                var len = valu.length;
+                for (let i = 0; i < arabalar.length; i++) {
+                        
+                var araba = arabalar[i];
+                if (!araba) continue;
+                araba = araba.substring(0,len);
+                if(valu == araba){
+                        
+                var yeniP = document.createElement("p");
+                yeniP.textContent = arabalar[i];
+                yeniP.style.color = "white"
+                search.appendChild(yeniP);
+                heightcounter++;
+                            
+                }
+            }
+        search.style.height = heightcounter*yeniP.offsetHeight + "px";
+        }
+        if(input1.value == ""){
+            search.innerHTML = "";
+            search.style.height = "0px";
+        }
+            
+                
+       
+        
+        
+   }
+   img1.onmouseup = function(){
+        drag = false;
+   }
+
+   var x11; // pencere içindeki X koordinatı
+    var drag1 = false;
+    var x22; // pencere içindeki X koordinatı
+    var lef1;
 
 
-    //ZOOM ENGELLEME
-    document.addEventListener('wheel', function(event) {
-    if (event.ctrlKey) {
-        event.preventDefault();
-    }
-    }, { passive: false });
+   img2.onmousedown = function(){
+        x11 = event.clientX; // pencere içindeki X koordinatı
+        lef1= img2.offsetLeft;
+        drag1 = true;
 
-    document.addEventListener('gesturestart', function(event) {
-    event.preventDefault();
-    });
-    document.addEventListener('gesturechange', function(event) {
-    event.preventDefault();
-    });
-    document.addEventListener('gestureend', function(event) {
-    event.preventDefault();
-    });
+   }
+   img2.onmouseup = function(){
+        drag1 = false;
+   }
+   cont.onmousemove = function(){
+        if(drag1){
+            x22 = event.clientX; // pencere içindeki X koordinatı
+                if(x11<x22){
+                    //sag kayiyor
+                    console.log("sag");
+                    var fark1 = x22 - x11; 
+                    img2.style.left = lef1 + fark1 +"px"; 
+                }
+                else if(x22<x11){
+                    //sol kayiyor
+                    console.log("sol");
+                    var fark1 = x22 - x11; 
+                    img2.style.left = lef1 + fark1 +"px"; 
+                }
+        }
+            x2 = event.clientX; // pencere içindeki X koordinatı
+        if(drag){
+            x2 = event.clientX; // pencere içindeki X koordinatı
+            if(x1<x2){
+                //sag kayiyor
+                console.log("sag");
+                console.log(lef);
+                var fark = x2 - x1; 
+                img1.style.left = lef + fark +"px"; 
+            }
+            else if(x2<x1){
+                //sol kayiyor
+                console.log("sol");
+                console.log(lef);
+                var fark = x2 - x1; 
+                img1.style.left = lef + fark +"px"; 
+            }
+        }
+   }
+
+   cont.onmouseup = function(){
+    drag1 = false;
+    drag = false;
+   }
 
 
 
+    var a = 668/578;
+    var a2 = 713/690;
+    var wid = body.offsetWidth;
+    var wid2 = sayilar[0]/sayilar[1]
+    wid = wid*7/10;
+    
+    wid2 = wid2*wid;
+    wid *= a;
+    wid2 *= a2;
+    console.log(wid2 + ' ' + wid)
 
+    img1.style.width = wid+"px";
+    img2.style.width = wid2+"px"; 
+
+
+
+    
 </script>
 
 </html>
