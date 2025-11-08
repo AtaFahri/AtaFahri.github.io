@@ -162,9 +162,9 @@
   </div>
 
   <div id="legend">   
-    <div class="alt"> <div  class="segment1 def"></div> <div style="width: 50%; height: 7vw; display: inline-block;"> <p id="segment1" class="txt">Altın %74</p>   </div>  </div>
-    <div class="alt"> <div  class="segment3 def"></div> <div style="width: 50%; height: 7vw; display: inline-block;"> <p id="segment3" class="txt">BES %70</p>     </div>  </div>
-    <div class="alt"> <div  class="segment2 def"></div> <div style="width: 50%; height: 7vw; display: inline-block;"> <p id="segment2" class="txt">Fon</p>     </div>  </div>
+    <div id="legend1" class="alt"> <div  class="segment1 def"></div> <div style="width: 50%; height: 7vw; display: inline-block;"> <p id="segment1" class="txt">Altın %74</p>   </div>  </div>
+    <div id="legend2" class="alt"> <div  class="segment3 def"></div> <div style="width: 50%; height: 7vw; display: inline-block;"> <p id="segment3" class="txt">BES %70</p>     </div>  </div>
+    <div id="legend3" class="alt"> <div  class="segment2 def"></div> <div style="width: 50%; height: 7vw; display: inline-block;"> <p id="segment2" class="txt">Fon</p>     </div>  </div>
     
     <!-- <div class="alt"> <div  class="segment4 def"></div> <div style="width: 50%; height: 7vw; display: inline-block;"> <p id="segment4" class="txt">TTA %70</p>     </div>  </div>    -->
     
@@ -192,29 +192,11 @@
   <div id="vis" style=" width: 100%;  height: 100%; position: fixed; background-color: rgb(2, 0, 48); top: 0px; transition: 0.5s; margin-left: -100%;">
     <center style="width: 100%;"> <div class="custom-select" style="width:100%; overflow: hidden; ">
      <button id="close" style="float: inline-end; background-color: transparent;border: none; outline: none; color: white; margin-top: 10vw; font-size: 6vw;">X</button>
-     <input placeholder="ENTER A VALUE" style="font-size: 8vw; margin-top: 20vw; width: 100%; text-align: center; border-radius: 0px;" type="number" id="input1">    
-     <select style="font-size: 6vw; margin-top: 1vw; width: 100%; text-align: center; border-radius: 0px;" id="select">
-           <option value="0">MAKE A CHOICE</option>
-           <option value="1">Altın</option>
-           <option value="2">Fon </option>
-           <option value="3">BES</option>
-           <!-- <option value="4">TTA Altın</option> -->
-           <option value="4">KUR</option>
-           <!-- <option value="6">OCAK</option>
-           <option value="7">ŞUBAT</option>
-           <option value="8">MART</option>
-           <option value="9">NİSAN</option>
-           <option value="10">MAYIS</option>
-           <option value="11">HAZİRAN</option>
-           <option value="12">TEMMUZ</option>
-           <option value="13">AĞUSTOS</option>
-           <option value="14">EYLÜL</option>
-           <option value="15">EKİM</option>
-           <option value="16">KASIM</option>
-           <option value="17">ARALIK</option> -->
- 
-         </select>
-         <!-- <button style="font-size: 8vw; margin-top:80vw; width: 25%; aspect-ratio: 1; border-radius: 100%;" id="downloadPDF">💾</button> -->
+     <label id="deger" style="color: white; font-size: 10vw; display: block; margin-top: 20vw;">KUR</label>  
+     <input placeholder="ENTER A VALUE" style="font-size: 12vw;  width: 100%; text-align: center; border-radius: 0px;" type="number" id="input1">    
+     <label style="color: white; font-size: 8vw; display: block; margin-top: 5vw;">KUR</label>  
+     <input placeholder="ENTER A VALUE" style="font-size: 10vw;  width: 100%; text-align: center; border-radius: 0px;" type="number" id="input2">  
+      
          <button style="font-size: 8vw; margin-top:80vw; width: 25%; aspect-ratio: 1; border-radius: 100%;" id="calc">💾</button></center>
      </div>    
    </div>
@@ -225,15 +207,19 @@
 
   var donut = document.getElementById("donut");
   var input1 = document.getElementById("input1");
+  var deger = document.getElementById("deger");
+  var input2 = document.getElementById("input2");
   var body = document.getElementById("body");
   var calc = document.getElementById("calc");
   var clos = document.getElementById("close");
-  var select = document.getElementById("select");
+  // var select = document.getElementById("select");
   var altin = document.getElementById("altin");
   var fonn = document.getElementById("fon");
   var bess = document.getElementById("bes");
   // var tta = document.getElementById("tta");
-  var legend = document.getElementById("legend");
+  var legend1 = document.getElementById("legend1");
+  var legend2 = document.getElementById("legend2");
+  var legend3 = document.getElementById("legend3");
   var vis = document.getElementById("vis");
   var toplama = document.getElementById("toplam");
   
@@ -253,9 +239,32 @@
   console.log(document.cookie);
   getcookie();
 
-  legend.onclick = function(){
+  legend1.onclick = function(){
     vis.style.marginLeft = "0px";
+    input1.value = gold;
+    input2.value = kur;
+    deger.innerHTML = "Altın";
+    input1.focus();
+    si = "gold";
   }
+  legend2.onclick = function(){
+    vis.style.marginLeft = "0px";
+    input1.value = bes;
+    deger.innerHTML = "BES";
+    input2.value = kur;
+    input1.focus();
+    si = "bes";
+  }
+  legend3.onclick = function(){
+    vis.style.marginLeft = "0px";
+    input1.value = fon;
+    deger.innerHTML = "Fon";
+    input2.value = kur;
+    input1.focus();
+    si = "fon";
+  }
+
+
   clos.onclick = function(){
     vis.style.marginLeft = "-100%";
   }
@@ -349,38 +358,39 @@
 
     
   }
-  
+  var si;
   calc.onclick = function(){
-    var si;
-    switch (select.selectedIndex) {
-      case 1:
-        si = "gold";
-        break;
-      case 2:
-        si = "fon";
-        break;
-      case 3:
-        si = "bes";
-        break;  
-      // case 4:
-      //   si = "TTA";
-      //   break;
-      case 4:
-        si = "KUR";
-        break;   
+   
+    // switch (select.selectedIndex) {
+    //   case 1:
+    //     si = "gold";
+    //     break;
+    //   case 2:
+    //     si = "fon";
+    //     break;
+    //   case 3:
+    //     si = "bes";
+    //     break;  
+    //   // case 4:
+    //   //   si = "TTA";
+    //   //   break;
+    //   case 4:
+    //     si = "KUR";
+    //     break;   
     
-      default:
-        break;
-    }
-   setcookie(si,input1.value);  
+    //   default:
+    //     break;
+    // }
+   setcookie(si,input1.value,input2.value);  
    vis.style.marginLeft = "-100%"; 
   //  graph();
   }
   console.log(document.cookie);
 
 
-  function setcookie(type,valu){
+  function setcookie(type,valu,value2){
     var kuki = document.cookie;
+    valu=valu.replace(".","");
     var spkuki = kuki.split(" ");
     var old;
     for (let index = 0; index < spkuki.length; index++) {
@@ -391,41 +401,23 @@
       
     }
     document.cookie = type+ "="+ old+" path=/; expires=Thu, 31 Dec 2020 23:59:59 UTC";
-    document.cookie = type+ "="+ valu+"; path=/; expires=Thu, 31 Dec 2026 23:59:59 UTC";
+    document.cookie = type+ "="+ valu+"; path=/; expires=Thu, 31 Dec 2029x   23:59:59 UTC";
+
+    console.log(type+' '+valu+' '+value2);
+
+    document.cookie = "KUR="+ kur+" path=/; expires=Thu, 31 Dec 2020 23:59:59 UTC";
+    document.cookie = "KUR="+ value2+"; path=/; expires=Thu, 31 Dec 2029x   23:59:59 UTC";
     console.log(document.cookie);
     getcookie();
     
   }
-  select.addEventListener("change", function () {
+  
 
-    switch (select.selectedIndex) {
-      case 1:
-      input1.value = gold;
-        break;
-      case 2:
-      input1.value = fon;
-        break;
-      case 3:
-      input1.value = bes;
-        break;  
-      // case 4:
-      //   si = "TTA";
-      //   break;
-      case 4:
-      input1.value = kur;
-        break;   
-    
-      default:
-        break;
-    }
-     setTimeout(() => {
-    // İsteğe bağlı: select’ten odağı al
-    select.blur();
 
-    // Kaydırma odak yüzünden sekmesin diye:
-    input1.focus({ preventScroll: true });
-  }, 50);
-  });
+
+
+
+
 
 
   // deg1 = 60;
