@@ -396,9 +396,6 @@
     getcookie();
     
   }
-  select.onselect = function(){
-    alert();
-  }
   select.addEventListener("change", function () {
 
     switch (select.selectedIndex) {
@@ -421,7 +418,15 @@
       default:
         break;
     }
-    input1.focus();
+    setTimeout(() => {
+    // İsteğe bağlı: select’ten odağı al
+    select.blur();
+
+    // Kaydırma odak yüzünden sekmesin diye:
+    input1.focus({ preventScroll: true });
+    // Kullanıcı direkt yazabilsin istersen:
+    input1.select();
+  }, 50);
   });
 
 
