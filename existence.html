@@ -418,14 +418,12 @@
       default:
         break;
     }
-    setTimeout(() => {
+     setTimeout(() => {
     // İsteğe bağlı: select’ten odağı al
     select.blur();
 
     // Kaydırma odak yüzünden sekmesin diye:
     input1.focus({ preventScroll: true });
-    // Kullanıcı direkt yazabilsin istersen:
-    input1.select();
   }, 50);
   });
 
