@@ -1,221 +1,593 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Document</title>
-    <link rel="icon" href="pics/logo1.png" type="image/x-icon" />
+  <title>existence</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet">
+  <link rel="icon" href="pics/logo1.png" type="image/x-icon" />
   <link rel="apple-touch-icon" href="pics/logo1.png">
   <link rel="shortcut icon" href="pics/logo1.png" type="image/x-icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-
-
 <style>
+*{
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    outline: none;
+}
 
-    *{
-        margin: 0px;
-        padding: 0px;
-        border: 0px;
-    }
-    #div1{
-        width: 80%; margin-left: 10%; margin-top: 4vw; 
-    }
-    #p1{
-        color: white; font-size: 4.2vw; text-align: center;
-    }
-    #pass{
-        width: 100%;  margin-top: 3vw; background-color: white; text-align: center;
-        color: rgb(58, 58, 58); 
-        height: 12vw;
-    }
-    #num{
-        width: 80%; margin-left: 10%;   margin-top: 25vw; visibility: hidden; display: flex; justify-content: space-around;
-    }
-    .num{
-        width: 32%;
-        display: inline-block;
-        /* height: 33%; */
-       
-       
-    }
-    .num2{
-        width: 100%;
-        /* height: 33%; */
-        
-      
-    }
-    .nums{
-        width: 25%;
-    }
-    .pass{
-        font-size: 10vw;
-       
-    }
-    .numt{
-        font-size: 15vw;
-        line-height: 20vw;
-        margin-top: 15%;
-        text-align: center;
-        border-radius: 100%;
-        width: 78%;
-        margin-left: 11%;
-        
-        background-color: rgb(196, 196, 196);
-    }
-    .numt2{
-        font-size: 15vw;
-        line-height: 20vw;
-        margin-top: 15%;
-        text-align: center;
-        color: rgb(196, 196, 196);
-        width: 78%;
-        margin-left: 11%;
-     
-    }
-    @media screen and (max-width:500px){
-        #div1{
-            width: 100%;
-            margin-left: 0px;
-        }
-        #p1{
-            font-size: 10vw;
-            margin-top: 15vw;
-        }
-        #pass{
-            font-size: 8vw;
-        }
-        #num{
-            visibility: visible;
-        }
-    }
-    ::-webkit-scrollbar{
-        display: none;
-    }
-</style>
+::-webkit-scrollbar {
+    display: none;
+}
 
-
-<body style="background-color: rgb(0, 20, 0);">
-
-    <div id="div1" >
-        <p id="p1" > </p>
-        <div id="pass">
-           <p class="pass">PASSCODE</p>
-        </div>
-    </div>
-    <div id="num">
-        <div class="num">
-            <label class="nums">
-                <p class="numt">1</p>
-            </label>
-            <label class="nums">
-                <p class="numt">4</p>
-            </label>
-            <label class="nums">
-                <p class="numt">7</p>
-            </label>
-        </div>
-        <div class="num">
-            <label class="nums">
-                <p class="numt">2</p>
-            </label>
-            <label class="nums">
-                <p class="numt">5</p>
-            </label>
-            <label class="nums">
-                <p class="numt">8</p>
-            </label>
-            <label class="nums">
-                <p class="numt">0</p>
-            </label>
-        </div>
-        <div class="num">
-            <label class="nums">
-                <p class="numt">3</p>
-            </label>
-            <label class="nums">
-                <p class="numt">6</p>
-            </label>
-            <label class="nums">
-                <p class="numt">9</p>
-            </label>
-            <label class="nums" id="delete">
-                <p class="numt2" >⌫</p>
-            </label>
-        </div>
-    </div>
+  #donut {    
+    width: 40%;
+    margin-left: 2%;
+    margin-top: 2vw;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 0.1vww solid white;
+    /* display: flex; */
     
+    display: inline-block;
+    
+  } 
+
+  
+  #can{
+  
+    width: 100%;
+    height: auto;
+    margin-top: 1vw;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  #legend {     
+    margin-top: 30px;
+    margin-left: 5vw;   
+    width: 45%;
+    float: right;
+  }
+  .txt{
+    font-size: 3.5vw;
+    color: white;
+    position: absolute;
+    display: inline-block;    
+    text-align: center;
+    line-height: 5vw;
+    margin-left: 1%;
+    display: inline-block;
+  }
+  .lb{
+    font-size: 3.3vw; text-align: center; font-family: Arial, Helvetica, sans-serif;
+    margin-top: 0.9vw; margin-left: 1vw;
+    width: 100%;
+  }
+
+  .def{
+    background-color: #fff;
+    width: 10%;    
+    
+    display: inline-block;
+    aspect-ratio: 1;    
+  }
+  
+  @media screen and (max-width:600px) {
+      .alt{
+      display: inline-block;
+      width: 31%;
+      margin-left: 1vw;
+    }  
+      #donut {    
+      width: 90%;
+      margin-left: 5%;
+      margin-top: 3vw;
+      margin-bottom: 2.3vw;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background-color: red;
+      /* display: flex; */
+      align-items: center;
+      justify-content: center;
+    } 
+    .def{
+      background-color: #fff;
+      width: 20%;
+      margin-left: 3vw;
+      display: inline-block;
+    }
+    #donut::before {
+      content: "";
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      background: #fff;
+    }
+    #can{
+    
+      width: 100%;
+      height: auto;
+      margin-top: 1vw;
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+    #legend {      
+      margin-top: 30px;
+      width: 100%;
+      margin-left: 5vw;
+    }
+    .txt{
+      font-size: 5vw;
+      color: white;
+      line-height: 5vw;
+      text-align: center;
+      margin-left: 1vw;
+      display: inline-block;
+      position: relative;
+    }
+    .lb{
+        font-size: 8vw; text-align: center; font-family: Arial, Helvetica, sans-serif;
+        margin-top: 2vw; margin-left: 2vw;
+      }
+      .lb2{
+        font-size: 8vw; text-align: center; font-family: Arial, Helvetica, sans-serif;
+        margin-top: 1vw;         
+      }
+
+  }
+
+  /* (C2) SEGMENTS */  
+  .segment1 { background: #ffdf00; margin-bottom: 2vw;} 
+  .segment2 { background: #705CF6; margin-bottom: 2vw;}
+  .segment3 { background: #fd3b00; margin-bottom: 2vw;}
+  /* .segment4 { background: #fd3b00; margin-bottom: 2vw;} */
+
+
+
+
+</style>
+<body id="body" style="background-color: rgb(0, 0, 0);">
+
+  <div id="pdfcontent" style="background-color: rgb(1, 0, 20);">  
+<div style="background-color: #002736; width: 90%; margin-left: 5%; border-radius: 8vw;  margin-top: 4vw; ">
+  <div id="donut">
+    <div style="width: 80%; margin-left: 10%; background-color: rgb(1, 0, 20); border-radius: 100%; margin-top: 10%; float: left; aspect-ratio: 1;">
+       <div style="width: 50%;  margin-left: 22%; margin-top: 29%; aspect-ratio: 1; font-size: 2vw; ">
+            <div style="display: block; width: 100%;" ><p class="lb" style="color: #ffdf00;" id="altin">5000</p></div>
+            <div style="display: block; width: 100%;" ><p class="lb" style=" color: #fd3b00;" id="bes">5000</p> </div>
+            <div style="display: block; width: 100%;" ><p class="lb" style="   color: #705CF6;" id="fon">5000</p> </div>
+
+
+
+            <!-- <div style="display: block; width: 100%;" ><p class="lb" style="color: #fd3b00;" id="tta">5000</p> </div> -->
+       </div>
+    </div>
+  </div>
+</div>
+  
+
+  <div id="legend">   
+    <div id="legend1" class="alt"> <div  class="segment1 def"></div> <div style="width: 50%; height: 7vw; display: inline-block;"> <p id="segment1" class="txt">Altın %74</p>   </div>  </div>
+    <div id="legend2" class="alt"> <div  class="segment3 def"></div> <div style="width: 50%; height: 7vw; display: inline-block;"> <p id="segment3" class="txt">BES %70</p>     </div>  </div>
+    <div id="legend3" class="alt"> <div  class="segment2 def"></div> <div style="width: 50%; height: 7vw; display: inline-block;"> <p id="segment2" class="txt">Fon</p>     </div>  </div>
+    
+    <!-- <div class="alt"> <div  class="segment4 def"></div> <div style="width: 50%; height: 7vw; display: inline-block;"> <p id="segment4" class="txt">TTA %70</p>     </div>  </div>    -->
+    
+    <p style="border-bottom: 1vw solid white; width: 100%; text-align: center; font-size: 12vw; margin-top: 2vw; font-family: Arial, Helvetica, sans-serif; color: white;" id="toplam">120000</p>
+    
+    <hr>     
+  </div>
+
+<!-- <p style="width: 100%; color: white; font-size: 4vw; white-space: pre; float: left; margin-top: 2vw;">   1       2      3      4       5      6      7       8      9     10     11    12</p > -->
+
+
+  
+
+ 
+
+  <div id="can">    
+    <canvas id="myCanvas"   style=" width: 100%; height: 99px; "></canvas>
+  </div>
+
+</div>
+  
+
+
+
+  <div id="vis" style=" width: 100%;  height: 100%; position: fixed; background-color: rgb(2, 0, 48); top: 0px; transition: 0.5s; margin-left: -100%;">
+    <center style="width: 100%;"> <div class="custom-select" style="width:100%; overflow: hidden; ">
+     <button id="close" style="float: inline-end; background-color: transparent;border: none; outline: none; color: white; margin-top: 10vw; font-size: 6vw;">X</button>
+     <label id="deger" style="color: white; font-size: 10vw; display: block; margin-top: 20vw;">KUR</label>  
+     <input placeholder="ENTER A VALUE" style="font-size: 12vw;  width: 100%; text-align: center; border-radius: 0px;" type="number" id="input1">    
+     <label style="color: white; font-size: 8vw; display: block; margin-top: 5vw;">KUR</label>  
+     <input placeholder="ENTER A VALUE" style="font-size: 10vw;  width: 100%; text-align: center; border-radius: 0px;" type="number" id="input2">  
+      
+         <button style="font-size: 8vw; margin-top:60vw; width: 25%; aspect-ratio: 1; border-radius: 100%;" id="calc">💾</button></center>
+     </div>    
+   </div>
+
 </body>
 
 <script>
 
-    var btns = document.querySelectorAll('.numt');
-    var pass = document.getElementById("pass");
-    var deleted = document.getElementById("delete");
-    var password = "s"
+  var donut = document.getElementById("donut");
+  var input1 = document.getElementById("input1");
+  var deger = document.getElementById("deger");
+  var input2 = document.getElementById("input2");
+  var body = document.getElementById("body");
+  var calc = document.getElementById("calc");
+  var clos = document.getElementById("close");
+  // var select = document.getElementById("select");
+  var altin = document.getElementById("altin");
+  var fonn = document.getElementById("fon");
+  var bess = document.getElementById("bes");
+  // var tta = document.getElementById("tta");
+  var legend1 = document.getElementById("legend1");
+  var legend2 = document.getElementById("legend2");
+  var legend3 = document.getElementById("legend3");
+  var vis = document.getElementById("vis");
+  var toplama = document.getElementById("toplam");
+  
+  var segment1 = document.getElementById("segment1");
+  var segment2 = document.getElementById("segment2");
+  var segment3 = document.getElementById("segment3");
+  // var segment4 = document.getElementById("segment4");
+
+
+
+  var counter = 0;
+  var toplam;
+  var sonuc;
+  var deg1 = 0,deg2 = 0,deg3 = 0;
+  var kur = 3100;
+  var gold = 0,fon = 0,bes = 0;
+  console.log(document.cookie);
+  getcookie();
+
+  legend1.onclick = function(){
+    vis.style.marginLeft = "0px";
+    input1.value = gold;
+    input2.value = kur;
+    deger.innerHTML = "Altın";
+    input1.focus();
+    si = "gold";
+  }
+  legend2.onclick = function(){
+    vis.style.marginLeft = "0px";
+    input1.value = bes;
+    deger.innerHTML = "BES";
+    input2.value = kur;
+    input1.focus();
+    si = "bes";
+  }
+  legend3.onclick = function(){
+    vis.style.marginLeft = "0px";
+    input1.value = fon;
+    deger.innerHTML = "Fon";
+    input2.value = kur;
+    input1.focus();
+    si = "fon";
+  }
+
+
+  clos.onclick = function(){
+    vis.style.marginLeft = "-100%";
+  }
+ 
+  function getcookie(type,valu){
+    var kuki = document.cookie;
+    var spkuki = kuki.split(" ");
+    //console.log(spkuki); 
+    for (let index = 0; index < spkuki.length; index++) {
+      var spp = spkuki[index].split("=");
+      try {
+        spp[1]=spp[1].replace(";","");
+      } catch (error) {
+        
+      }
+      
+      spp[1]=parseInt(spp[1])
+      switch (spp[0]) {
+        case "KUR":
+          kur = spp[1];
+          break;
+        case "gold":
+          gold = spp[1];
+          break;
+        case "fon":
+          fon = spp[1];
+          break;
+        case "bes":
+          bes = spp[1];
+          break;
+        // case "TTA":
+        //   TTA = spp[1];
+        //   break;
+      
+        default:
+          break;
+      }
+    }
+
+
+
+    var value1 = 86800,value2 = 5000,value3 = 20000,value4 = 10000;
+    var goldd = gold*kur;
+    toplam = goldd+fon+bes;
+    sonuc = 360/toplam;  
     
-    for (var i = 0; i < btns.length; i++) {
-        btns[i].onclick = text;            
+    // console.log(toplam);       
+    // console.log(goldd);
+    // console.log(fon);
+    // console.log(bes);
+    // console.log(tta);      
+    toplam = toplam.toLocaleString('de-DE');
+    toplama.innerHTML = toplam+"₺"
+    deg1 = sonuc*goldd;
+    deg2 = sonuc*fon + deg1;
+    deg3 = sonuc*bes + deg2;
+    donut.style.background =  "conic-gradient(#ffdf00 0deg "+deg1 +"deg, #705CF6 "+deg1+"deg "+deg2+"deg, #fd3b00 "+deg2+"deg 360deg)";
+    
+    var deg4 = 360-deg3; 
+    deg3-=deg2;
+    deg2 -= deg1;
+    
+    var degree = deg1/3.6;
+    degree = Math.round(degree * 10) / 10;    
+    segment1.innerText = "Altın"+" "+"%"+degree.toString();
+    
+    degree = deg2/3.6
+    degree = Math.round(degree * 10) / 10;;
+    segment2.innerText = "Fon"+" "+"%"+degree.toString();
+    
+    degree = deg3/3.6
+    degree = Math.round(degree * 10) / 10;
+    segment3.innerText = "BES"+" "+"%"+degree.toString();
+    
+    // degree = deg4/3.6
+    // degree = Math.round(degree * 10) / 10;
+    // segment4.innerText = "TTA"+" "+"%"+degree.toString();
+    
+
+
+
+    goldd = goldd.toLocaleString('de-DE');
+    fon = fon.toLocaleString('de-DE');
+    bes = bes.toLocaleString('de-DE');
+    // TTA = TTA.toLocaleString('de-DE');
+    altin.innerHTML = goldd +"₺";
+    fonn.innerHTML = fon +"₺";
+    bess.innerHTML = bes +"₺";
+    // tta.innerHTML = TTA +"₺"; 
+
+
+    
+  }
+  var si;
+  calc.onclick = function(){
+   
+    // switch (select.selectedIndex) {
+    //   case 1:
+    //     si = "gold";
+    //     break;
+    //   case 2:
+    //     si = "fon";
+    //     break;
+    //   case 3:
+    //     si = "bes";
+    //     break;  
+    //   // case 4:
+    //   //   si = "TTA";
+    //   //   break;
+    //   case 4:
+    //     si = "KUR";
+    //     break;   
+    
+    //   default:
+    //     break;
+    // }
+   setcookie(si,input1.value,input2.value);  
+   vis.style.marginLeft = "-100%"; 
+  //  graph();
+  }
+  console.log(document.cookie);
+
+
+  function setcookie(type,valu,value2){
+    var kuki = document.cookie;
+    valu=valu.replace(".","");
+    var spkuki = kuki.split(" ");
+    var old;
+    for (let index = 0; index < spkuki.length; index++) {
+      var spp = spkuki[index].split("=");
+      if(spp[0] == type){
+        old = spp[1];
+      }
+      
     }
-    var check = true;
-    function text(){
-       if(check){
-            check = false;
-            pass.innerHTML = "";
-       }
-       var btn = event.target;
-       
-       pass.innerHTML +="*";
-       password += btn.innerHTML;
-       console.log(password);
-       if(password.toString() == "s4416"){
-            pass.innerHTML="";
-            window.location = "https://atafahri.github.io/files.html"
-       }
-       else if(password.toString() == "s2580"){
-            pass.innerHTML="";
-            window.location = "https://atafahri.github.io/existence.html"
-       }
-       else if(password.toString() == "s1234"){
-            pass.innerHTML="";
-            window.location = "https://atafahri.github.io/index21.html"
-       }
-    }
-    deleted.onclick = function(){
-      //  console.log(parseInt(pass.innerHTML.length));
-     
-        var c = parseInt(pass.innerHTML.length);
-        pass.innerHTML = pass.innerHTML.substring(0, pass.innerHTML.length-1);
-        
-        
-        password= password.substring(0, password.length-1);
-        console.log(password);
-        if(password == ""){
-            //pass.innerHTML="Enter Your Passcode";
-            password = "s";            
-        }
-    }
+    document.cookie = type+ "="+ old+" path=/; expires=Thu, 31 Dec 2020 23:59:59 UTC";
+    document.cookie = type+ "="+ valu+"; path=/; expires=Thu, 31 Dec 2029x   23:59:59 UTC";
 
+    console.log(type+' '+valu+' '+value2);
 
-    //ZOOM ENGELLEME
-    document.addEventListener('wheel', function(event) {
-    if (event.ctrlKey) {
-        event.preventDefault();
-    }
-    }, { passive: false });
-
-    document.addEventListener('gesturestart', function(event) {
-    event.preventDefault();
-    });
-    document.addEventListener('gesturechange', function(event) {
-    event.preventDefault();
-    });
-    document.addEventListener('gestureend', function(event) {
-    event.preventDefault();
-    });
+    document.cookie = "KUR="+ kur+" path=/; expires=Thu, 31 Dec 2020 23:59:59 UTC";
+    document.cookie = "KUR="+ value2+"; path=/; expires=Thu, 31 Dec 2029x   23:59:59 UTC";
+    console.log(document.cookie);
+    getcookie();
+    
+  }
+  
 
 
 
+
+
+
+
+
+  // deg1 = 60;
+  // deg2 = 190;
+  // deg3 = 250;
+  //donut.style.background =  "conic-gradient(#e9a239 0deg "+deg1 +"deg, #1ddb4f "+deg1+"deg "+deg2+"deg, #e9a239 "+deg2+"deg "+deg3+"deg, #fd3b00 "+deg3+"deg 360deg)";
+
+
+ // donut.style.background =  "conic-gradient(#e9a239 0deg 60deg, #1ddb4f 60deg 190deg, #e9a239 190deg 250deg,orange 250deg 310deg,#fd3b00 250deg 360deg)";
+
+ //goldapi-112sql19m5zty9o6-io
+
+
+
+//  input1.addEventListener("input", function(event) {
+//     let value = input1.value;
+
+//     // Sayıya sadece rakamları ve virgül/ noktayı kabul ediyoruz
+//     value = value.replace(/[^0-9]/g, ''); // Tüm harfleri sileriz
+    
+//     // Sayıyı formatlayıp, tekrar input alanına yazarız
+//     const formattedValue = formatNumber(value);
+//     input1.value = formattedValue;
+//   });
+
+//   // Sayıyı binlik ayracı ile formatlama fonksiyonu
+//   function formatNumber(value) {
+//     if (value === "") return "";
+
+//     return Number(value)
+//       .toLocaleString('tr-TR'); // 'tr-TR' formatıyla binlik ayraç kullanılır
+//   }
+
+
+
+
+
+
+//GRAFİK
+
+// graph();
+// function graph(){
+// console.log("--------------GRAFİK--------------");
+
+// var array = ["66000","123000","134550","182400","202400","252400","252400","252400","252400","252400"];//ALTIN
+// //var array = ["66000","103000","134550"];//ALTIN Gerçek değerler
+// var array4 = ["0","15000","20000","35000","35000","40000"];//FON
+
+
+
+// array[new Date().getMonth() + 1]= gold*kur; 
+// var one = parseInt(TTA.replace(".",""));
+// var two = parseInt(bes.replace(".",""));
+// var trh = parseInt(fon.replace(".",""));
+// array4[new Date().getMonth() + 1]= one+two+trh; 
+
+// let canvas = document.getElementById('myCanvas');
+// canvas.width = canvas.offsetWidth;  // CSS genişliği kullanarak
+// canvas.height = canvas.offsetHeight;  // CSS yüksekliği kullanarak
+// let ctx = canvas.getContext('2d');  // 2D bağlamı alıyoruz
+// var wide = canvas.offsetWidth/12;
+// wide = parseInt(wide);
+// for(var i = 0; i < array.length; i++){
+//   drawing(array[i],array[i+1],i);
+// }
+
+// // for(var i = 0; i < array2.length; i++){
+// //   drawing2(array2[i],array2[i+1],i);
+// // }
+// // for(var i = 0; i < array2.length; i++){
+// //   drawing3(array3[i],array3[i+1],i);
+// // }
+// for(var i = 0; i < array4.length; i++){
+//   drawing4(array4[i],array4[i+1],i);
+// }
+
+// ctx.strokeStyle = "grey"; 
+
+// ctx.beginPath();
+// ctx.lineWidth = 2;  
+// ctx.moveTo(0, 0); 
+// ctx.lineTo(canvas.offsetWidth, 0);
+// ctx.stroke(); 
+
+
+
+// ctx.beginPath();
+// ctx.lineWidth = 1;  
+// ctx.moveTo(0, canvas.offsetHeight/3); 
+// ctx.lineTo(canvas.offsetWidth, canvas.offsetHeight/3);
+// ctx.stroke(); 
+
+
+// ctx.beginPath();
+// ctx.lineWidth = 1;  
+// ctx.moveTo(0, canvas.offsetHeight*2/3); 
+// ctx.lineTo(canvas.offsetWidth, canvas.offsetHeight*2/3);
+// ctx.stroke(); 
+
+
+// ctx.beginPath();
+// ctx.lineWidth = 2;  
+// ctx.moveTo(0, canvas.offsetHeight); 
+// ctx.lineTo(canvas.offsetWidth,  canvas.offsetHeight);
+// ctx.stroke(); 
+
+// for(let i = 1; i<12; i++){
+//   ctx.strokeStyle = "white"; 
+//   ctx.beginPath();
+//   ctx.lineWidth = 1;  
+//   ctx.moveTo(canvas.offsetWidth*i/12, canvas.offsetHeight); 
+//   ctx.lineTo(canvas.offsetWidth*i/12, 0);
+//   ctx.stroke(); 
+// }
+
+
+
+
+
+// function drawing(value1,value2,count,color){
+
+  
+//   value1/=6000;  
+//   value2/=6000;
+//   // console.log(value1);
+//   var count2 = count+1
+//   ctx.strokeStyle = "#ffdf00";
+//   ctx.beginPath();
+//   ctx.lineWidth = 2;  
+//   count *= wide;  
+//   count2 *=wide;
+//   ctx.moveTo(count, canvas.offsetHeight-value1); // Başlangıç noktası
+//   ctx.lineTo(count2, canvas.offsetHeight-value2); // Bitiş noktası  
+//   ctx.stroke();    
+  
+// }
+
+
+
+// function drawing4(value1,value2,count){
+//   value1/=1000;  
+//   value2/=1000;
+//   // console.log(value1);
+//   var count2 = count+1
+//   ctx.strokeStyle = "#6622f8"; 
+//   ctx.beginPath();
+//   ctx.lineWidth = 2;  
+//   count *= wide;  
+//   count2*=wide;
+//   ctx.moveTo(count, canvas.offsetHeight-value1); // Başlangıç noktası
+//   ctx.lineTo(count2, canvas.offsetHeight-value2); // Bitiş noktası  
+//   ctx.stroke(); 
+// }
+
+
+
+
+// }
+
+// // Basit bir çizgi çizin
+// console.log("----------------------------")
 
 </script>
+
+
+
 
 </html>
