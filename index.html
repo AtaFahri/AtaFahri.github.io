@@ -216,5 +216,16 @@
     document.addEventListener('gestureend', function (event) {
         event.preventDefault();
     });
+
+
+    let lastTap = 0;
+
+    document.addEventListener('touchend', function (event) {
+        const now = Date.now();
+        if (now - lastTap < 300) {
+            event.preventDefault();
+        }
+        lastTap = now;
+    }, { passive: false });
 </script>
 </html>
