@@ -272,40 +272,24 @@
     vis.style.marginLeft = "-100%";
   }
  
-  function getcookie(type,valu){
-    var kuki = document.cookie;
-    var spkuki = kuki.split(" ");
-    //console.log(spkuki); 
-    for (let index = 0; index < spkuki.length; index++) {
-      var spp = spkuki[index].split("=");
-      try {
-        spp[1]=spp[1].replace(";","");
-      } catch (error) {
-        
-      }
-      
-      spp[1]=parseInt(spp[1])
-      switch (spp[0]) {
-        case "KUR":
-          kur = spp[1];
-          break;
-        case "gold":
-          gold = spp[1];
-          break;
-        case "fon":
-          fon = spp[1];
-          break;
-        case "bes":
-          bes = spp[1];
-          break;
-        // case "TTA":
-        //   TTA = spp[1];
-        //   break;
-      
-        default:
-          break;
-      }
+  function getcookie() {
+  var kuki = document.cookie;        // "KUR=123; gold=50; fon=0"
+  var spkuki = kuki.split(";");      // ["KUR=123", " gold=50", " fon=0"]
+
+  for (let index = 0; index < spkuki.length; index++) {
+    var pair = spkuki[index].trim().split("=");
+    var key = pair[0];
+    var value = parseInt((pair[1] || "0").replace(";", ""));
+
+    switch (key) {
+      case "KUR":  kur = value; break;
+      case "gold": gold = value; break;
+      case "fon":  fon = value; break;
+      case "bes":  bes = value; break;
     }
+  }
+
+  // devamı senin hesaplar...
 
 
 
@@ -391,29 +375,23 @@
   console.log(document.cookie);
 
 
-  function setcookie(type,valu,value2){
-    var kuki = document.cookie;
-    valu=valu.replace(".","");
-    var spkuki = kuki.split(" ");
-    var old;
-    for (let index = 0; index < spkuki.length; index++) {
-      var spp = spkuki[index].split("=");
-      if(spp[0] == type){
-        old = spp[1];
-      }
-      
-    }
-    document.cookie = type+ "="+ old+" path=/; expires=Thu, 31 Dec 2020 23:59:59 UTC";
-    document.cookie = type+ "="+ valu+"; path=/; eexpires=Mon, 1 Jan 2100 00:00:00 GMT";
+  function setcookie(type, valu, value2) {
+    // sayıysa stringe çevir, noktaları kaldır
+    valu = String(valu).replace(/\./g, "");
 
-    console.log(type+' '+valu+' '+value2);
+    // Önce eski cookie'yi sil
+    document.cookie = type + "=; path=/; expires=Thu, 31 Dec 2020 23:59:59 GMT";
 
-    document.cookie = "KUR="+ kur+" path=/; expires=Thu, 31 Dec 2020 23:59:59 UTC";
-    document.cookie = "KUR="+ value2+"; path=/; expires=Mon, 1 Jan 2100 00:00:00 GMT";
+    // Yeni değeri uzun süreli kaydet
+    document.cookie = type + "=" + valu + "; path=/; expires=Mon, 01 Jan 2100 00:00:00 GMT";
+
+    // KUR için de aynı işlemi yap
+    document.cookie = "KUR=; path=/; expires=Thu, 31 Dec 2020 23:59:59 GMT";
+    document.cookie = "KUR=" + value2 + "; path=/; expires=Mon, 01 Jan 2100 00:00:00 GMT";
+
     console.log(document.cookie);
     getcookie();
-    
-  }
+}
   
 
 
