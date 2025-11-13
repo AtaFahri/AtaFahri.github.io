@@ -16,6 +16,8 @@
         margin: 0px;
         padding: 0px;
         border: 0px;
+        -webkit-tap-highlight-color: transparent;
+        user-select: none;
     }
     #div1{
         width: 80%; margin-left: 10%; margin-top: 4vw; 
@@ -147,75 +149,72 @@
 </body>
 
 <script>
-
     var btns = document.querySelectorAll('.numt');
     var pass = document.getElementById("pass");
     var deleted = document.getElementById("delete");
-    var password = "s"
-    
-    for (var i = 0; i < btns.length; i++) {
-        btns[i].onclick = text;            
-    }
+    var password = "s";
     var check = true;
-    function text(){
-       if(check){
+
+    // Ortak handler
+    function handleKey(e) {
+        if (check) {
             check = false;
-            pass.innerHTML = "";
-       }
-       var btn = event.target;
-       
-       pass.innerHTML +="*";
-       password += btn.innerHTML;
-       console.log(password);
-       if(password.toString() == "s4416"){
-            pass.innerHTML="";
-            window.location = "https://atafahri.github.io/files.html"
-       }
-       else if(password.toString() == "s2580"){
-            pass.innerHTML="";
-            window.location = "https://atafahri.github.io/existence.html"
-       }
-       else if(password.toString() == "s1234"){
-            pass.innerHTML="";
-            window.location = "https://atafahri.github.io/index21.html"
-       }
-    }
-    deleted.onclick = function(){
-      //  console.log(parseInt(pass.innerHTML.length));
-     
-        var c = parseInt(pass.innerHTML.length);
-        pass.innerHTML = pass.innerHTML.substring(0, pass.innerHTML.length-1);
-        
-        
-        password= password.substring(0, password.length-1);
-        console.log(password);
-        if(password == ""){
-            //pass.innerHTML="Enter Your Passcode";
-            password = "s";            
+            pass.textContent = ""; // innerHTML yerine textContent daha hafif
+        }
+
+        var btn = e.currentTarget; // global event yerine e.currentTarget kullan
+        pass.textContent += "*";
+        password += btn.textContent;
+
+        // console.log(password); // HIZ için yorum satırı
+
+        if (password === "s4416") {
+            pass.textContent = "";
+            window.location = "https://atafahri.github.io/files.html";
+        } else if (password === "s2580") {
+            pass.textContent = "";
+            window.location = "https://atafahri.github.io/existence.html";
+        } else if (password === "s1234") {
+            pass.textContent = "";
+            window.location = "https://atafahri.github.io/index21.html";
         }
     }
 
-
-    //ZOOM ENGELLEME
-    document.addEventListener('wheel', function(event) {
-    if (event.ctrlKey) {
-        event.preventDefault();
+    // click yerine pointerdown kullan (hem mouse hem touch için geçerli)
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener('pointerdown', handleKey);
     }
+
+    deleted.addEventListener('pointerdown', function () {
+        var len = pass.textContent.length;
+        if (len > 0) {
+            pass.textContent = pass.textContent.substring(0, len - 1);
+            password = password.substring(0, password.length - 1);
+        }
+
+        if (password === "") {
+            password = "s";
+            // istersen buraya "PASSCODE" geri yazdırabilirsin
+            // pass.textContent = "PASSCODE";
+        }
+        // console.log(password);
+    });
+
+    // ZOOM ENGELLEME
+    document.addEventListener('wheel', function (event) {
+        if (event.ctrlKey) {
+            event.preventDefault();
+        }
     }, { passive: false });
 
-    document.addEventListener('gesturestart', function(event) {
-    event.preventDefault();
+    document.addEventListener('gesturestart', function (event) {
+        event.preventDefault();
     });
-    document.addEventListener('gesturechange', function(event) {
-    event.preventDefault();
+    document.addEventListener('gesturechange', function (event) {
+        event.preventDefault();
     });
-    document.addEventListener('gestureend', function(event) {
-    event.preventDefault();
+    document.addEventListener('gestureend', function (event) {
+        event.preventDefault();
     });
-
-
-
-
 </script>
-
 </html>
