@@ -82,7 +82,7 @@
       #donut {    
       width: 90%;
       margin-left: 5%;
-      margin-top: 3vw;
+      margin-top: 5vw;
       margin-bottom: 2.3vw;
       aspect-ratio: 1;
       border-radius: 50%;
@@ -172,7 +172,7 @@
     <!-- <div class="alt"> <div  class="segment4 def"></div> <div style="width: 50%; height: 7vw; display: inline-block;"> <p id="segment4" class="txt">TTA %70</p>     </div>  </div>    -->
     
     <p style="border-bottom: 1vw solid white; width: 100%; text-align: center; font-size: 12vw; margin-top: 2vw; font-family: Arial, Helvetica, sans-serif; color: white;" id="toplam">120000</p>
-    
+    <p id="kurp" style="color: white; width: 100%; font-size: 8vw; text-align: center; font-family: Arial, Helvetica, sans-serif;"></p>
     <hr>     
   </div>
 
@@ -197,10 +197,10 @@
      <button id="close" style="float: inline-end; background-color: transparent;border: none; outline: none; color: white; margin-top: 10vw; font-size: 6vw;">X</button>
      <label id="deger" style="color: white; font-size: 10vw; display: block; margin-top: 20vw;">KUR</label>  
      <input placeholder="ENTER A VALUE" style="font-size: 12vw;  width: 100%; text-align: center; border-radius: 0px;" type="number" id="input1">    
-     <label style="color: white; font-size: 8vw; display: block; margin-top: 5vw;">KUR</label>  
-     <input placeholder="ENTER A VALUE" style="font-size: 10vw;  width: 100%; text-align: center; border-radius: 0px;" type="number" id="input2">  
+     
+    
       
-         <button style="font-size: 8vw; margin-top:60vw; width: 25%; aspect-ratio: 1; border-radius: 100%;" id="calc">💾</button></center>
+         <button style="font-size: 8vw; margin-top:80vw; width: 25%; aspect-ratio: 1; border-radius: 100%;" id="calc">💾</button></center>
      </div>    
    </div>
 
@@ -211,7 +211,6 @@
   var donut = document.getElementById("donut");
   var input1 = document.getElementById("input1");
   var deger = document.getElementById("deger");
-  var input2 = document.getElementById("input2");
   var body = document.getElementById("body");
   var calc = document.getElementById("calc");
   var clos = document.getElementById("close");
@@ -219,6 +218,7 @@
   var altin = document.getElementById("altin");
   var fonn = document.getElementById("fon");
   var bess = document.getElementById("bes");
+  var kurp = document.getElementById("kurp");
   // var tta = document.getElementById("tta");
   var legend1 = document.getElementById("legend1");
   var legend2 = document.getElementById("legend2");
@@ -245,7 +245,6 @@
   legend1.onclick = function(){
     vis.style.marginLeft = "0px";
     input1.value = gold;
-    input2.value = kur;
     deger.innerHTML = "Altın";
     input1.focus();
     si = "gold";
@@ -254,7 +253,6 @@
     vis.style.marginLeft = "0px";
     input1.value = bes;
     deger.innerHTML = "BES";
-    input2.value = kur;
     input1.focus();
     si = "bes";
   }
@@ -262,9 +260,15 @@
     vis.style.marginLeft = "0px";
     input1.value = fon;
     deger.innerHTML = "Fon";
-    input2.value = kur;
     input1.focus();
     si = "fon";
+  }
+  kurp.onclick = function(){
+    vis.style.marginLeft = "0px";
+    deger.innerHTML = "Kur";
+    input1.value = kur;
+    input1.focus();
+    si = "KUR";
   }
 
 
@@ -273,21 +277,21 @@
   }
  
   function getcookie() {
-  var kuki = document.cookie;        // "KUR=123; gold=50; fon=0"
-  var spkuki = kuki.split(";");      // ["KUR=123", " gold=50", " fon=0"]
+    var kuki = document.cookie;        // "KUR=123; gold=50; fon=0"
+    var spkuki = kuki.split(";");      // ["KUR=123", " gold=50", " fon=0"]
 
-  for (let index = 0; index < spkuki.length; index++) {
-    var pair = spkuki[index].trim().split("=");
-    var key = pair[0];
-    var value = parseInt((pair[1] || "0").replace(";", ""));
+    for (let index = 0; index < spkuki.length; index++) {
+      var pair = spkuki[index].trim().split("=");
+      var key = pair[0];
+      var value = parseInt((pair[1] || "0").replace(";", ""));
 
-    switch (key) {
-      case "KUR":  kur = value; break;
-      case "gold": gold = value; break;
-      case "fon":  fon = value; break;
-      case "bes":  bes = value; break;
+      switch (key) {
+        case "KUR":  kur = value; break;
+        case "gold": gold = value; break;
+        case "fon":  fon = value; break;
+        case "bes":  bes = value; break;
+      }
     }
-  }
 
   // devamı senin hesaplar...
 
@@ -340,6 +344,8 @@
     altin.innerHTML = goldd +"₺";
     fonn.innerHTML = fon +"₺";
     bess.innerHTML = bes +"₺";
+    var kurpt = kur.toLocaleString('de-DE');
+    kurp.innerHTML = kurpt+"₺";
     // tta.innerHTML = TTA +"₺"; 
 
 
@@ -368,14 +374,14 @@
     //   default:
     //     break;
     // }
-   setcookie(si,input1.value,input2.value);  
+   setcookie(si,input1.value);  
    vis.style.marginLeft = "-100%"; 
   //  graph();
   }
   console.log(document.cookie);
 
 
-  function setcookie(type, valu, value2) {
+  function setcookie(type, valu) {
     // sayıysa stringe çevir, noktaları kaldır
     valu = String(valu).replace(/\./g, "");
 
@@ -386,8 +392,8 @@
     document.cookie = type + "=" + valu + "; path=/; expires=Mon, 01 Jan 2100 00:00:00 GMT";
 
     // KUR için de aynı işlemi yap
-    document.cookie = "KUR=; path=/; expires=Thu, 31 Dec 2020 23:59:59 GMT";
-    document.cookie = "KUR=" + value2 + "; path=/; expires=Mon, 01 Jan 2100 00:00:00 GMT";
+    // document.cookie = "KUR=; path=/; expires=Thu, 31 Dec 2020 23:59:59 GMT";
+    // document.cookie = "KUR=" + value2 + "; path=/; expires=Mon, 01 Jan 2100 00:00:00 GMT";
 
     console.log(document.cookie);
     getcookie();
